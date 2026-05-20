@@ -37,7 +37,7 @@ async def buscar_fotos(query: str, per_page: int = 3) -> list[dict]:
     async with httpx.AsyncClient(timeout=12) as client:
         r = await client.get(
             "https://api.pexels.com/v1/search",
-            params={"query": query, "per_page": per_page, "orientation": "portrait"},
+            params={"query": query, "per_page": per_page, "orientation": "portrait", "locale": "pt-BR"},
             headers={"Authorization": key},
         )
         r.raise_for_status()
@@ -46,7 +46,7 @@ async def buscar_fotos(query: str, per_page: int = 3) -> list[dict]:
         {
             "id": p["id"],
             "thumb": p["src"]["medium"],
-            "src": p["src"]["large"],
+            "src": p["src"]["portrait"],   # já recortado em formato retrato (9:16)
             "autor": p["photographer"],
         }
         for p in data.get("photos", [])
