@@ -8,7 +8,7 @@ echo   Content Machine — iniciando...
 echo  =========================================
 echo.
 
-:: Cria venv e instala dependencias na primeira execucao
+:: Cria venv se nao existir
 if not exist venv (
     echo  [1/3] Criando ambiente virtual...
     python -m venv venv
@@ -16,9 +16,13 @@ if not exist venv (
         echo  ERRO: Python nao encontrado. Instale Python 3.11+ e tente novamente.
         pause & exit /b 1
     )
+)
 
+call venv\Scripts\activate
+
+:: Instala dependencias se uvicorn nao estiver presente
+if not exist venv\Scripts\uvicorn.exe (
     echo  [2/3] Instalando dependencias...
-    call venv\Scripts\activate
     pip install -r requirements.txt --quiet
     if errorlevel 1 (
         echo  ERRO: Falha ao instalar dependencias.
@@ -29,8 +33,6 @@ if not exist venv (
     playwright install chromium
     echo.
     echo  Setup concluido!
-) else (
-    call venv\Scripts\activate
 )
 
 echo  Abrindo navegador em http://localhost:8000 ...
