@@ -651,3 +651,54 @@ body { background: var(--bg); color: var(--text); font-family: system-ui, sans-s
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+/* ── Pexels ── */
+.pexels-key-status { font-size: 12px; color: var(--green); }
+
+.pexels-bar {
+  display: flex; align-items: center; gap: 12px; margin: 12px 0 8px;
+}
+.btn-pexels {
+  background: #1a1a2e; border: 1px solid #3a3a5c; color: #b0b0d0;
+  padding: 7px 14px; border-radius: 8px; font-size: 13px; cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-pexels:hover { background: #25254a; border-color: #6060a0; color: #d0d0f0; }
+
+.pexels-sel-count { font-size: 12px; color: var(--green); font-weight: 600; }
+
+.pexels-gallery {
+  background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px; margin-bottom: 12px;
+}
+
+.pexels-slide-block { margin-bottom: 16px; }
+.pexels-slide-block:last-child { margin-bottom: 0; }
+
+.pexels-slide-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+}
+.pexels-query { font-size: 11px; color: var(--muted); font-style: italic; }
+
+.pexels-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.pexels-thumb {
+  position: relative; cursor: pointer; border-radius: 8px; overflow: hidden;
+  border: 2px solid transparent; transition: border-color 0.15s, transform 0.1s;
+}
+.pexels-thumb:hover { border-color: #555; transform: scale(1.01); }
+.pexels-thumb.selected { border-color: var(--accent); }
+
+.pexels-thumb img {
+  width: 100%; aspect-ratio: 9/16; object-fit: cover; display: block;
+}
+.pexels-autor {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  color: #ddd; font-size: 10px; padding: 12px 6px 4px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.pexels-loading { color: var(--muted); padding: 12px 0; font-size: 13px; }
+.pexels-vazio   { color: var(--muted); font-size: 13px; }
+.pexels-erro    { color: var(--red);   font-size: 13px; }

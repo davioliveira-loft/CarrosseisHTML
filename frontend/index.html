@@ -105,6 +105,23 @@
       </form>
     </div>
 
+    <!-- Pexels API -->
+    <div class="sidebar-section">
+      <button class="section-toggle" onclick="togglePexelsConfig()">
+        ▸ Pexels API
+      </button>
+      <div id="pexels-config-form" class="collapsed" style="padding: 0 20px 16px;">
+        <p class="hint-text" style="margin-bottom:10px">Fotos grátis para seus slides. Chave gratuita em <strong>pexels.com/api</strong></p>
+        <div class="field">
+          <input type="password" id="pexels-key-input" placeholder="Cole sua API key aqui" style="width:100%">
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:8px">
+          <button class="btn-primary" onclick="savePexelsKey()">Salvar chave</button>
+          <span id="pexels-key-status" class="pexels-key-status"></span>
+        </div>
+      </div>
+    </div>
+
     <!-- Importar JSON -->
     <div class="sidebar-section">
       <div class="section-header">
@@ -152,6 +169,13 @@
       </div>
       <div class="template-row-individual" id="template-row-individual"></div>
       <div id="sugestao-lista"></div>
+      <div class="pexels-bar">
+        <button class="btn-pexels" id="btn-pexels-individual" onclick="buscarPexelsIndividual()">
+          📷 Buscar fotos no Pexels
+        </button>
+        <span id="pexels-individual-sel" class="pexels-sel-count"></span>
+      </div>
+      <div id="pexels-individual-gallery" class="pexels-gallery" style="display:none"></div>
       <div class="upload-zone" id="upload-zone" ondragover="event.preventDefault()" ondrop="onDrop(event)">
         <input type="file" id="img-input" multiple accept="image/*" style="display:none" onchange="onFilesSelected(event)">
         <div class="upload-inner" onclick="document.getElementById('img-input').click()">

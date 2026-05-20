@@ -50,6 +50,9 @@ class SlideTexto(BaseModel):
     cta_keyword: str | None = None
     cta_beneficio: str | None = None
 
+    # Pexels
+    busca_pexels: str | None = None
+
 
 class HeadlinesResponse(BaseModel):
     triagem_resumo: str
