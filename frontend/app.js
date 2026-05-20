@@ -6,6 +6,8 @@ const S = {
   batchFiles: {},    // {cid: [File, ...]}
   templates: [],     // [{id, nome, descricao}]
   cardTemplate: {},  // {cid: 'template-id'}
+  pexelsSelecoes: {}, // {cid: {slideNum: {url, thumb}}}
+  pexelsConfigurado: false,
 };
 
 /* ── API ── */
@@ -48,6 +50,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   loadLogoStatus();
   await loadTemplatesList();
   await loadLotesAtivos();
+  await loadPexelsConfig();
 });
 
 /* ── Templates ── */
@@ -248,7 +251,8 @@ async function importarJSONFromText() {
   }
   let payload;
   try {
-    payload = JSON.parse(raw);
+    const clean = raw.replace(/^```json\s*/i, '').replace(/^```\s*/, '').replace(/\s*```\s*$/, '').trim();
+    payload = JSON.parse(clean);
   } catch (e) {
     erro.textContent = 'JSON inválido: ' + e.message;
     return;
@@ -372,9 +376,18 @@ function addFiles(newFiles) {
 async function uploadImagens(semImagem = false) {
   showSpinner('Renderizando carrossel...');
   try {
-    const fd = new FormData();
-    if (!semImagem) S.files.forEach(f => fd.append('files', f));
-    const r = await api('POST', `/api/carrossel/${S.id}/upload-imagens`, fd);
+    const pexSel = !semImagem && S.pexelsSelecoes[S.id];
+    const hasPexels = pexSel && Object.keys(pexSel).length > 0;
+    let r;
+    if (hasPexels) {
+      showSpinner('Baixando fotos do Pexels...');
+      const selecoes = Object.entries(pexSel).map(([slide, info]) => ({ slide: parseInt(slide), url: info.url }));
+      r = await api('POST', `/api/carrossel/${S.id}/upload-pexels`, { selecoes });
+    } else {
+      const fd = new FormData();
+      if (!semImagem) S.files.forEach(f => fd.append('files', f));
+      r = await api('POST', `/api/carrossel/${S.id}/upload-imagens`, fd);
+    }
     loadPreview(S.id, r.preview_url);
   } catch (e) { showErro(e.message); }
 }
@@ -484,6 +497,11 @@ function renderBatchImagens(carrosseis) {
           </div>
           <div id="bpreview-${c.cid}" class="img-preview-row"></div>
         </div>
+        <div class="pexels-bar" style="margin: 8px 0 0;">
+          <button class="btn-pexels" onclick="buscarPexelsLote('${c.cid}')">📷 Buscar no Pexels</button>
+          <span id="pexels-sel-${c.cid}" class="pexels-sel-count"></span>
+        </div>
+        <div id="pexels-gallery-${c.cid}" class="pexels-gallery" style="display:none"></div>
         <div class="batch-card-actions">
           <button class="batch-btn-slides btn-secondary" onclick="toggleBatchSlides('${c.cid}', this)">Ver slides</button>
           <button class="btn-primary" onclick="uploadImagensLote('${c.cid}')">Gerar preview</button>
@@ -574,9 +592,18 @@ async function uploadImagensLote(cid, semImagem = false) {
   const statusEl = document.getElementById('bstatus-' + cid);
   if (statusEl) statusEl.textContent = 'gerando preview...';
   try {
-    const fd = new FormData();
-    if (!semImagem) (S.batchFiles[cid] || []).forEach(f => fd.append('files', f));
-    const r = await api('POST', `/api/carrossel/${cid}/upload-imagens`, fd);
+    const pexSel = !semImagem && S.pexelsSelecoes[cid];
+    const hasPexels = pexSel && Object.keys(pexSel).length > 0;
+    let r;
+    if (hasPexels) {
+      if (statusEl) statusEl.textContent = 'baixando fotos do Pexels...';
+      const selecoes = Object.entries(pexSel).map(([slide, info]) => ({ slide: parseInt(slide), url: info.url }));
+      r = await api('POST', `/api/carrossel/${cid}/upload-pexels`, { selecoes });
+    } else {
+      const fd = new FormData();
+      if (!semImagem) (S.batchFiles[cid] || []).forEach(f => fd.append('files', f));
+      r = await api('POST', `/api/carrossel/${cid}/upload-imagens`, fd);
+    }
     if (statusEl) statusEl.textContent = 'preview pronto';
     const link   = document.getElementById('blink-' + cid);
     const btnExp = document.getElementById('bexport-' + cid);
@@ -670,6 +697,123 @@ function readonlyField(label, value) {
     <label>${label}</label>
     <div class="editable-readonly">${value || ''}</div>
   </div>`;
+}
+
+/* ── Pexels: configuração ── */
+function togglePexelsConfig() {
+  const form = document.getElementById('pexels-config-form');
+  const btn = form.previousElementSibling;
+  const collapsed = form.classList.toggle('collapsed');
+  btn.textContent = (collapsed ? '▸' : '▾') + ' Pexels API';
+}
+
+async function loadPexelsConfig() {
+  const cfg = await api('GET', '/api/config/pexels').catch(() => null);
+  S.pexelsConfigurado = cfg?.configurado || false;
+  const status = document.getElementById('pexels-key-status');
+  if (status && S.pexelsConfigurado) status.textContent = '✓ Chave configurada';
+}
+
+async function savePexelsKey() {
+  const key = document.getElementById('pexels-key-input').value.trim();
+  if (!key) { alert('Cole a API key antes de salvar.'); return; }
+  try {
+    await api('POST', '/api/config/pexels', { key });
+    document.getElementById('pexels-key-input').value = '';
+    const status = document.getElementById('pexels-key-status');
+    if (status) status.textContent = '✓ Salvo';
+    S.pexelsConfigurado = true;
+  } catch (e) { alert('Erro ao salvar: ' + e.message); }
+}
+
+/* ── Pexels: busca e galeria ── */
+async function buscarPexelsIndividual() {
+  if (!S.id) return;
+  if (!S.pexelsConfigurado) {
+    alert('Configure a API key do Pexels primeiro (seção "Pexels API" na sidebar).');
+    return;
+  }
+  const gallery = document.getElementById('pexels-individual-gallery');
+  gallery.style.display = 'block';
+  await buscarPexelsParaCid(S.id, gallery, 'pexels-individual-sel');
+}
+
+async function buscarPexelsLote(cid) {
+  if (!S.pexelsConfigurado) {
+    alert('Configure a API key do Pexels primeiro (seção "Pexels API" na sidebar).');
+    return;
+  }
+  const gallery = document.getElementById('pexels-gallery-' + cid);
+  if (!gallery) return;
+  gallery.style.display = 'block';
+  await buscarPexelsParaCid(cid, gallery, 'pexels-sel-' + cid);
+}
+
+async function buscarPexelsParaCid(cid, galleryEl, selCountId) {
+  galleryEl.innerHTML = '<div class="pexels-loading">Buscando no Pexels...</div>';
+  try {
+    const queries = await api('GET', `/api/carrossel/${cid}/pexels-queries`);
+    if (!queries.length) {
+      galleryEl.innerHTML = '<p class="pexels-vazio">Nenhum slide com imagem sugerida.</p>';
+      return;
+    }
+    const results = await api('POST', '/api/pexels/buscar', { queries });
+    renderPexelsGallery(cid, results, galleryEl, selCountId);
+  } catch (e) {
+    galleryEl.innerHTML = `<p class="pexels-erro">Erro: ${esc(e.message)}</p>`;
+  }
+}
+
+function renderPexelsGallery(cid, results, galleryEl, selCountId) {
+  if (!S.pexelsSelecoes[cid]) S.pexelsSelecoes[cid] = {};
+  galleryEl.innerHTML = results.map(r => `
+    <div class="pexels-slide-block">
+      <div class="pexels-slide-header">
+        <span class="sugestao-num">Slide ${r.slide}</span>
+        <span class="pexels-query">"${esc(r.q)}"</span>
+      </div>
+      ${r.erro
+        ? `<p class="pexels-erro">Erro: ${esc(r.erro)}</p>`
+        : r.fotos.length === 0
+          ? '<p class="pexels-vazio">Nenhuma foto encontrada.</p>'
+          : `<div class="pexels-grid">
+              ${r.fotos.map(f => `
+                <div class="pexels-thumb"
+                     data-cid="${cid}"
+                     data-slide="${r.slide}"
+                     data-url="${f.src}"
+                     data-thumb="${f.thumb}"
+                     data-selid="${selCountId}"
+                     onclick="togglePexelsPhoto(this)">
+                  <img src="${f.thumb}" loading="lazy" alt="">
+                  <span class="pexels-autor">${esc(f.autor)}</span>
+                </div>`).join('')}
+            </div>`}
+    </div>`).join('');
+}
+
+function togglePexelsPhoto(el) {
+  const cid = el.dataset.cid;
+  const slide = parseInt(el.dataset.slide);
+  const url = el.dataset.url;
+  const thumb = el.dataset.thumb;
+  const selCountId = el.dataset.selid;
+
+  if (!S.pexelsSelecoes[cid]) S.pexelsSelecoes[cid] = {};
+
+  const block = el.closest('.pexels-slide-block');
+  block.querySelectorAll('.pexels-thumb').forEach(t => t.classList.remove('selected'));
+
+  if (S.pexelsSelecoes[cid][slide]?.url === url) {
+    delete S.pexelsSelecoes[cid][slide];
+  } else {
+    el.classList.add('selected');
+    S.pexelsSelecoes[cid][slide] = { url, thumb };
+  }
+
+  const total = Object.keys(S.pexelsSelecoes[cid] || {}).length;
+  const countEl = document.getElementById(selCountId);
+  if (countEl) countEl.textContent = total > 0 ? `${total} foto${total !== 1 ? 's' : ''} selecionada${total !== 1 ? 's' : ''}` : '';
 }
 
 /* ── Utilitários ── */

@@ -12,6 +12,7 @@ from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
+import httpx
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
@@ -19,6 +20,7 @@ from pydantic import BaseModel
 
 from app.exporter import exportar_pngs
 from app.models import Briefing, SlidesResponse, SugestaoImagens
+from app.pexels import buscar_fotos, download_as_base64, get_api_key, save_api_key
 from app.template_engine import FONT_PAIRS, render_carrossel
 
 # ── Constantes de caminhos ────────────────────────────────────────────────────
@@ -216,6 +218,21 @@ def _bg_exportar(cid: str, fonte: str) -> None:
         _set_status(cid, "finalizado")
     except Exception as e:
         _set_status(cid, "erro", str(e))
+
+
+# ── Helper Pexels: extrai query de busca do slide ─────────────────────────────
+
+def _slide_pexels_query(slide) -> str:
+    if slide.busca_pexels:
+        return slide.busca_pexels
+    parts = []
+    if slide.tag:
+        parts.append(slide.tag)
+    if slide.headline_capa:
+        parts.extend(re.sub(r"<[^>]+>", "", slide.headline_capa).split()[:5])
+    elif slide.bloco1:
+        parts.extend(re.sub(r"<[^>]+>", "", slide.bloco1).split()[:5])
+    return " ".join(parts)[:100] or "lifestyle"
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -506,3 +523,80 @@ async def get_arquivo(cid: str, filename: str):
     if not p.is_file():
         raise HTTPException(404)
     return FileResponse(str(p))
+
+
+# ── Pexels ────────────────────────────────────────────────────────────────────
+
+@app.get("/api/config/pexels")
+async def get_pexels_config():
+    return {"configurado": bool(get_api_key())}
+
+
+@app.post("/api/config/pexels")
+async def save_pexels_config(body: dict):
+    key = body.get("key", "").strip()
+    if not key:
+        raise HTTPException(400, "Chave inválida")
+    save_api_key(key)
+    return {"ok": True}
+
+
+@app.get("/api/carrossel/{cid}/pexels-queries")
+async def pexels_queries(cid: str):
+    pasta = _require_pasta(cid)
+    sugestao_path = pasta / "sugestao_imagens.json"
+    slides_path = pasta / "slides_texto.json"
+    if not sugestao_path.exists() or not slides_path.exists():
+        return []
+    sugestao = SugestaoImagens.model_validate(_read(sugestao_path))
+    slides_resp = SlidesResponse.model_validate(_read(slides_path))
+    slides_map = {s.numero: s for s in slides_resp.slides}
+    return [
+        {
+            "slide": img.numero,
+            "q": _slide_pexels_query(slides_map[img.numero]) if img.numero in slides_map else img.descricao_sugestao,
+            "tipo_imagem": img.tipo_imagem,
+        }
+        for img in sugestao.slides_com_imagem
+    ]
+
+
+@app.post("/api/pexels/buscar")
+async def pexels_buscar(body: dict):
+    queries = body.get("queries", [])
+    resultado = []
+    for item in queries:
+        try:
+            fotos = await buscar_fotos(item["q"], per_page=3)
+            resultado.append({"slide": item["slide"], "q": item["q"], "fotos": fotos})
+        except Exception as e:
+            resultado.append({"slide": item["slide"], "q": item["q"], "fotos": [], "erro": str(e)})
+    return resultado
+
+
+@app.post("/api/carrossel/{cid}/upload-pexels")
+async def upload_pexels(cid: str, body: dict):
+    pasta = _require_pasta(cid)
+    briefing = Briefing.model_validate(_read(pasta / "briefing.json"))
+    slides = SlidesResponse.model_validate(_read(pasta / "slides_texto.json")).slides
+    sugestao_path = pasta / "sugestao_imagens.json"
+    sugestao = SugestaoImagens.model_validate(_read(sugestao_path)) if sugestao_path.exists() else None
+
+    selecoes = body.get("selecoes", [])  # [{slide: 1, url: "..."}, ...]
+    imagens: dict[int, str] = {}
+    for sel in selecoes:
+        try:
+            imagens[int(sel["slide"])] = await download_as_base64(sel["url"])
+        except Exception:
+            pass
+
+    logo_data_url = _logo_data_url(briefing.handle)
+    template_name = _carrossel_template(cid)
+    html = render_carrossel(
+        briefing, slides, imagens, sugestao,
+        _template_dir(template_name), logo_data_url=logo_data_url,
+        carrossel_id=cid,
+    )
+    (pasta / "slides.html").write_text(html, encoding="utf-8")
+    _set_status(cid, "aguardando_exportacao")
+    return {"ok": True, "preview_url": f"/api/carrossel/{cid}/preview"}
