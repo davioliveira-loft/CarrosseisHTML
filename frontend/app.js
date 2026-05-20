@@ -251,7 +251,8 @@ async function importarJSONFromText() {
   }
   let payload;
   try {
-    payload = JSON.parse(raw);
+    const clean = raw.replace(/^```json\s*/i, '').replace(/^```\s*/, '').replace(/\s*```\s*$/, '').trim();
+    payload = JSON.parse(clean);
   } catch (e) {
     erro.textContent = 'JSON inválido: ' + e.message;
     return;
