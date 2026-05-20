@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "NÃO ENTRE NUM SUPERMERCADO NA ITÁLIA SEM ANTES CONHECER ESTAS CINCO PALAVRAS",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você entra no balcão de frios (la salumeria). A atendente te pergunta quanto de presunto de Parma você quer. E você diz: 'Duo cento gramas' num portunhol sofrido.",
+      "bloco2": "Ela pesa tudo, você paga, e vai pegar legumes. A caixa te dá uma bronca porque você esqueceu de pesar e colocar o adesivo nos tomates. Supermercados italianos têm suas próprias lógicas (e vocabulário).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O CONCEITO DE 'ETTO'",
+      "headline_capa": null,
+      "headline_interna": "A medida secreta de 100 gramas",
+      "bloco1": "A palavra mais importante na compra de frios não é o grama. É 'L'etto' (abreviação de hectograma, ou 100 gramas).",
+      "bloco2": "Se você quer 200 gramas de presunto crudo, você pede: 'Due etti di crudo, per favore'. 'Un etto' (100g), 'Tre etti' (300g). É assim que a Itália mede as compras rápidas no balcão.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "LA SPESA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Fazer compras de supermercado tem um nome próprio: 'Fare la spesa'. É diferente de 'fare shopping' (comprar roupas, sapatos).",
+      "bloco2": "'Oggi devo fare la spesa al supermercato' (Hoje preciso fazer compras no supermercado). Simples e inconfundível.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "PESAGEM DOS LEGUMES",
+      "headline_capa": null,
+      "headline_interna": "Faça você mesmo",
+      "bloco1": "Na seção de hortifrúti, é preciso colocar a luva plástica (il guanto), escolher a fruta, olhar o número na placa, colocar na balança (la bilancia) e imprimir o adesivo.",
+      "bloco2": "Chegar ao caixa (la cassa) com o saco sem a etiqueta impressa trava a fila e gera o descontentamento coletivo mais rápido da península.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "O CARRINHO E A SACOLA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O carrinho de mercado é 'il carrello' — e você geralmente precisa colocar uma moeda de 1 ou 2 euros nele para destravar a corrente (que recupera ao final).",
+      "bloco2": "Na hora de pagar, a caixa vai perguntar: 'Vuole un sacchetto? / Una busta?' (Quer uma sacola plástica?). Elas são sempre cobradas, responda 'Sì, grazie' ou traga a sua.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "A lista de compras italiana",
+      "bloco1": "Para a próxima semana, escreva sua lista de supermercado no Brasil completamente em italiano. 'Pane', 'due etti di formaggio', 'latte', 'uova'.",
+      "bloco2": "Transforme as compras do dia a dia num simulador visual constante. Esse exercício passivo te prepara para encontrar produtos rapidamente nas prateleiras europeias.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O supermercado (o il mercato rionale de rua) é o lugar mais pulsante da rotina italiana autêntica. Lá os nativos reclamam, socializam e defendem suas receitas.",
+      "bloco2": "Ao dominar o sistema (o etto, a balança, a sacola), você passeia por ali não como um intruso de férias, mas como um vizinho eficiente absorvendo o melhor do país.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer a lista completa dos mantimentos essenciais e os roteiros de falas no caixa?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com vocabulário em setores de supermercado + sistema de pesos italianos + áudios reais"
+    }
+  ]
+}

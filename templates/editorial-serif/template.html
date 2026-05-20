@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @{{ handle }}</title>
+<style>
+{{ font_face_css }}
+
+:root {
+  --P:      {{ paleta.P }};
+  --PL:     {{ paleta.PL }};
+  --PD:     {{ paleta.PD }};
+  --ACCENT: {{ paleta.ACCENT }};
+  --CREAM:  {{ paleta.LB }};
+  --PAPER:  {{ paleta.LR }};
+  --INK:    {{ paleta.DB }};
+  --INK-L:  color-mix(in srgb, var(--INK) 55%, transparent);
+  --RULE:   color-mix(in srgb, var(--INK) 18%, transparent);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #232020; font-family: 'Playfair Display', 'DM Sans', Georgia, serif; }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1612; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: var(--P); color: #fff; border: none;
+  padding: 8px 20px; border-radius: 6px; font-size: 14px;
+  font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+.slides-wrap {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 24px;
+  padding: 32px 24px;
+}
+.slides-wrap.preview {
+  flex-direction: row; flex-wrap: wrap;
+  justify-content: center; gap: 16px;
+}
+
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+  background: var(--CREAM);
+  color: var(--INK);
+  font-family: 'DM Sans', sans-serif;
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28);
+  transform-origin: top left;
+  margin-bottom: -972px;
+  margin-right: -777px;
+}
+
+.slide-dark { background: var(--INK); color: var(--CREAM); }
+.slide-dark { --INK-L: color-mix(in srgb, var(--CREAM) 65%, transparent); --RULE: color-mix(in srgb, var(--CREAM) 22%, transparent); }
+
+/* ── HEADER (decorativo no topo) ── */
+.editorial-header {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 48px 72px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--INK-L);
+  border-bottom: 1px solid var(--RULE);
+  z-index: 10;
+}
+.editorial-header .left { display: flex; gap: 18px; align-items: center; }
+.editorial-header .left strong { font-weight: 700; color: var(--INK); letter-spacing: 5px; }
+.editorial-header .num-roman { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; letter-spacing: 0; }
+
+.slide-dark .editorial-header strong { color: var(--CREAM); }
+
+/* ── FOOTER (rodapé com paginação) ── */
+.editorial-footer {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 72px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--INK-L);
+  border-top: 1px solid var(--RULE);
+  z-index: 10;
+}
+.editorial-footer .pgnum {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 22px; letter-spacing: 0; color: var(--INK);
+  border-bottom: 3px solid var(--ACCENT); padding-bottom: 2px;
+}
+.slide-dark .editorial-footer .pgnum { color: var(--CREAM); }
+
+/* ══════════════════════════════════════════════════
+   SLIDE CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: var(--INK); color: var(--PAPER); }
+.slide-capa .editorial-header strong { color: var(--PAPER); }
+.slide-capa .editorial-header { color: color-mix(in srgb, var(--CREAM) 62%, transparent); border-bottom-color: color-mix(in srgb, var(--CREAM) 22%, transparent); }
+.slide-capa .editorial-footer { color: color-mix(in srgb, var(--CREAM) 62%, transparent); border-top-color: color-mix(in srgb, var(--CREAM) 22%, transparent); }
+.slide-capa .editorial-footer .pgnum { color: var(--PAPER); }
+
+.capa-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.4) brightness(0.55) contrast(1.05);
+}
+.capa-content {
+  position: absolute; left: 72px; right: 72px;
+  top: 50%; transform: translateY(-50%);
+  z-index: 5;
+}
+.capa-kicker {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; letter-spacing: 6px; text-transform: uppercase;
+  color: var(--ACCENT); margin-bottom: 36px; font-weight: 700;
+}
+.capa-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 900; color: var(--PAPER);
+  text-transform: none;
+}
+.capa-headline.len-xl { font-size: 96px; line-height: 1.02; }
+.capa-headline.len-lg { font-size: 84px; line-height: 1.04; }
+.capa-headline.len-md { font-size: 72px; line-height: 1.06; }
+.capa-headline.len-sm { font-size: 60px; line-height: 1.10; }
+.capa-headline.len-xs { font-size: 52px; line-height: 1.14; }
+.capa-headline em, .capa-headline strong { color: var(--PL); font-style: italic; font-weight: 900; }
+
+.capa-decor {
+  position: absolute; left: 72px; right: 72px;
+  height: 1px; background: color-mix(in srgb, var(--CREAM) 35%, transparent);
+  bottom: 180px;
+}
+.capa-decor::before {
+  content: ''; position: absolute; left: 0; top: -1px; height: 3px;
+  width: 80px; background: var(--ACCENT);
+}
+.capa-byline {
+  position: absolute; bottom: 130px; left: 72px; right: 72px;
+  display: flex; align-items: center; gap: 16px;
+  font-family: 'DM Sans', sans-serif; font-size: 13px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--CREAM) 75%, transparent);
+}
+.capa-byline .dot {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--P); display: flex; align-items: center; justify-content: center;
+  font-family: 'DM Sans'; font-size: 14px; font-weight: 800; color: var(--CREAM);
+  overflow: hidden;
+}
+.capa-byline .dot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ══════════════════════════════════════════════════
+   SLIDES INTERNOS (light, dark, grad)
+══════════════════════════════════════════════════ */
+.slide-content {
+  position: absolute; inset: 0;
+  padding: 132px 72px 132px;
+  display: flex; flex-direction: column;
+  justify-content: center;
+}
+.slide-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px; letter-spacing: 6px; text-transform: uppercase;
+  color: var(--INK); margin-bottom: 28px; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 14px;
+  align-self: flex-start;
+}
+.slide-tag::before {
+  content: ''; width: 36px; height: 3px; background: var(--ACCENT);
+}
+.slide-dark .slide-tag { color: var(--CREAM); }
+.slide-h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 62px; font-weight: 900; line-height: 1.05;
+  color: inherit; margin-bottom: 36px;
+}
+.slide-h1 em, .slide-h1 strong { color: var(--P); font-style: italic; font-weight: 900; }
+
+.slide-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 30px; font-weight: 400; line-height: 1.45;
+  color: var(--INK); margin-bottom: 24px;
+}
+.slide-dark .slide-body { color: var(--PAPER); }
+.slide-body strong { font-weight: 800; color: var(--P); background: color-mix(in srgb, var(--ACCENT) 35%, transparent); padding: 0 4px; }
+.slide-dark .slide-body strong { background: color-mix(in srgb, var(--ACCENT) 30%, transparent); color: var(--ACCENT); }
+.slide-body em { font-style: italic; }
+
+.slide-img-overlay-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.6) brightness(0.4);
+}
+.slide-img-overlay-tint {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--INK) 45%, transparent) 0%, color-mix(in srgb, var(--INK) 85%, transparent) 100%);
+}
+
+.img-box-editorial {
+  width: 100%; height: 380px;
+  margin-bottom: 32px;
+  overflow: hidden;
+  border: 1px solid var(--RULE);
+}
+.img-box-editorial img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(0.15);
+}
+
+/* ── SLIDE GRAD (destaque colorido) ── */
+.slide-grad {
+  background: var(--P);
+  color: var(--CREAM);
+}
+.slide-grad .editorial-header,
+.slide-grad .editorial-footer { color: color-mix(in srgb, var(--CREAM) 65%, transparent); border-color: color-mix(in srgb, var(--CREAM) 25%, transparent); }
+.slide-grad .editorial-header strong { color: var(--CREAM); }
+.slide-grad .editorial-footer .pgnum { color: var(--CREAM); }
+.slide-grad .slide-tag { color: color-mix(in srgb, var(--CREAM) 85%, transparent); }
+.slide-grad .slide-body { color: var(--CREAM); }
+.slide-grad .slide-body strong { color: var(--CREAM); background: color-mix(in srgb, var(--ACCENT) 45%, transparent); padding: 0 4px; }
+.slide-grad .slide-tag::before { background: var(--ACCENT); }
+
+.grad-pullquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 70px; line-height: 1.06; font-weight: 700;
+  font-style: italic;
+  color: var(--CREAM); margin-bottom: 28px;
+}
+
+/* ── SLIDE CTA ── */
+.slide-cta { background: var(--PAPER); }
+.cta-content {
+  position: absolute; inset: 0;
+  padding: 132px 72px 132px;
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center; align-items: center;
+}
+.cta-bridge {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-style: italic; line-height: 1.3;
+  color: var(--INK); margin-bottom: 28px; max-width: 800px;
+}
+.cta-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 88px; font-weight: 900;
+  color: var(--P); margin-bottom: 50px; letter-spacing: -1px;
+}
+.cta-kbox {
+  background: var(--CREAM);
+  border: 2px solid var(--INK);
+  border-bottom: 6px solid var(--ACCENT);
+  padding: 36px 56px; margin-bottom: 40px;
+  max-width: 720px;
+}
+.cta-kinstr {
+  font-size: 14px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--INK-L); margin-bottom: 14px;
+}
+.cta-kword {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px; font-weight: 900;
+  color: var(--P); margin-bottom: 14px;
+}
+.cta-kbenefit {
+  font-size: 18px; color: var(--INK-L);
+  font-family: 'DM Sans', sans-serif;
+}
+.cta-byline {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--INK-L);
+}
+.cta-byline .dot {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--P); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--CREAM); font-weight: 800; font-size: 16px;
+}
+.cta-byline .dot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT (data-v="1" é o default acima)
+══════════════════════════════════════════════════ */
+
+/* V2 — DROP-CAP + ALINHAMENTO ESQUERDO: editorial com capitular */
+[data-v="2"] .slide-content {
+  justify-content: flex-start;
+  padding-top: 200px;
+}
+[data-v="2"] .slide-h1 { font-size: 72px; }
+[data-v="2"] .slide-body:first-of-type::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 112px; font-weight: 900;
+  float: left; line-height: 0.85;
+  margin: 8px 14px 0 0; color: var(--P);
+}
+[data-v="2"].slide-dark .slide-body:first-of-type::first-letter { color: var(--PL); }
+[data-v="2"].slide-grad .slide-body:first-of-type::first-letter { color: var(--CREAM); }
+[data-v="2"].slide-capa .capa-content {
+  top: 32%; transform: translateY(-50%);
+}
+[data-v="2"].slide-capa .capa-headline { font-style: italic; }
+[data-v="2"].slide-cta .cta-content { padding-top: 200px; justify-content: flex-start; }
+[data-v="2"].slide-cta .cta-bridge::before { content: "« "; color: var(--P); }
+[data-v="2"].slide-cta .cta-bridge::after { content: " »"; color: var(--P); }
+
+/* V3 — RULE + CENTRO: linha decorativa antes do título, conteúdo central */
+[data-v="3"] .slide-content {
+  justify-content: center;
+  text-align: center; align-items: center;
+}
+[data-v="3"] .slide-tag::before, [data-v="3"] .slide-tag::after { content: ""; }
+[data-v="3"] .slide-tag {
+  margin: 0 auto 28px; padding: 14px 0;
+  border-top: 1px solid var(--P); border-bottom: 1px solid var(--P);
+  display: inline-block; padding-left: 40px; padding-right: 40px;
+}
+[data-v="3"] .slide-h1 { text-align: center; max-width: 780px; }
+[data-v="3"] .slide-body { text-align: center; max-width: 760px; margin-left: auto; margin-right: auto; }
+[data-v="3"] .img-box-editorial { max-width: 700px; margin-left: auto; margin-right: auto; }
+[data-v="3"].slide-capa .capa-content { top: 50%; text-align: center; }
+[data-v="3"].slide-capa .capa-kicker { display: block; text-align: center; }
+[data-v="3"].slide-capa .capa-headline { text-align: center; }
+[data-v="3"].slide-cta .cta-content {
+  align-items: center; text-align: center; padding-top: 230px;
+}
+[data-v="3"].slide-cta .cta-kbox { transform: rotate(-0.8deg); }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">{{ template_nome }}</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+{% set roman = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'] %}
+
+{% macro header(slide) %}
+<div class="editorial-header">
+  <div class="left">
+    <strong>@{{ handle }}</strong>
+    <span>Lezione</span>
+    <span class="num-roman">{{ roman[slide.numero] if slide.numero < 13 else slide.numero }}</span>
+  </div>
+  <div>MMXXVI · Edizione</div>
+</div>
+{% endmacro %}
+
+{% macro footer(slide) %}
+<div class="editorial-footer">
+  <span>@{{ handle }} · Aprenda Italiano</span>
+  <span class="pgnum">— {{ slide.numero }}/{{ total_slides }} —</span>
+</div>
+{% endmacro %}
+
+{% for slide in slides %}
+
+  {% if slide.tipo == 'capa' %}
+  <div class="slide slide-capa" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.imagem_base64 %}
+      <div class="capa-bg-img" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% endif %}
+    {{ header(slide) }}
+    <div class="capa-content">
+      <div class="capa-kicker">— L'edizione di oggi —</div>
+      {% set _hlen = (slide.headline_capa | striptags | length) if slide.headline_capa else 0 %}
+      {% if _hlen < 40 %}{% set _hsize = 'len-xl' %}
+      {% elif _hlen < 70 %}{% set _hsize = 'len-lg' %}
+      {% elif _hlen < 100 %}{% set _hsize = 'len-md' %}
+      {% elif _hlen < 130 %}{% set _hsize = 'len-sm' %}
+      {% else %}{% set _hsize = 'len-xs' %}{% endif %}
+      <div class="capa-headline {{ _hsize }}">{{ slide.headline_capa | safe if slide.headline_capa else '' }}</div>
+    </div>
+    <div class="capa-decor"></div>
+    <div class="capa-byline">
+      <div class="dot">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+      <span>@{{ handle }} · Lezione di italiano</span>
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% elif slide.tipo in ['dark', 'light'] %}
+  <div class="slide slide-{{ slide.tipo }}" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.tipo_imagem == 'background-overlay' and slide.imagem_base64 %}
+      <div class="slide-img-overlay-bg" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+      <div class="slide-img-overlay-tint"></div>
+    {% endif %}
+    {{ header(slide) }}
+    <div class="slide-content">
+      {% if slide.tag %}<div class="slide-tag">— {{ slide.tag }} —</div>{% endif %}
+      {% if slide.headline_interna %}<div class="slide-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.tipo_imagem == 'img-box' and slide.imagem_base64 %}
+        <div class="img-box-editorial"><img src="{{ slide.imagem_base64 }}" alt=""></div>
+      {% endif %}
+      {% if slide.bloco1 %}<div class="slide-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="slide-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% elif slide.tipo == 'grad' %}
+  <div class="slide slide-grad" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ header(slide) }}
+    <div class="slide-content">
+      {% if slide.tag %}<div class="slide-tag">— {{ slide.tag or 'In sintesi' }} —</div>{% endif %}
+      {% if slide.headline_interna %}<div class="grad-pullquote">"{{ slide.headline_interna | safe }}"</div>{% endif %}
+      {% if slide.bloco1 %}<div class="slide-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="slide-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% elif slide.tipo == 'cta' %}
+  <div class="slide slide-cta" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ header(slide) }}
+    <div class="cta-content">
+      {% if slide.frase_ponte %}<div class="cta-bridge">{{ slide.frase_ponte | safe }}</div>{% endif %}
+      {% if slide.cta_headline %}<div class="cta-headline">{{ slide.cta_headline | safe }}</div>{% endif %}
+      <div class="cta-kbox">
+        <div class="cta-kinstr">— Comenta la parola —</div>
+        <div class="cta-kword">{{ slide.cta_keyword or 'GUIA' }}</div>
+        <div class="cta-kbenefit">{{ slide.cta_beneficio or 'e recebe o guia direto na DM' }}</div>
+      </div>
+      <div class="cta-byline">
+        <div class="dot">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+        <span>@{{ handle }} · Risposta automatica via DM</span>
+      </div>
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% endif %}
+
+{% endfor %}
+
+</div>
+
+<script>
+function toggleView() {
+  const w = document.getElementById('slides-wrap');
+  const l = document.getElementById('view-label');
+  w.classList.toggle('preview');
+  l.textContent = w.classList.contains('preview') ? 'Modo: Preview lado a lado' : 'Modo: Tamanho real (1080×1350)';
+}
+</script>
+</body>
+</html>

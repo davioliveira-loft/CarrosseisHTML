@@ -1,0 +1,29 @@
+{
+  "total_imagens_sugeridas": 4,
+  "slides_com_imagem": [
+    {
+      "numero": 1,
+      "tipo_imagem": "full-bleed",
+      "descricao_sugestao": "Foto de impacto da capa. Sujeito no terço superior, gradiente escuro na base.",
+      "obrigatorio": true
+    },
+    {
+      "numero": 3,
+      "tipo_imagem": "img-box",
+      "descricao_sugestao": "Box no topo do slide. Imagem ilustrativa do tema.",
+      "obrigatorio": false
+    },
+    {
+      "numero": 4,
+      "tipo_imagem": "background-overlay",
+      "descricao_sugestao": "Imagem de fundo com overlay 80%. Reforça o tema do slide.",
+      "obrigatorio": false
+    },
+    {
+      "numero": 5,
+      "tipo_imagem": "img-box",
+      "descricao_sugestao": "Box no topo do slide. Imagem ilustrativa do tema.",
+      "obrigatorio": false
+    }
+  ]
+}

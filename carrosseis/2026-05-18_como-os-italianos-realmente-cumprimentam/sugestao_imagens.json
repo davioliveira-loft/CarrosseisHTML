@@ -1,0 +1,28 @@
+{
+  "total_imagens_sugeridas": 3,
+  "slides_com_imagem": [
+    {
+      "numero": 1,
+      "tipo_imagem": "full-bleed",
+      "descricao_sugestao": "Foto de impacto relacionada ao idioma italiano — Roma, Coliseu, pessoas conversando em café italiano, ou mapa da Itália. Sujeito preferencialmente no terço superior da imagem para não colidir com a headline na base.",
+      "obrigatorio": true
+    },
+    {
+      "numero": 4,
+      "tipo_imagem": "background-overlay",
+      "descricao_sugestao": "Imagem de fundo com overlay 80% opacity. Slide dark com 77 palavras — densidade média, comporta imagem de fundo sem comprometer legibilidade. Sugestão: foto de sala de aula, tela de celular com app de idiomas, ou paisagem italiana desfocada.",
+      "obrigatorio": false
+    },
+    {
+      "numero": 6,
+      "tipo_imagem": "background-overlay",
+      "descricao_sugestao": "Imagem de fundo com overlay 80% opacity. Slide dark com 73 palavras — dentro do limite seguro. Sugestão: foto de livros, caderno de anotações, ou cena cotidiana italiana (mercado, rua, sinalização em italiano).",
+      "obrigatorio": false
+    }
+  ],
+  "notas": {
+    "slide_8_descartado": "Slide 8 (grad) tem apenas 3 palavras — candidato a img-box, mas o fundo gradient já é visualmente rico e o conteúdo mínimo não justifica adicionar imagem.",
+    "slides_light_descartados": "Slides 3 (87 palavras), 5 (94 palavras) e 7 (71 palavras) estão próximos ou acima de 60% de preenchimento — img-box não recomendado para não sobrecarregar.",
+    "distribuicao": "Todas as imagens disponíveis devem ser distribuídas entre capa (obrigatória), slide 4 e slide 6, priorizando slides dark conforme critério do sistema."
+  }
+}

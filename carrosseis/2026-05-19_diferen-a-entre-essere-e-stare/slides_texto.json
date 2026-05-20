@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "COMO RESPONDER 'TUDO BEM' SEM PARECER UM TURISTA NO PRIMEIRO DIA",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você encontra seu vizinho italiano. Ele sorri e pergunta: 'Come stai?'. E você, traduzindo direto do português, responde rápido: 'Io sono bene'.",
+      "bloco2": "O vizinho entende a intenção, mas a frase soa artificial. O uso dos verbos 'ser' e 'estar' muda bastante do português para o italiano.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "A REGRA",
+      "headline_capa": null,
+      "headline_interna": "Para saúde, use Stare",
+      "bloco1": "Quando falamos de estado físico, saúde ou como estamos nos sentindo naquele exato momento, o italiano exige o verbo stare.",
+      "bloco2": "Por isso, a pergunta natural é 'Come stai?' e a resposta correta é 'Sto bene' (Estou bem) ou 'Sto male' (Estou mal).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "O APROFUNDAMENTO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "E quando usamos o verbo essere (ser/estar)? Ele entra quando falamos de identidade, características, origem ou uma emoção geral.",
+      "bloco2": "Você diz 'Io sono brasiliano' (Eu sou brasileiro) ou 'Io sono felice' (Eu sou/estou feliz).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "COMPARAÇÃO",
+      "headline_capa": null,
+      "headline_interna": "Localização confunde",
+      "bloco1": "No português, dizemos 'eu estou em casa'. Em italiano, usamos o verbo essere para localização estática na enorme maioria das vezes.",
+      "bloco2": "O correto e natural é dizer 'Sono a casa' (Estou em casa) ou 'Sono in ufficio' (Estou no escritório). Evite usar o 'sto' nesses casos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "EXPANSÃO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O verbo stare ganha um papel especial quando acompanhado do gerúndio, indicando uma ação que está acontecendo agora mesmo, sem parar.",
+      "bloco2": "Se alguém liga e você está comendo, responda: 'Sto mangiando' (Estou comendo). Aqui o padrão funciona igualzinho ao nosso português!",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "O teste do espelho",
+      "bloco1": "Para fixar de vez: associe stare a 'como me sinto' (sto bene) e 'o que estou fazendo' (sto parlando).",
+      "bloco2": "Crie três frases simples mentalmente todos os dias de manhã: como você se sente hoje, o que está fazendo agora e onde você está localizado.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Misturar esses dois verbos é o tropeço mais comum de quem fala português e começa a aprender a língua.",
+      "bloco2": "Mas alinhar essa regra básica transforma a sua fluência e faz você soar incrivelmente natural conversando com qualquer nativo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer destravar as regras de ouro e falar com muito mais confiança?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com as regras vitais + exercícios práticos + áudios"
+    }
+  ]
+}

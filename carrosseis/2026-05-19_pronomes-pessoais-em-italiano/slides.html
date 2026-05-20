@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @aprendaitaliano_</title>
+<style>
+
+
+:root {
+  --P:      #CD212A;
+  --PL:     #D74D54;
+  --PD:     #8F171D;
+  --YELLOW: #008C45;
+  --PAPER:  #FFFFFF;
+  --PAPER2: #F2F2F2;
+  --INK:    #0E0E0E;
+  --G:      linear-gradient(165deg, #8F171D 0%, #CD212A 50%, #D74D54 100%);
+  --F-HEAD: 'Barlow Condensed', 'Playfair Display', Georgia, serif;
+  --F-BODY: 'Plus Jakarta Sans', 'DM Sans', Georgia, serif;
+  --RULE: color-mix(in srgb, var(--INK) 28%, transparent);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #2a221a; font-family: var(--F-BODY); }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #1c1612; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: var(--P); color: #fff; border: none;
+  padding: 8px 20px; font-size: 14px;
+  font-weight: 700; cursor: pointer; letter-spacing: 1px;
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+.slides-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 32px 24px; }
+.slides-wrap.preview { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+  background: var(--PAPER);
+  color: var(--INK);
+  font-family: var(--F-BODY);
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28); transform-origin: top left;
+  margin-bottom: -972px; margin-right: -777px;
+}
+
+/* Textura sutil de papel via gradientes */
+.slide::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse at 20% 30%, color-mix(in srgb, var(--INK) 4%, transparent), transparent 60%),
+    radial-gradient(ellipse at 80% 70%, color-mix(in srgb, var(--P) 5%, transparent), transparent 55%);
+  pointer-events: none;
+}
+.slide-dark::before {
+  background:
+    radial-gradient(ellipse at 30% 20%, color-mix(in srgb, var(--PAPER) 5%, transparent), transparent 60%),
+    radial-gradient(ellipse at 70% 80%, color-mix(in srgb, var(--P) 8%, transparent), transparent 55%);
+}
+
+/* ── MASTHEAD (cabeçalho de revista) ── */
+.mast {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 36px 72px 18px;
+  border-bottom: 1px solid var(--RULE);
+  display: flex; justify-content: space-between; align-items: baseline;
+  z-index: 10;
+}
+.mast-name {
+  font-family: var(--F-HEAD);
+  font-size: 28px; font-weight: 900;
+  letter-spacing: 4px; text-transform: uppercase;
+  font-style: italic;
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.mast-name::before {
+  content: ''; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--YELLOW);
+}
+.mast-meta {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--INK) 50%, transparent);
+  font-family: var(--F-BODY);
+}
+.mast-meta .sep { margin: 0 10px; }
+
+/* ── FOOTER (rodapé com fólio) ── */
+.foot {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 18px 72px 36px;
+  border-top: 1px solid var(--RULE);
+  display: flex; justify-content: space-between; align-items: baseline;
+  z-index: 10;
+}
+.foot-text {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--INK) 50%, transparent);
+}
+.foot-folio {
+  font-family: var(--F-HEAD); font-style: italic;
+  font-size: 22px; font-weight: 900;
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.foot-folio::before {
+  content: ''; width: 36px; height: 3px; background: var(--YELLOW);
+}
+
+/* Dark slides invertem cores do masthead/footer */
+.slide-dark .mast { border-bottom-color: color-mix(in srgb, var(--PAPER) 22%, transparent); }
+.slide-dark .foot { border-top-color: color-mix(in srgb, var(--PAPER) 22%, transparent); }
+.slide-dark .mast-meta, .slide-dark .foot-text { color: color-mix(in srgb, var(--PAPER) 60%, transparent); }
+
+/* ── ORNAMENTOS ── */
+.orn {
+  display: block; text-align: center;
+  font-family: var(--F-HEAD); font-style: italic;
+  color: var(--P); font-size: 26px;
+  letter-spacing: 12px; margin: 24px 0;
+}
+.orn::before { content: '❦  ·  ❦'; }
+.slide-dark .orn { color: var(--YELLOW); }
+.slide-grad .orn { color: var(--YELLOW); }
+
+/* ── CONTEÚDO BASE ── */
+.r-content {
+  position: absolute;
+  top: 140px; left: 72px; right: 72px; bottom: 110px;
+  display: flex; flex-direction: column; justify-content: center;
+  z-index: 5;
+}
+
+.r-tag {
+  font-family: var(--F-BODY);
+  font-size: 13px; letter-spacing: 6px; text-transform: uppercase;
+  color: var(--P); margin-bottom: 26px; font-weight: 800;
+  text-align: center;
+  position: relative;
+}
+.r-tag::before, .r-tag::after {
+  content: ''; display: inline-block; width: 60px; height: 3px;
+  background: var(--YELLOW); vertical-align: middle; margin: 0 18px;
+}
+.slide-dark .r-tag, .slide-grad .r-tag { color: var(--YELLOW); }
+
+.r-h1 {
+  font-family: var(--F-HEAD);
+  font-size: 76px; font-weight: 900; line-height: 1.02;
+  text-align: center; margin-bottom: 38px;
+  letter-spacing: -1px;
+}
+.r-h1 em, .r-h1 strong {
+  color: var(--P); font-style: italic; font-weight: 900;
+  border-bottom: 4px solid var(--YELLOW);
+}
+.slide-dark .r-h1 em, .slide-dark .r-h1 strong,
+.slide-grad .r-h1 em, .slide-grad .r-h1 strong { color: var(--YELLOW); }
+
+.r-body {
+  font-family: var(--F-BODY);
+  font-size: 28px; font-weight: 400; line-height: 1.55;
+  text-align: left; max-width: 820px;
+  margin: 0 auto 22px;
+  color: color-mix(in srgb, currentColor 88%, transparent);
+}
+.r-body strong { font-weight: 700; color: currentColor; background: color-mix(in srgb, var(--YELLOW) 35%, transparent); padding: 0 4px; }
+.r-body em { font-style: italic; color: var(--P); }
+.slide-dark .r-body em, .slide-grad .r-body em { color: var(--YELLOW); }
+
+/* Drop cap na primeira frase da body */
+.r-body.has-cap::first-letter {
+  font-family: var(--F-HEAD);
+  font-size: 96px; line-height: 0.85; font-weight: 900;
+  float: left; margin: 8px 14px 0 0;
+  color: var(--P);
+}
+.slide-dark .r-body.has-cap::first-letter,
+.slide-grad .r-body.has-cap::first-letter { color: var(--YELLOW); }
+
+/* ══════════════════════════════════════════════════
+   CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: var(--INK); color: var(--PAPER); }
+.slide-capa::before {
+  background:
+    radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--P) 18%, transparent), transparent 65%),
+    radial-gradient(ellipse at 80% 80%, color-mix(in srgb, var(--YELLOW) 8%, transparent), transparent 60%);
+}
+.capa-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.5) brightness(0.4) sepia(0.2);
+}
+.capa-bg-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--INK) 65%, transparent);
+}
+.slide-capa .mast { border-bottom-color: color-mix(in srgb, var(--PAPER) 22%, transparent); }
+.slide-capa .foot { border-top-color: color-mix(in srgb, var(--PAPER) 22%, transparent); }
+.slide-capa .mast-meta, .slide-capa .foot-text { color: color-mix(in srgb, var(--PAPER) 60%, transparent); }
+
+.capa-content {
+  position: absolute; top: 50%; left: 72px; right: 72px;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 5;
+}
+.capa-vol {
+  font-family: var(--F-HEAD); font-style: italic;
+  font-size: 18px; letter-spacing: 6px;
+  text-transform: uppercase; margin-bottom: 24px;
+  color: var(--YELLOW);
+  display: inline-block; padding: 4px 14px;
+  border: 1px solid var(--YELLOW);
+}
+.capa-headline {
+  font-family: var(--F-HEAD);
+  font-weight: 900; color: var(--PAPER);
+  letter-spacing: -1.5px;
+}
+.capa-headline.len-xl { font-size: 110px; line-height: 1.0; }
+.capa-headline.len-lg { font-size: 96px;  line-height: 1.02; }
+.capa-headline.len-md { font-size: 80px;  line-height: 1.04; }
+.capa-headline.len-sm { font-size: 64px;  line-height: 1.08; }
+.capa-headline.len-xs { font-size: 54px;  line-height: 1.14; }
+.capa-headline em, .capa-headline strong {
+  color: var(--YELLOW); font-style: italic; font-weight: 900;
+}
+.capa-byline {
+  margin-top: 38px;
+  font-family: var(--F-BODY);
+  font-size: 13px; letter-spacing: 4px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--PAPER) 70%, transparent);
+}
+.capa-byline strong { color: var(--PAPER); }
+
+/* ══════════════════════════════════════════════════
+   DARK / LIGHT / GRAD
+══════════════════════════════════════════════════ */
+.slide-dark { background: var(--INK); color: var(--PAPER); }
+.slide-light { background: var(--PAPER); }
+.slide-grad { background: var(--P); color: var(--PAPER); }
+
+.slide-img-overlay {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.6) brightness(0.45) sepia(0.15);
+}
+.slide-img-overlay::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--INK) 55%, transparent);
+}
+
+.r-imgbox {
+  width: 100%; max-width: 760px; margin: 0 auto 28px;
+  height: 320px; overflow: hidden;
+  filter: grayscale(0.2) sepia(0.08);
+  border: 1px solid var(--RULE);
+}
+.r-imgbox img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ══════════════════════════════════════════════════
+   CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--PAPER2); }
+.cta-content {
+  position: absolute; top: 50%; left: 72px; right: 72px;
+  transform: translateY(-50%);
+  text-align: center; z-index: 5;
+}
+.cta-bridge {
+  font-family: var(--F-HEAD); font-style: italic;
+  font-size: 32px; font-weight: 700; line-height: 1.3;
+  color: var(--INK); margin-bottom: 32px;
+  max-width: 800px; margin-left: auto; margin-right: auto;
+}
+.cta-bridge::before { content: '"'; color: var(--P); margin-right: 6px; }
+.cta-bridge::after { content: '"'; color: var(--P); margin-left: 6px; }
+.cta-headline {
+  font-family: var(--F-HEAD);
+  font-size: 88px; font-weight: 900;
+  color: var(--P); margin-bottom: 44px;
+  letter-spacing: -1.5px; line-height: 0.96;
+}
+.cta-kbox {
+  display: inline-block;
+  background: var(--INK); color: var(--PAPER);
+  padding: 36px 60px;
+  border: 4px double color-mix(in srgb, var(--YELLOW) 70%, transparent);
+}
+.cta-kinstr {
+  font-family: var(--F-BODY);
+  font-size: 12px; letter-spacing: 5px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--YELLOW) 70%, transparent);
+  margin-bottom: 12px; font-weight: 800;
+}
+.cta-kword {
+  font-family: var(--F-HEAD);
+  font-size: 72px; font-weight: 900;
+  color: var(--YELLOW); letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.cta-kbenefit {
+  font-family: var(--F-BODY); font-style: italic;
+  font-size: 18px;
+  color: color-mix(in srgb, var(--PAPER) 80%, transparent);
+}
+.cta-byline-foot {
+  margin-top: 36px;
+  font-family: var(--F-BODY);
+  font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--INK) 55%, transparent);
+}
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT
+══════════════════════════════════════════════════ */
+
+/* V2 — ESQUERDA + DROP CAP: alinhamento à esquerda, capitular obrigatória */
+[data-v="2"] .r-content { padding-top: 80px; justify-content: flex-start; }
+[data-v="2"] .r-tag {
+  text-align: left;
+}
+[data-v="2"] .r-tag::before { display: none; }
+[data-v="2"] .r-tag::after { margin-left: 24px; width: 90px; }
+[data-v="2"] .r-h1 { text-align: left; font-size: 84px; }
+[data-v="2"] .r-body { text-align: left; max-width: none; }
+[data-v="2"] .r-body:first-of-type::first-letter {
+  font-family: var(--F-HEAD);
+  font-size: 110px; line-height: 0.85; font-weight: 900;
+  float: left; margin: 8px 18px 0 0;
+  color: var(--P);
+}
+[data-v="2"].slide-dark .r-body:first-of-type::first-letter,
+[data-v="2"].slide-grad .r-body:first-of-type::first-letter { color: var(--YELLOW); }
+[data-v="2"] .orn { text-align: left; }
+[data-v="2"] .orn::before { content: '§'; letter-spacing: 0; font-size: 36px; }
+[data-v="2"].slide-capa .capa-content { text-align: left; }
+[data-v="2"].slide-capa .capa-headline { text-align: left; }
+[data-v="2"].slide-cta .cta-content { text-align: left; }
+[data-v="2"].slide-cta .cta-bridge { text-align: left; margin-left: 0; }
+[data-v="2"].slide-cta .cta-headline { text-align: left; }
+
+/* V3 — COLUNA ESTREITA + ORNAMENTOS: conteúdo apertado, ornamentos duplos */
+[data-v="3"] .r-content { padding-left: 130px; padding-right: 130px; }
+[data-v="3"] .r-h1 { font-size: 64px; max-width: 720px; margin-left: auto; margin-right: auto; }
+[data-v="3"] .r-body { max-width: 660px; font-size: 26px; }
+[data-v="3"] .r-tag::before, [data-v="3"] .r-tag::after { width: 36px; }
+[data-v="3"] .r-content::before {
+  content: '❋'; display: block; text-align: center;
+  color: var(--P); font-size: 28px; margin-bottom: 32px;
+}
+[data-v="3"].slide-dark .r-content::before,
+[data-v="3"].slide-grad .r-content::before { color: var(--YELLOW); }
+[data-v="3"].slide-capa .capa-vol::before { content: '✦  '; }
+[data-v="3"].slide-capa .capa-vol::after { content: '  ✦'; }
+[data-v="3"].slide-cta .cta-kbox { padding: 28px 48px; }
+[data-v="3"].slide-cta .cta-headline { font-size: 76px; max-width: 800px; margin: 0 auto 36px; }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">Revista Vintage</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+
+
+
+
+
+
+
+
+  
+  <div class="slide slide-capa" id="slide-1" data-v="1">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio I</span>
+  </div>
+</div>
+
+    <div class="capa-content">
+      <div class="capa-vol">Edição especial</div>
+      
+      
+      
+      <div class="capa-headline len-lg">OS PRONOMES PESSOAIS EM ITALIANO: O QUE USAR, QUANDO OMITIR E POR QUÊ</div>
+      <div class="capa-byline">por <strong>@aprendaitaliano_</strong> · 9 páginas</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 1/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-dark" id="slide-2" data-v="2">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio II</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      <div class="r-tag">A CENA</div>
+      
+      
+      <div class="r-body has-cap">Você ouve um italiano dizer '<strong>Mangio la pizza</strong>' — sem '<strong>io</strong>' no começo. Não seria '<strong>Io mangio la pizza</strong>'? Seria — mas o '<strong>io</strong>' está implícito na terminação do verbo. Você pode dizer os dois; só o primeiro é mais natural.</div>
+      <div class="r-body">Os pronomes pessoais em italiano existem e são importantes — mas seu uso é diferente do português. Entender quando usá-los e quando omiti-los é um detalhe que transforma iniciante em falante natural.</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 2/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-light" id="slide-3" data-v="2">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio III</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      <div class="r-tag">OS PRONOMES</div>
+      <div class="r-h1">Io, tu, lui, lei, noi, voi, loro — o sistema completo</div>
+      
+      <div class="r-body has-cap"><strong>Io</strong> (eu), <strong>tu</strong> (você informal), <strong>lui</strong> (ele), <strong>lei</strong> (ela), <strong>noi</strong> (nós), <strong>voi</strong> (vocês), <strong>loro</strong> (eles/elas). Em italiano, não existe distinção entre 'ele' e 'ela' no pronome sujeito de terceira pessoa do plural — <strong>loro</strong> serve para ambos.</div>
+      <div class="r-body">Atenção especial: <strong>Lei</strong> com maiúscula é o pronome formal de tratamento — equivale ao nosso 'o senhor/a senhora'. '<strong>Lei come si chiama?</strong>' (como o senhor se chama?). Essa distinção maiúscula/minúscula existe na escrita; na fala, o contexto define o sentido.</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 3/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-dark" id="slide-4" data-v="1">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio IV</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      <div class="r-tag">QUANDO OMITIR</div>
+      
+      
+      <div class="r-body has-cap">Em italiano, o pronome sujeito é frequentemente omitido — porque a terminação do verbo já indica a pessoa. '<strong>Parlo italiano</strong>' é claramente 'eu falo italiano' pela terminação '<strong>-o</strong>'. '<strong>Parli italiano?</strong>' é 'você fala?' pela terminação '<strong>-i</strong>'.</div>
+      <div class="r-body">Omitir o pronome é a forma mais natural e fluente. Usá-lo não é errado — mas soa um pouco redundante na fala cotidiana. Os italianos mantêm o pronome principalmente para ênfase ou contraste: '<strong>Io non capisco, ma lei capisce tutto</strong>' (eu não entendo, mas ela entende tudo).</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 4/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-light" id="slide-5" data-v="3">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio V</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      <div class="r-tag">ÊNFASE E CONTRASTE</div>
+      <div class="r-h1">Quando o pronome aparece — e por quê</div>
+      
+      <div class="r-body has-cap">Além de ênfase e contraste, o pronome reaparece quando há ambiguidade: '<strong>lui lavora, lei studia</strong>' (ele trabalha, ela estuda) — sem os pronomes, dois verbos de terceira pessoa singular poderiam confundir quem faz o quê.</div>
+      <div class="r-body">Também após certas conjunções e em respostas curtas onde o verbo está implícito: '<strong>Chi parla italiano? Io.</strong>' (Quem fala italiano? Eu.) — nesse caso, o pronome é o único elemento da resposta, então não pode ser omitido. A língua é econômica, mas não ambígua.</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 5/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-dark" id="slide-6" data-v="2">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio VI</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      <div class="r-tag">VOI VS LORO</div>
+      
+      
+      <div class="r-body has-cap">Uma curiosidade sobre o plural: historicamente, <strong>loro</strong> era o pronome formal de tratamento no plural (equivalente ao '<strong>Lei</strong>' singular). Hoje, na fala cotidiana, essa função foi praticamente absorvida por <strong>voi</strong> — mesmo para grupos formais.</div>
+      <div class="r-body"><strong>Loro</strong> ainda aparece na língua formal escrita e literária, mas na fala do dia a dia os italianos dizem '<strong>voi</strong>' para se referir a um grupo em qualquer contexto. É uma das áreas onde o italiano contemporâneo diverge do italiano ensinado em gramáticas mais antigas.</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 6/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-light" id="slide-7" data-v="1">
+    
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio VII</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      <div class="r-tag">COMO TREINAR</div>
+      <div class="r-h1">Conjugue sem pronome — depois adicione quando precisar</div>
+      
+      <div class="r-body has-cap">Quando praticar frases em italiano, tente construí-las sem o pronome sujeito primeiro: '<strong>Mangio alle otto</strong>' (como às oito), '<strong>Abito a São Paulo</strong>' (moro em São Paulo). Isso treina o hábito mais natural do italiano falado.</div>
+      <div class="r-body">Depois, pratique adicionar o pronome para ênfase em pares de frases: '<strong>Io mangio carne, lui non mangia</strong>' (eu como carne, ele não come). Exercitar os dois registros — com e sem pronome — dá flexibilidade real na fala.</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 7/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-grad" id="slide-8" data-v="3">
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio VIII</span>
+  </div>
+</div>
+
+    <div class="r-content">
+      
+      <div class="orn"></div>
+      
+      <div class="r-body">Os pronomes pessoais revelam uma das diferenças mais elegantes entre o italiano e o português: em italiano, o verbo é autoexplicativo. Sua terminação carrega a informação de quem fala — o pronome é bônus, usado quando a clareza ou a ênfase pedem.</div>
+      <div class="r-body">Internalizar isso libera você de uma muleta desnecessária e faz seu italiano soar muito mais fluido. É um dos pontos onde a 'regra' é justamente saber quando não usá-la.</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 8/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-cta" id="slide-9" data-v="1">
+    
+<div class="mast">
+  <div class="mast-name">@aprendaitaliano_</div>
+  <div class="mast-meta">
+    <span>Volume MMXXVI</span>
+    <span class="sep">·</span>
+    <span>Folio IX</span>
+  </div>
+</div>
+
+    <div class="cta-content">
+      <div class="cta-bridge">Quer um guia com as estruturas de frase mais usadas no italiano cotidiano?</div>
+      <div class="cta-headline">BAIXE O GUIA</div>
+      <div class="cta-kbox">
+        <div class="cta-kinstr">Comenta a palavra</div>
+        <div class="cta-kword">GUIA</div>
+        <div class="cta-kbenefit">PDF com pronomes, estruturas de frase e exemplos reais + áudio de pronúncia nativa</div>
+      </div>
+      <div class="cta-byline-foot">@aprendaitaliano_ · resposta automática</div>
+    </div>
+    
+<div class="foot">
+  <div class="foot-text">@aprendaitaliano_ · Carrossel</div>
+  <div class="foot-folio">— 9/9 —</div>
+</div>
+
+  </div>
+
+  
+
+
+</div>
+
+<script>
+function toggleView() {
+  var wrap = document.getElementById('slides-wrap');
+  var label = document.getElementById('view-label');
+  wrap.classList.toggle('preview');
+  label.textContent = wrap.classList.contains('preview') ? 'Modo: Preview lado a lado' : 'Modo: Tamanho real (1080×1350)';
+}
+</script>
+</body>
+</html>

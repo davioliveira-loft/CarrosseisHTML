@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "O QUE ESSE GESTO ITALIANO SIGNIFICA? A LINGUAGEM QUE NENHUM LIVRO ENSINA",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você está conversando com um italiano em Roma e ele junta as pontas dos dedos, vira a mão para cima e faz um movimento pra frente. Parece uma pergunta. Mas qual? Você ri nervoso, sem entender.",
+      "bloco2": "A Itália tem um dos sistemas de gestos mais ricos do mundo — linguistas chamam de '<strong>gestualità</strong>' — e muitos desses gestos têm significado tão preciso quanto palavras. Conhecê-los muda completamente sua leitura de uma conversa real.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "GESTO 1",
+      "headline_capa": null,
+      "headline_interna": "Dedos juntos: 'che vuoi?' ou 'ma dai!'",
+      "bloco1": "O gesto mais famoso: mão aberta, dedos apontando para cima, pontas unidas, movimento de vai-e-vem ou sacudida. Significa '<strong>Che vuoi?</strong>' (o que você quer? / o que é isso?) ou uma versão mais irritada de 'o que está acontecendo?'.",
+      "bloco2": "Contexto muda o tom: feito com leveza numa conversa de amigos pode ser '<strong>ma dai!</strong>' (mas vai!), expressando surpresa ou incredulidade. Feito com tensão, é mais 'que história é essa?'. Os italianos leem o contexto instintivamente — você aprende a fazer o mesmo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "GESTO 2",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Dedo indicador puxando a pálpebra inferior para baixo. Significa '<strong>occhio!</strong>' (atenção! / cuidado com isso!). É um alerta — 'presta atenção nesse detalhe, pode haver armadilha'.",
+      "bloco2": "Muito comum em conversas sobre negócios, preços, situações suspeitas. Se alguém faz esse gesto enquanto fala de um restaurante ou de um táxi, é aviso: '<strong>stai attento</strong>' (tome cuidado). Aprender a ler isso em tempo real te poupa de muita enrascada.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "GESTO 3",
+      "headline_capa": null,
+      "headline_interna": "A mão na barriga e o 'fregarsene'",
+      "bloco1": "Mão aberta, palma para cima, movimento rápido sob o queixo para fora. Significa '<strong>me ne frego</strong>' ou '<strong>chi se ne frega</strong>' — 'não me importo', 'que se dane'. É informal e pode soar agressivo fora de contexto.",
+      "bloco2": "Mais suave é o encolher de ombros com as mãos abertas viradas para cima, expressão neutra: '<strong>boh</strong>' — uma das palavras mais italianas que existem. Significa algo entre 'não sei', 'quem sabe' e 'que posso fazer?'. Um único som com um gesto e uma enciclopédia de significados.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "CONTEXTO CULTURAL",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "A gestualidade italiana não é uniforme no país. O sul, especialmente Nápoles e Sicília, tem um repertório muito mais amplo e expressivo do que o norte. Em Milão, gestos exagerados numa reunião de negócios podem parecer pouco profissionais.",
+      "bloco2": "Pesquisadores como Isabella Poggi mapearam mais de 250 gestos com significado específico no italiano. Não é exagero dramático — é um sistema paralelo de comunicação que coexiste com a fala. Entender isso muda como você assiste a qualquer vídeo ou filme italiano.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Assista com o som desligado",
+      "bloco1": "Escolha uma cena de qualquer série italiana (funciona bem com <strong>Gomorra</strong> ou <strong>Boris</strong>) e assista um minuto com o som desligado. O que você consegue entender só pelos gestos e expressões? Depois assista com o som e confira.",
+      "bloco2": "Fazer isso algumas vezes calibra sua leitura corporal de forma muito eficiente. E quando você voltar a assistir normalmente, vai perceber os gestos acontecendo em sincronia com a fala — algo que não se vê enquanto se lê legenda.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Em italiano, o corpo fala junto com a voz. Gestos não são enfeite — são parte da mensagem. Um '<strong>boh</strong>' com o gesto certo diz mais do que uma frase inteira.",
+      "bloco2": "Quando você começa a ler os gestos, para de depender apenas das palavras para entender uma conversa. E aí o italiano fica muito mais leve — e muito mais divertido.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um guia visual com os principais gestos italianos e seus significados?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF ilustrado com 20 gestos + contexto de uso + frases que acompanham cada gesto"
+    }
+  ]
+}

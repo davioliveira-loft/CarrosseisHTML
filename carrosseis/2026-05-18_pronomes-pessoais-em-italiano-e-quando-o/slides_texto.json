@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "IO, TU, LUI: POR QUE OS ITALIANOS RARAMENTE USAM OS PRONOMES QUE VOCÊ MEMORIZOU",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você aprende os pronomes: <strong>io, tu, lui, lei, noi, voi, loro</strong>. Memoriza tudo. Então ouve um italiano falar e percebe que ele raramente diz <strong>io</strong> antes do verbo. A frase começa direto no verbo — e você entende tudo assim mesmo.",
+      "bloco2": "Em italiano, o pronome sujeito é quase sempre <strong>redundante</strong>. A terminação do verbo já indica quem faz a ação: <strong>parlo</strong> só pode ser eu, <strong>parli</strong> só pode ser tu. Usar <strong>io parlo</strong> tem um efeito específico — e usá-lo sempre soa estranho.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "REGRA 1",
+      "headline_capa": null,
+      "headline_interna": "O pronome existe, mas o verbo carrega a informação",
+      "bloco1": "Em português brasileiro, dizemos 'eu falo', 'você fala', 'ele fala' — o pronome é quase obrigatório porque as formas do verbo são às vezes iguais. Em italiano, as terminações são distintas o suficiente para dispensar o pronome na maioria dos casos.",
+      "bloco2": "<strong>Parlo italiano</strong> (Falo italiano), <strong>studi molto</strong> (Você estuda muito), <strong>abita a Roma</strong> (Ele/ela mora em Roma). Nenhum pronome — e nenhuma ambiguidade. O verbo é suficiente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "QUANDO USAR O PRONOME",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O pronome aparece em italiano principalmente para <strong>ênfase</strong> ou <strong>contraste</strong>: <strong>Io non l'ho fatto, l'ha fatto lui</strong> (Eu não fiz, foi ele quem fez). Aqui o <strong>io</strong> e o <strong>lui</strong> carregam peso comunicativo — não são redundantes.",
+      "bloco2": "Também se usa o pronome quando o verbo está ausente: <strong>Chi parla italiano? Io!</strong> (Quem fala italiano? Eu!). E em contextos formais escritos, o pronome pode aparecer para clareza — especialmente quando <strong>lui</strong> e <strong>lei</strong> poderiam ser ambíguos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "OS PRONOMES EM DETALHE",
+      "headline_capa": null,
+      "headline_interna": "Lui, lei e loro: os que mais confundem",
+      "bloco1": "<strong>Lui</strong> (ele) e <strong>lei</strong> (ela) são os pronomes de terceira pessoa singular. <strong>Lei</strong> com maiúscula é também o pronome formal de segunda pessoa (como vimos no carrossel sobre tu × Lei). O contexto — e a maiúscula na escrita — resolvem a ambiguidade.",
+      "bloco2": "<strong>Loro</strong> é o pronome de terceira pessoa plural (eles/elas). Em linguagem coloquial, <strong>loro</strong> como sujeito está sendo substituído por <strong>loro</strong> invariável, mas na escrita formal e no italiano padrão, <strong>loro</strong> permanece a forma correta.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "VARIAÇÃO REGIONAL",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "No norte da Itália, especialmente em Lombardia e Piemonte, é comum usar o pronome sujeito com mais frequência — uma influência dos dialetos locais, que são mais próximos das línguas galo-românicas. O resultado soa levemente diferente do italiano central padrão.",
+      "bloco2": "No sul, a omissão do pronome é ainda mais sistemática. Em Nápoles e na Sicília, a fala é muito fluida e os pronomes aparecem principalmente nos momentos de contraste. Ouvir essas variações ajuda a calibrar o ouvido para a diversidade do italiano real.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Pratique sem o pronome desde o começo",
+      "bloco1": "Ao construir frases em italiano, treine a omitir o pronome sujeito por padrão: não <strong>Io studio italiano</strong>, mas <strong>Studio italiano</strong>. Essa mudança pequena faz sua fala soar muito mais natural imediatamente.",
+      "bloco2": "Quando quiser enfatizar, aí sim adicione o pronome: <strong>Io studio italiano, non lui</strong> (Eu estudo italiano, não ele). Perceba a diferença de peso comunicativo. Cinco minutos praticando pares de frases com e sem pronome fixam a intuição rapidamente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Entender que o pronome é opcional — e não a regra — transforma a forma como você ouve o italiano. Você deixa de esperar o <strong>io</strong> antes de cada verbo e passa a prestar atenção na terminação. Isso é um salto de nível de escuta.",
+      "bloco2": "E na fala, a omissão do pronome é um dos primeiros sinais de fluência. Quem fala <strong>studio</strong> em vez de <strong>io studio</strong> soa imediatamente mais próximo de um falante nativo — mesmo que todo o resto ainda esteja sendo construído.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer o guia com pronomes, conjugações e frases do cotidiano para praticar desde hoje?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com tabela de pronomes + 60 frases com e sem pronome + áudios de diálogos naturais"
+    }
+  ]
+}

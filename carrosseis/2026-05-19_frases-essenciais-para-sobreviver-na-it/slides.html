@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @aprendaitaliano_</title>
+<style>
+
+
+:root {
+  --P:      #CD212A;
+  --PL:     #D74D54;
+  --PD:     #8F171D;
+  --YELLOW: #CD212A;
+  --PAPER:  #FFFFFF;
+  --PAPER2: #F2F2F2;
+  --INK:    #0E0E0E;
+  --G:      linear-gradient(165deg, #8F171D 0%, #CD212A 50%, #D74D54 100%);
+  --F-HEAD: 'Barlow Condensed', system-ui, sans-serif;
+  --F-BODY: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --F-MONO: ui-monospace, 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+  --HAIR: color-mix(in srgb, var(--INK) 14%, transparent);
+  --MUTED: color-mix(in srgb, var(--INK) 55%, transparent);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #18171a; font-family: var(--F-BODY); }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #0e0d10; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 20px; font-size: 13px;
+  font-weight: 500; cursor: pointer; letter-spacing: 1px;
+  font-family: var(--F-MONO);
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; font-family: var(--F-MONO); }
+
+.slides-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 32px 24px; }
+.slides-wrap.preview { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+  background: var(--PAPER);
+  color: var(--INK);
+  font-family: var(--F-BODY);
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28); transform-origin: top left;
+  margin-bottom: -972px; margin-right: -777px;
+}
+
+/* ── HEADER MINIMAL ── */
+.zen-head {
+  position: absolute; top: 60px; left: 80px; right: 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 10;
+  font-family: var(--F-MONO); font-size: 13px;
+  letter-spacing: 0.5px;
+  color: var(--MUTED);
+}
+.zen-head .lhs { display: flex; align-items: center; gap: 14px; }
+.zen-head .dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--P);
+}
+.zen-head .pgnum { color: var(--INK); font-weight: 600; }
+
+/* ── FOOTER MINIMAL ── */
+.zen-foot {
+  position: absolute; bottom: 60px; left: 80px; right: 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 10;
+  font-family: var(--F-MONO); font-size: 12px;
+  color: var(--MUTED); letter-spacing: 0.5px;
+}
+.zen-foot .progress {
+  flex: 1; height: 1px; background: var(--HAIR);
+  margin: 0 24px; position: relative;
+}
+.zen-foot .progress::after {
+  content: ''; position: absolute; left: 0; top: -1px; height: 3px;
+  background: var(--P); width: var(--w, 0%);
+}
+
+/* ── CONTEÚDO BASE ── */
+.zen-content {
+  position: absolute;
+  top: 200px; left: 80px; right: 80px; bottom: 160px;
+  display: flex; flex-direction: column; justify-content: center;
+  z-index: 5;
+}
+
+.zen-num {
+  font-family: var(--F-MONO);
+  font-size: 13px; color: var(--MUTED);
+  margin-bottom: 36px; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 14px;
+}
+.zen-num::before {
+  content: ''; width: 28px; height: 1px; background: var(--P);
+}
+
+.zen-tag {
+  font-family: var(--F-MONO);
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--P); font-weight: 500;
+  margin-bottom: 26px;
+}
+
+.zen-h1 {
+  font-family: var(--F-HEAD);
+  font-size: 76px; font-weight: 300; line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 44px; max-width: 880px;
+}
+.zen-h1 strong { font-weight: 700; }
+.zen-h1 em {
+  font-style: normal; color: var(--P); font-weight: 700;
+  background: linear-gradient(transparent 65%, color-mix(in srgb, var(--YELLOW) 50%, transparent) 65%);
+  padding: 0 4px;
+}
+
+.zen-body {
+  font-size: 26px; font-weight: 400; line-height: 1.6;
+  color: color-mix(in srgb, var(--INK) 75%, transparent);
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+.zen-body strong { color: var(--INK); font-weight: 700; background: color-mix(in srgb, var(--YELLOW) 32%, transparent); padding: 0 4px; }
+.zen-body em { font-style: italic; color: var(--P); font-weight: 600; }
+
+.zen-rule {
+  width: 60px; height: 1px;
+  background: var(--P); margin: 36px 0;
+}
+
+.zen-imgbox {
+  width: 100%; max-width: 700px;
+  height: 360px; margin: 0 0 32px;
+  overflow: hidden;
+  border: 1px solid var(--HAIR);
+}
+.zen-imgbox img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.2); }
+
+/* Slides escuros / grad */
+.slide-dark { background: var(--INK); color: var(--PAPER); }
+.slide-dark { --HAIR: color-mix(in srgb, var(--PAPER) 18%, transparent); --MUTED: color-mix(in srgb, var(--PAPER) 55%, transparent); }
+.slide-dark .zen-h1 em {
+  color: var(--YELLOW);
+  background: linear-gradient(transparent 65%, color-mix(in srgb, var(--YELLOW) 25%, transparent) 65%);
+}
+.slide-dark .zen-tag { color: var(--YELLOW); }
+.slide-dark .zen-rule { background: var(--YELLOW); }
+.slide-dark .zen-body { color: color-mix(in srgb, var(--PAPER) 70%, transparent); }
+.slide-dark .zen-body strong { color: var(--PAPER); }
+.slide-dark .zen-num::before { background: var(--YELLOW); }
+.slide-dark .zen-head .dot { background: var(--YELLOW); }
+.slide-dark .zen-head .pgnum { color: var(--PAPER); }
+.slide-dark .zen-foot .progress::after { background: var(--YELLOW); }
+
+.slide-grad { background: var(--P); color: var(--PAPER); }
+.slide-grad { --HAIR: color-mix(in srgb, var(--PAPER) 24%, transparent); --MUTED: color-mix(in srgb, var(--PAPER) 65%, transparent); }
+.slide-grad .zen-h1 em {
+  color: var(--YELLOW); background: none;
+  font-style: italic;
+}
+.slide-grad .zen-tag { color: var(--YELLOW); }
+.slide-grad .zen-rule { background: var(--YELLOW); }
+.slide-grad .zen-body { color: color-mix(in srgb, var(--PAPER) 80%, transparent); }
+.slide-grad .zen-body strong { color: var(--PAPER); }
+.slide-grad .zen-num::before { background: var(--YELLOW); }
+.slide-grad .zen-head .dot { background: var(--YELLOW); }
+.slide-grad .zen-head .pgnum { color: var(--PAPER); }
+.slide-grad .zen-foot .progress::after { background: var(--YELLOW); }
+
+/* ══════════════════════════════════════════════════
+   CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: var(--PAPER2); color: var(--INK); }
+.capa-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.4) brightness(0.95) contrast(1.05);
+  opacity: 0.85;
+}
+.capa-bg-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--PAPER) 50%, transparent);
+}
+.capa-content {
+  position: absolute; top: 200px; left: 80px; right: 80px; bottom: 160px;
+  display: flex; flex-direction: column; justify-content: center; z-index: 5;
+}
+.capa-meta {
+  font-family: var(--F-MONO);
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--MUTED); margin-bottom: 32px;
+}
+.capa-meta strong { color: var(--P); font-weight: 600; }
+.capa-headline {
+  font-family: var(--F-HEAD);
+  font-weight: 300; color: var(--INK);
+  letter-spacing: -2.5px; line-height: 1.0;
+}
+.capa-headline.len-xl { font-size: 116px; }
+.capa-headline.len-lg { font-size: 100px; }
+.capa-headline.len-md { font-size: 84px;  }
+.capa-headline.len-sm { font-size: 70px;  line-height: 1.04; }
+.capa-headline.len-xs { font-size: 58px;  line-height: 1.08; }
+.capa-headline strong { font-weight: 700; }
+.capa-headline em {
+  font-style: normal; color: var(--P); font-weight: 700;
+  background: linear-gradient(transparent 70%, color-mix(in srgb, var(--YELLOW) 60%, transparent) 70%);
+  padding: 0 6px;
+}
+.capa-foot-meta {
+  margin-top: 60px;
+  font-family: var(--F-MONO);
+  font-size: 13px; letter-spacing: 1.5px;
+  color: var(--MUTED);
+  display: flex; gap: 36px;
+}
+.capa-foot-meta .label { color: var(--INK); font-weight: 600; }
+
+/* Slides com imagem de fundo (dark/light) */
+.slide-img-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.5) brightness(0.45);
+}
+.slide-img-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--INK) 60%, transparent);
+}
+
+/* ══════════════════════════════════════════════════
+   CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--PAPER); }
+.cta-content {
+  position: absolute; top: 200px; left: 80px; right: 80px; bottom: 160px;
+  display: flex; flex-direction: column; justify-content: center; z-index: 5;
+}
+.cta-num {
+  font-family: var(--F-MONO);
+  font-size: 13px; color: var(--MUTED);
+  margin-bottom: 36px; letter-spacing: 1px;
+}
+.cta-bridge {
+  font-family: var(--F-HEAD);
+  font-size: 30px; font-weight: 300; line-height: 1.45;
+  color: var(--INK); margin-bottom: 32px;
+  max-width: 760px;
+}
+.cta-bridge strong { font-weight: 600; color: var(--P); }
+.cta-headline {
+  font-family: var(--F-HEAD);
+  font-size: 88px; font-weight: 300;
+  color: var(--INK); margin-bottom: 56px;
+  letter-spacing: -2.5px; line-height: 0.98;
+  max-width: 880px;
+}
+.cta-headline strong { font-weight: 700; color: var(--P); }
+.cta-kbox {
+  padding: 36px 0;
+  border-top: 1px solid var(--HAIR);
+  border-bottom: 1px solid var(--HAIR);
+  max-width: 720px;
+  display: flex; align-items: baseline; gap: 36px;
+}
+.cta-kinstr {
+  font-family: var(--F-MONO);
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--MUTED); flex: 0 0 auto;
+  padding-top: 18px;
+}
+.cta-kmid { flex: 1; }
+.cta-kword {
+  font-family: var(--F-HEAD);
+  font-size: 72px; font-weight: 700;
+  color: var(--P); letter-spacing: -1px;
+  line-height: 1.0; margin-bottom: 10px;
+  display: inline-block; border-bottom: 3px solid var(--YELLOW); padding-bottom: 4px;
+}
+.cta-kbenefit {
+  font-size: 16px;
+  color: var(--MUTED);
+}
+.cta-foot-meta {
+  margin-top: 48px;
+  font-family: var(--F-MONO);
+  font-size: 12px; letter-spacing: 1.5px;
+  color: var(--MUTED);
+}
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT
+══════════════════════════════════════════════════ */
+
+/* V2 — VERTICAL RULE: barra vertical fina à esquerda, conteúdo indentado */
+[data-v="2"] .zen-content {
+  padding-left: 56px;
+  border-left: 1px solid var(--P);
+}
+[data-v="2"] .zen-num::before { display: none; }
+[data-v="2"] .zen-num { padding-left: 0; }
+[data-v="2"] .zen-h1 { font-size: 64px; }
+[data-v="2"] .zen-rule { display: none; }
+[data-v="2"].slide-capa .capa-content {
+  padding-left: 56px; border-left: 1px solid var(--P);
+}
+[data-v="2"].slide-capa .capa-headline { font-size: 88px; }
+[data-v="2"].slide-cta .cta-content {
+  padding-left: 56px; border-left: 1px solid var(--P);
+}
+[data-v="2"].slide-dark .zen-content,
+[data-v="2"].slide-grad .zen-content { border-left-color: var(--YELLOW); }
+
+/* V3 — CENTRO + ESPAÇO: tudo centralizado, espaçamento amplo */
+[data-v="3"] .zen-content {
+  align-items: center; text-align: center;
+  top: 240px; bottom: 200px;
+}
+[data-v="3"] .zen-h1 {
+  max-width: 720px; font-size: 62px;
+  text-align: center;
+}
+[data-v="3"] .zen-body {
+  text-align: center; max-width: 620px;
+  margin-left: auto; margin-right: auto;
+}
+[data-v="3"] .zen-num {
+  margin: 0 auto 36px;
+}
+[data-v="3"] .zen-num::before { display: none; }
+[data-v="3"] .zen-num::after {
+  content: ''; width: 28px; height: 1px; background: var(--P);
+}
+[data-v="3"] .zen-tag { text-align: center; }
+[data-v="3"] .zen-rule { margin: 36px auto; }
+[data-v="3"] .zen-imgbox { margin: 0 auto 32px; }
+[data-v="3"].slide-dark .zen-num::after,
+[data-v="3"].slide-grad .zen-num::after { background: var(--YELLOW); }
+[data-v="3"].slide-capa .capa-content {
+  align-items: center; text-align: center;
+}
+[data-v="3"].slide-capa .capa-headline { text-align: center; max-width: 880px; }
+[data-v="3"].slide-capa .capa-foot-meta { justify-content: center; }
+[data-v="3"].slide-cta .cta-content {
+  align-items: center; text-align: center;
+}
+[data-v="3"].slide-cta .cta-headline { text-align: center; }
+[data-v="3"].slide-cta .cta-kbox { margin: 0 auto; }
+[data-v="3"].slide-cta .cta-bridge { margin: 0 auto 32px; text-align: center; }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">Minimal Zen</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+
+
+
+
+
+
+  
+  <div class="slide slide-capa" id="slide-1" data-v="3">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">01 / 09</div>
+</div>
+
+    <div class="capa-content">
+      <div class="capa-meta">Carrossel <strong>nº 001</strong> · @aprendaitaliano_</div>
+      
+      
+      
+      <div class="capa-headline len-lg">FRASES QUE VOCÊ PRECISA SABER ANTES DE PISAR NA ITÁLIA</div>
+      <div class="capa-foot-meta">
+        <span><span class="label">Total</span> · 9 slides</span>
+        <span><span class="label">Lê em</span> · 108s</span>
+      </div>
+    </div>
+    
+<div class="zen-foot">
+  <span>01</span>
+  <div class="progress" style="--w: 11%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-dark" id="slide-2" data-v="2">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">02 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">002 — A CENA</div>
+      
+      
+      <div class="zen-body">Você está em Nápoles, com fome, e não encontra o restaurante que pesquisou. Tenta perguntar para um senhor na calçada. Ele não fala inglês. Você tem o endereço no celular, mas não sabe como perguntar '<strong>dove si trova?</strong>' (onde fica?). Você aponta a tela. Ele sorri e gesticula.</div>
+      <div class="zen-rule"></div><div class="zen-body">Algumas frases salvas no celular ou na memória mudam completamente a experiência de viagem. Não é sobre fluência — é sobre ter as ferramentas certas para as situações mais comuns.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>02</span>
+  <div class="progress" style="--w: 22%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-light" id="slide-3" data-v="2">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">03 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">003 — NO RESTAURANTE</div>
+      <div class="zen-h1">Do cardápio à conta, em cinco frases</div>
+      
+      <div class="zen-body">'<strong>Un tavolo per due, per favore</strong>' (uma mesa para dois, por favor). '<strong>Posso vedere il menù?</strong>' (posso ver o cardápio?). '<strong>Cosa mi consiglia?</strong>' (o que você me recomenda?) — essa última os garçons adoram ouvir.</div>
+      <div class="zen-rule"></div><div class="zen-body">'<strong>Il conto, per favore</strong>' (a conta, por favor). '<strong>È incluso il servizio?</strong>' (está incluída a taxa de serviço?) — importante porque em muitos restaurantes italianos o <strong>coperto</strong> (couvert) já está na conta e pode surpreender.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>03</span>
+  <div class="progress" style="--w: 33%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-dark" id="slide-4" data-v="3">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">04 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">004 — NA RUA</div>
+      
+      
+      <div class="zen-body">'<strong>Scusi, dove si trova [lugar]?</strong>' (com licença, onde fica [lugar]?) é sua frase de ouro. '<strong>È lontano da qui?</strong>' (é longe daqui?). Se não entender a resposta, use: '<strong>Può ripetere più lentamente?</strong>' (pode repetir mais devagar?).</div>
+      <div class="zen-rule"></div><div class="zen-body">Para entender direções: '<strong>a destra</strong>' (à direita), '<strong>a sinistra</strong>' (à esquerda), '<strong>sempre dritto</strong>' (sempre em frente), '<strong>al semaforo</strong>' (no semáforo). Com essas quatro expressões você entende qualquer indicação.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>04</span>
+  <div class="progress" style="--w: 44%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-light" id="slide-5" data-v="2">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">05 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">005 — NO TRANSPORTE</div>
+      <div class="zen-h1">Trem, metrô e ônibus sem sufoco</div>
+      
+      <div class="zen-body">'<strong>Un biglietto per [cidade], per favore</strong>' (uma passagem para [cidade], por favor). '<strong>A che ora parte il treno?</strong>' (a que horas parte o trem?). '<strong>Questo treno ferma a [cidade]?</strong>' (este trem para em [cidade]?).</div>
+      <div class="zen-rule"></div><div class="zen-body">'<strong>Devo timbrare il biglietto?</strong>' (preciso validar o bilhete?) — pergunta essencial, porque na Itália muitos bilhetes de trem regional e ônibus precisam ser carimbados numa máquina antes de embarcar. Sem isso, você pode tomar multa mesmo com bilhete pago.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>05</span>
+  <div class="progress" style="--w: 55%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-dark" id="slide-6" data-v="1">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">06 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">006 — SITUAÇÕES DIFÍCEIS</div>
+      
+      
+      <div class="zen-body">'<strong>Ho perso il portafoglio</strong>' (perdi a carteira). '<strong>Ho bisogno di un medico</strong>' (preciso de um médico). '<strong>Dov'è il pronto soccorso?</strong>' (onde é a emergência?). '<strong>Può chiamare la polizia?</strong>' (pode chamar a polícia?).</div>
+      <div class="zen-rule"></div><div class="zen-body">Ninguém quer precisar dessas frases — mas saber que elas existem e como soa cada uma em italiano dá uma camada a mais de segurança. Vale salvar num arquivo de notas no celular antes de viajar.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>06</span>
+  <div class="progress" style="--w: 66%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-light" id="slide-7" data-v="3">
+    
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">07 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">007 — COMO TREINAR</div>
+      <div class="zen-h1">Monte um roteiro de frases para a sua viagem</div>
+      
+      <div class="zen-body">Antes de viajar — ou mesmo sem planos concretos — imagine um dia típico em Roma: acorda no hotel, toma café no bar, visita um museu, almoça, pega o metrô, janta. Que frases você precisaria em cada momento?</div>
+      <div class="zen-rule"></div><div class="zen-body">Escreva essas frases, pesquise a tradução e a pronúncia (o site Forvo tem áudio de nativos para qualquer palavra italiana), e repita em voz alta. Esse exercício de 15 minutos prepara você para situações reais muito melhor do que decorar listas genéricas.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>07</span>
+  <div class="progress" style="--w: 77%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-grad" id="slide-8" data-v="2">
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">08 / 09</div>
+</div>
+
+    <div class="zen-content">
+      <div class="zen-num">008 — em síntese</div>
+      
+      <div class="zen-body">Você não precisa falar italiano fluente para se virar bem na Itália. Precisa de um repertório funcional de frases certas para os momentos certos — e da coragem de usá-las.</div>
+      <div class="zen-body">Os italianos geralmente respondem muito bem a quem tenta falar na língua deles, mesmo que imperfeito. O esforço já abre portas — as frases garantem que você passe por elas.</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>08</span>
+  <div class="progress" style="--w: 88%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+  
+  <div class="slide slide-cta" id="slide-9" data-v="2">
+    
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@aprendaitaliano_</span>
+  </div>
+  <div class="pgnum">09 / 09</div>
+</div>
+
+    <div class="cta-content">
+      <div class="cta-num">009 — call to action</div>
+      <div class="cta-bridge">Quer um guia de sobrevivência completo para viagem à Itália?</div>
+      <div class="cta-headline">BAIXE O GUIA</div>
+      <div class="cta-kbox">
+        <div class="cta-kinstr">Comenta<br>abaixo</div>
+        <div class="cta-kmid">
+          <div class="cta-kword">GUIA</div>
+          <div class="cta-kbenefit">PDF com 80 frases de viagem organizadas por situação + áudio de pronúncia nativa</div>
+        </div>
+      </div>
+      <div class="cta-foot-meta">@aprendaitaliano_ · resposta automática via direct</div>
+    </div>
+    
+<div class="zen-foot">
+  <span>09</span>
+  <div class="progress" style="--w: 100%;"></div>
+  <span>09</span>
+</div>
+
+  </div>
+
+  
+
+
+</div>
+
+<script>
+function toggleView() {
+  var wrap = document.getElementById('slides-wrap');
+  var label = document.getElementById('view-label');
+  wrap.classList.toggle('preview');
+  label.textContent = wrap.classList.contains('preview') ? 'Modo: Preview lado a lado' : 'Modo: Tamanho real (1080×1350)';
+}
+</script>
+</body>
+</html>

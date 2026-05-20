@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @{{ handle }}</title>
+<style>
+
+/* ── Fontes (injetadas pelo template_engine como base64) ── */
+{{ font_face_css }}
+
+/* ── Variáveis globais da marca ── */
+:root {
+  --P:      {{ paleta.P }};
+  --PL:     {{ paleta.PL }};
+  --PD:     {{ paleta.PD }};
+  --LB:     {{ paleta.LB }};
+  --LR:     {{ paleta.LR }};
+  --DB:     {{ paleta.DB }};
+  --ACCENT: {{ paleta.ACCENT }};
+  --G:      {{ paleta.G }};
+  --F-HEAD: '{{ paleta.F_HEAD }}', sans-serif;
+  --F-BODY: '{{ paleta.F_BODY }}', sans-serif;
+}
+
+/* ── Reset e página ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #1a1a1a; font-family: var(--F-BODY); }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #111; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: var(--P); color: #fff; border: none;
+  padding: 8px 20px; border-radius: 6px; font-size: 14px;
+  font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+/* ── Wrapper dos slides ── */
+.slides-wrap {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 24px;
+  padding: 32px 24px;
+}
+.slides-wrap.preview {
+  flex-direction: row; flex-wrap: wrap;
+  justify-content: center; gap: 16px;
+}
+
+/* ── Slide base ── */
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28);
+  transform-origin: top left;
+  margin-bottom: -972px;
+  margin-right: -777px;
+}
+
+/* ── Accent bar ── */
+.accent-bar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 7px; z-index: 30;
+  background: var(--ACCENT);
+}
+.on-grad .accent-bar { background: color-mix(in srgb, var(--LB) 18%, transparent); }
+
+/* ── Brand bar ── */
+.brand-bar {
+  position: absolute; top: 7px; left: 0; right: 0;
+  padding: 32px 56px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 20; font-family: var(--F-BODY);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.brand-bar.on-light { color: color-mix(in srgb, var(--DB) 45%, transparent); }
+.brand-bar.on-dark  { color: color-mix(in srgb, var(--LB) 45%, transparent); }
+.brand-bar.on-grad  { color: color-mix(in srgb, var(--LB) 50%, transparent); }
+
+/* ── Progress bar ── */
+.prog {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 0 56px 30px; z-index: 20;
+  display: flex; align-items: center; gap: 16px;
+  font-family: var(--F-BODY);
+}
+.prog-track { flex: 1; height: 3px; border-radius: 2px; overflow: hidden; }
+.prog-fill  { height: 100%; border-radius: 2px; }
+.prog-num   { font-size: 15px; font-weight: 600; }
+
+.on-light .prog-track { background: color-mix(in srgb, var(--DB) 8%, transparent); }
+.on-light .prog-fill  { background: var(--P); }
+.on-light .prog-num   { color: color-mix(in srgb, var(--DB) 22%, transparent); }
+
+.on-dark .prog-track  { background: color-mix(in srgb, var(--LB) 10%, transparent); }
+.on-dark .prog-fill   { background: var(--LB); }
+.on-dark .prog-num    { color: color-mix(in srgb, var(--LB) 22%, transparent); }
+
+.on-grad .prog-track  { background: color-mix(in srgb, var(--LB) 15%, transparent); }
+.on-grad .prog-fill   { background: color-mix(in srgb, var(--LB) 60%, transparent); }
+.on-grad .prog-num    { color: color-mix(in srgb, var(--LB) 30%, transparent); }
+
+/* ── Tag / label ── */
+.tag {
+  font-family: var(--F-BODY); font-size: 13px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
+}
+.on-light .tag { color: var(--P); }
+.on-dark  .tag { color: var(--PL); }
+.on-grad  .tag { color: color-mix(in srgb, var(--LB) 55%, transparent); }
+
+/* ── Área de conteúdo padrão ── */
+.content {
+  position: absolute;
+  top: 110px; left: 56px; right: 56px; bottom: 80px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-bottom: 40px;
+}
+
+/* ══════════════════════════════════════════════════
+   SLIDE DE CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: var(--DB); }
+
+.capa-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.capa-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--DB) 35%, transparent) 0%,  color-mix(in srgb, var(--DB) 8%, transparent) 25%,
+    color-mix(in srgb, var(--DB) 15%, transparent) 40%, color-mix(in srgb, var(--DB) 65%, transparent) 55%,
+    color-mix(in srgb, var(--DB) 92%, transparent) 75%, color-mix(in srgb, var(--DB) 99%, transparent) 100%
+  );
+}
+.capa-headline-area {
+  position: absolute; bottom: 120px; left: 0; right: 0;
+  padding: 0 52px; z-index: 10;
+}
+.capa-badge {
+  display: flex; align-items: center; gap: 14px;
+  background: color-mix(in srgb, var(--DB) 38%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--LB) 12%, transparent);
+  border-radius: 60px; padding: 12px 26px 12px 14px;
+  backdrop-filter: blur(10px); width: fit-content; margin-bottom: 32px;
+}
+.badge-dot {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--G);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--F-BODY); font-size: 16px; font-weight: 900; color: var(--LB);
+  overflow: hidden;
+}
+.badge-dot img, .cta-footer-dot img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.badge-handle {
+  font-family: var(--F-BODY); font-size: 22px; font-weight: 700;
+  color: var(--LB); letter-spacing: 0.3px;
+}
+.capa-headline {
+  font-family: var(--F-HEAD); font-weight: 900;
+  text-transform: uppercase; color: var(--LB);
+  /* tamanho default — sobrescrito por classes len-* */
+  font-size: 108px; line-height: 0.93; letter-spacing: -3px;
+}
+.capa-headline.len-xl { font-size: 124px; line-height: 0.92; letter-spacing: -4px; }
+.capa-headline.len-lg { font-size: 108px; line-height: 0.93; letter-spacing: -3px; }
+.capa-headline.len-md { font-size:  88px; line-height: 0.95; letter-spacing: -2px; }
+.capa-headline.len-sm { font-size:  72px; line-height: 0.98; letter-spacing: -1.5px; }
+.capa-headline.len-xs { font-size:  60px; line-height: 1.02; letter-spacing: -1px; }
+.capa-headline em { color: var(--ACCENT); font-style: normal; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE DARK
+══════════════════════════════════════════════════ */
+.slide-dark { background: var(--DB); }
+
+.dark-h1 {
+  font-family: var(--F-HEAD); font-size: 80px; font-weight: 900;
+  line-height: 0.97; letter-spacing: -2px; text-transform: uppercase;
+  color: var(--LB); margin-bottom: 36px;
+}
+.dark-h1 em { color: var(--P); font-style: normal; }
+
+.dark-body {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 400;
+  line-height: 1.5; letter-spacing: -0.2px; color: color-mix(in srgb, var(--LB) 55%, transparent);
+}
+.dark-body + .dark-body { margin-top: 24px; }
+.dark-body strong { background: var(--ACCENT); color: var(--DB); font-weight: 800; padding: 0 6px; border-radius: 3px; }
+.dark-body em     { color: var(--ACCENT); font-style: normal; font-weight: 700; }
+
+.dark-card {
+  background: color-mix(in srgb, var(--LB) 4%, transparent);
+  border-left: 6px solid var(--P);
+  border-radius: 16px; padding: 44px 48px;
+}
+
+.dark-arrow-row {
+  display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px;
+}
+.dark-arrow-row::before {
+  content: '→'; font-size: 32px; color: color-mix(in srgb, var(--LB) 30%, transparent);
+  flex-shrink: 0; margin-top: 4px; font-family: var(--F-BODY);
+}
+
+/* Slide dark com imagem de fundo */
+.slide-img-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center; z-index: 0;
+}
+.slide-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--DB) 80%, transparent) 0%, color-mix(in srgb, var(--DB) 70%, transparent) 30%,
+    color-mix(in srgb, var(--DB) 75%, transparent) 60%, color-mix(in srgb, var(--DB) 90%, transparent) 100%
+  );
+  z-index: 1;
+}
+.with-img .content { z-index: 2; }
+.with-img .brand-bar,
+.with-img .prog,
+.with-img .accent-bar { z-index: 3; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE LIGHT
+══════════════════════════════════════════════════ */
+.slide-light { background: var(--LB); }
+
+.light-h1 {
+  font-family: var(--F-HEAD); font-size: 72px; font-weight: 900;
+  line-height: 1.0; letter-spacing: -1.5px; text-transform: uppercase;
+  color: var(--DB); margin-bottom: 32px;
+}
+.light-h1 em { color: var(--P); font-style: normal; }
+
+.light-body {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 400;
+  line-height: 1.55; letter-spacing: -0.2px; color: color-mix(in srgb, var(--DB) 60%, transparent);
+}
+.light-body + .light-body { margin-top: 24px; }
+.light-body strong { background: var(--ACCENT); color: var(--DB); font-weight: 800; padding: 0 6px; border-radius: 3px; }
+.light-body em     { color: var(--P); font-style: normal; font-weight: 700; }
+
+.light-card {
+  background: var(--LR); border-left: 7px solid var(--P);
+  border-radius: 18px; padding: 52px 56px;
+}
+
+.light-table { width: 100%; border-collapse: collapse; }
+.light-table th {
+  background: var(--P); color: var(--LB); padding: 20px 24px;
+  font-size: 16px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; text-align: left; font-family: var(--F-BODY);
+}
+.light-table td {
+  padding: 22px 24px; font-size: 26px; font-weight: 500;
+  border-bottom: 1px solid var(--LR); font-family: var(--F-BODY);
+  color: var(--DB);
+}
+.light-table tr:last-child td { border-bottom: none; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE GRADIENT
+══════════════════════════════════════════════════ */
+.slide-grad { background: var(--G); }
+
+.grad-h1 {
+  font-family: var(--F-HEAD); font-size: 80px; font-weight: 900;
+  line-height: 0.97; letter-spacing: -2px; text-transform: uppercase;
+  color: var(--LB); margin-bottom: 40px;
+}
+
+.grad-body {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 400;
+  line-height: 1.55; letter-spacing: -0.2px; color: color-mix(in srgb, var(--LB) 65%, transparent);
+}
+.grad-body + .grad-body { margin-top: 24px; }
+.grad-body strong { color: var(--LB); font-weight: 700; }
+
+.grad-row {
+  display: flex; align-items: flex-start; gap: 22px; margin-bottom: 30px;
+}
+.grad-arrow {
+  font-size: 34px; color: color-mix(in srgb, var(--LB) 40%, transparent);
+  flex-shrink: 0; margin-top: 4px; font-family: var(--F-BODY);
+}
+.grad-text {
+  font-family: var(--F-BODY); font-size: 32px; font-weight: 500;
+  line-height: 1.45; letter-spacing: -0.2px; color: color-mix(in srgb, var(--LB) 72%, transparent);
+}
+.grad-text strong { color: var(--LB); font-weight: 800; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--LB); }
+
+.cta-bridge {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 500;
+  line-height: 1.5; letter-spacing: -0.2px;
+  color: color-mix(in srgb, var(--DB) 55%, transparent); margin-bottom: 48px;
+}
+.cta-bridge strong { color: var(--DB); font-weight: 800; }
+
+.cta-headline {
+  font-family: var(--F-HEAD); font-size: 72px; font-weight: 900;
+  line-height: 0.97; letter-spacing: -2px; text-transform: uppercase;
+  color: var(--DB); margin-bottom: 40px;
+}
+.cta-headline em { color: var(--P); font-style: normal; }
+
+.cta-kbox {
+  background: var(--LR); border: 3px solid color-mix(in srgb, var(--DB) 8%, transparent);
+  border-radius: 20px; padding: 40px 48px; margin-bottom: 32px;
+}
+.cta-kinstr {
+  font-family: var(--F-BODY); font-size: 20px; font-weight: 500;
+  color: color-mix(in srgb, var(--DB) 42%, transparent); margin-bottom: 12px;
+}
+.cta-kword {
+  font-family: var(--F-HEAD); font-size: 80px; font-weight: 900;
+  color: var(--P); letter-spacing: -2px; line-height: 1; margin-bottom: 14px;
+  border-bottom: 4px solid var(--ACCENT); display: inline-block; padding-bottom: 6px;
+}
+.cta-kbenefit {
+  font-family: var(--F-BODY); font-size: 22px; font-weight: 500;
+  line-height: 1.5; color: color-mix(in srgb, var(--DB) 50%, transparent);
+}
+
+.cta-footer {
+  display: flex; align-items: center; gap: 16px;
+}
+.cta-footer-dot {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--G);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--F-BODY); font-size: 16px; font-weight: 900; color: var(--LB);
+  overflow: hidden;
+}
+.cta-footer-text {
+  font-family: var(--F-BODY); font-size: 18px; color: color-mix(in srgb, var(--DB) 35%, transparent);
+}
+
+/* ── Image box (slides com espaço sobrando) ── */
+.img-box {
+  width: 100%; height: 360px; border-radius: 20px;
+  overflow: hidden; margin-bottom: 36px;
+}
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.on-dark .img-box  { border: 1.5px solid color-mix(in srgb, var(--LB) 8%, transparent); }
+.on-light .img-box { box-shadow: 0 4px 24px color-mix(in srgb, var(--DB) 6%, transparent); }
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT (data-v="1" é o default acima)
+══════════════════════════════════════════════════ */
+
+/* V2 — TOPO + CENTRO: conteúdo ancorado no topo, alinhamento central */
+[data-v="2"] .content {
+  justify-content: flex-start;
+  padding-top: 40px; padding-bottom: 0;
+  text-align: center;
+}
+[data-v="2"] .content > * { align-self: center; max-width: 880px; }
+[data-v="2"] .img-box { max-width: 800px; height: 320px; }
+[data-v="2"] .tag { margin-bottom: 36px; }
+[data-v="2"] .dark-h1, [data-v="2"] .light-h1, [data-v="2"] .grad-h1 {
+  font-size: 84px; letter-spacing: -1.5px;
+}
+[data-v="2"].slide-capa .capa-headline-area {
+  bottom: auto; top: 240px;
+}
+[data-v="2"].slide-capa .capa-headline { text-align: center; }
+[data-v="2"].slide-capa .capa-badge { margin-left: auto; margin-right: auto; }
+[data-v="2"].slide-cta .content { text-align: center; align-items: center; }
+[data-v="2"].slide-cta .cta-kbox { text-align: center; max-width: 760px; }
+[data-v="2"].slide-cta .cta-footer { justify-content: center; }
+
+/* V3 — ASSIMÉTRICO: indentação à esquerda com barra de acento */
+[data-v="3"] .content {
+  padding-left: 36px;
+  border-left: 5px solid var(--P);
+}
+[data-v="3"].on-dark .content,
+[data-v="3"].on-grad .content { border-left-color: var(--PL); }
+[data-v="3"] .tag {
+  display: inline-block; padding: 8px 18px;
+  border: 2px solid currentColor; border-radius: 100px;
+  margin-bottom: 32px; letter-spacing: 2.5px;
+}
+[data-v="3"] .dark-h1, [data-v="3"] .light-h1, [data-v="3"] .grad-h1 {
+  letter-spacing: -3.5px; font-size: 92px; line-height: 0.94;
+}
+[data-v="3"] .light-card, [data-v="3"] .dark-card {
+  border-left: none; border-radius: 0 22px 22px 0;
+}
+[data-v="3"].slide-capa .capa-headline-area {
+  bottom: 50%; transform: translateY(50%);
+}
+[data-v="3"].slide-capa .capa-badge { transform: rotate(-1.5deg); }
+[data-v="3"].slide-cta .content {
+  padding-left: 36px; border-left: 5px solid var(--P);
+  text-align: left; align-items: flex-start;
+}
+[data-v="3"].slide-cta .cta-kbox { width: 100%; max-width: 700px; }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">{{ template_nome }}</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+{# ── Macros reutilizáveis ────────────────────────────────────────────── #}
+{% macro accent(ctx='') %}
+  <div class="accent-bar {% if ctx == 'grad' %}on-grad{% endif %}"></div>
+{% endmacro %}
+
+{% macro brand_bar(ctx) %}
+  <div class="brand-bar {{ ctx }}">
+    <span>@{{ handle }}</span>
+    <span>2026 ®</span>
+  </div>
+{% endmacro %}
+
+{% macro progress(slide, ctx) %}
+  <div class="prog {{ ctx }}">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: {{ (slide.numero / total_slides * 100)|int }}%;"></div>
+    </div>
+    <span class="prog-num">{{ slide.numero }}/{{ total_slides }}</span>
+  </div>
+{% endmacro %}
+
+{# ── Renderização dos slides ─────────────────────────────────────────── #}
+{% for slide in slides %}
+
+  {# ── CAPA ── #}
+  {% if slide.tipo == 'capa' %}
+  <div class="slide slide-capa" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.imagem_base64 %}
+    <div class="capa-bg" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% else %}
+    <div class="capa-bg" style="background: linear-gradient(160deg, var(--PD) 0%, var(--DB) 100%);"></div>
+    {% endif %}
+    <div class="capa-grad"></div>
+    {{ accent() }}
+    {{ brand_bar('on-dark') }}
+    <div class="capa-headline-area">
+      <div class="capa-badge">
+        <div class="badge-dot">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+        <span class="badge-handle">@{{ handle }}</span>
+      </div>
+      {% set _hlen = (slide.headline_capa | striptags | length) if slide.headline_capa else 0 %}
+      {% if _hlen < 40 %}{% set _hsize = 'len-xl' %}
+      {% elif _hlen < 70 %}{% set _hsize = 'len-lg' %}
+      {% elif _hlen < 100 %}{% set _hsize = 'len-md' %}
+      {% elif _hlen < 130 %}{% set _hsize = 'len-sm' %}
+      {% else %}{% set _hsize = 'len-xs' %}{% endif %}
+      <div class="capa-headline {{ _hsize }}">{{ slide.headline_capa | safe if slide.headline_capa else '' }}</div>
+    </div>
+    {{ progress(slide, 'on-dark') }}
+  </div>
+
+  {# ── DARK ── #}
+  {% elif slide.tipo == 'dark' %}
+  <div class="slide slide-dark on-dark{% if slide.tipo_imagem == 'background-overlay' %} with-img{% endif %}" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.tipo_imagem == 'background-overlay' and slide.imagem_base64 %}
+    <div class="slide-img-bg" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    <div class="slide-img-overlay"></div>
+    {% endif %}
+    {{ accent() }}
+    {{ brand_bar('on-dark') }}
+    <div class="content">
+      {% if slide.tag %}<div class="tag">{{ slide.tag }}</div>{% endif %}
+      {% if slide.headline_interna %}<div class="dark-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.tipo_imagem == 'img-box' and slide.imagem_base64 %}
+      <div class="img-box"><img src="{{ slide.imagem_base64 }}" alt=""></div>
+      {% endif %}
+      {% if slide.bloco1 %}<div class="dark-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="dark-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ progress(slide, 'on-dark') }}
+  </div>
+
+  {# ── LIGHT ── #}
+  {% elif slide.tipo == 'light' %}
+  <div class="slide slide-light on-light" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ accent() }}
+    {{ brand_bar('on-light') }}
+    <div class="content">
+      {% if slide.tag %}<div class="tag">{{ slide.tag }}</div>{% endif %}
+      {% if slide.headline_interna %}<div class="light-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.tipo_imagem == 'img-box' and slide.imagem_base64 %}
+      <div class="img-box"><img src="{{ slide.imagem_base64 }}" alt=""></div>
+      {% endif %}
+      {% if slide.bloco1 %}<div class="light-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="light-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ progress(slide, 'on-light') }}
+  </div>
+
+  {# ── GRADIENT ── #}
+  {% elif slide.tipo == 'grad' %}
+  <div class="slide slide-grad on-grad" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ accent('grad') }}
+    {{ brand_bar('on-grad') }}
+    <div class="content">
+      {% if slide.tag %}<div class="tag">{{ slide.tag }}</div>{% endif %}
+      {% if slide.headline_interna %}<div class="grad-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.bloco1 %}<div class="grad-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="grad-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ progress(slide, 'on-grad') }}
+  </div>
+
+  {# ── CTA ── #}
+  {% elif slide.tipo == 'cta' %}
+  <div class="slide slide-cta on-light" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ accent() }}
+    {{ brand_bar('on-light') }}
+    <div class="content">
+      {% if slide.frase_ponte %}
+      <div class="cta-bridge">{{ slide.frase_ponte | safe }}</div>
+      {% endif %}
+      {% if slide.cta_headline %}
+      <div class="cta-headline">{{ slide.cta_headline | safe }}</div>
+      {% endif %}
+      <div class="cta-kbox">
+        <div class="cta-kinstr">Comenta a palavra abaixo:</div>
+        <div class="cta-kword">{{ slide.cta_keyword or 'MANUAL' }}</div>
+        <div class="cta-kbenefit">{{ slide.cta_beneficio or 'e recebe o guia direto na DM' }}</div>
+      </div>
+      <div class="cta-footer">
+        <div class="cta-footer-dot">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+        <span class="cta-footer-text">@{{ handle }} · Envio automático via DM</span>
+      </div>
+    </div>
+    {{ progress(slide, 'on-light') }}
+  </div>
+
+  {% endif %}
+{% endfor %}
+
+</div><!-- /slides-wrap -->
+
+<script>
+var isPreview = true;
+function toggleView() {
+  var wrap = document.getElementById('slides-wrap');
+  var label = document.getElementById('view-label');
+  isPreview = !isPreview;
+  if (isPreview) {
+    wrap.classList.add('preview');
+    label.textContent = 'Modo: Preview lado a lado';
+  } else {
+    wrap.classList.remove('preview');
+    label.textContent = 'Modo: Tamanho real (1080×1350)';
+  }
+}
+</script>
+</body>
+</html>

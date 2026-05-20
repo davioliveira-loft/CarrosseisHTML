@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "VOCÊ PRONUNCIA 'GNOCCHI' COMO 'GNOK' E O GARÇOM TRAVA: OS 4 SONS ITALIANOS QUE BRASILEIRO APLICA ERRADO POR REFLEXO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você entra numa trattoria em Florença, abre o cardápio e pede '<strong>gnocchi al ragù</strong>'. O garçom inclina a cabeça. Você repete. Ele sorri educado e anota — entendeu pelo contexto, não pelo som.",
+      "bloco2": "A diferença foi 1 letra. O 'gn' italiano não soa como 'g' + 'n'. É o mesmo som do '<strong>nh</strong>' português em 'banho'. Quem não sabe disso vira turista mesmo falando 'fluente'.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "REGRA 1",
+      "headline_capa": null,
+      "headline_interna": "O 'GN' que vira 'NH'",
+      "bloco1": "Sempre que ver 'gn' em italiano, leia como '<strong>nh</strong>'. Não há exceção.",
+      "bloco2": "<strong>Gnocchi</strong> = nhóqui. <strong>Lasagna</strong> = lazânha. <strong>Bagno</strong> = banho. <strong>Signore</strong> = sinhore.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "REGRA 2",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O 'gh' italiano nunca soa como 'gui'. É um <strong>g duro puro</strong>, como em 'guerra' — sem o 'i' colado depois.",
+      "bloco2": "<strong>Spaghetti</strong> = espaguéti (não 'espadjeti'). <strong>Funghi</strong> = fungui (não 'fundji'). <strong>Margherita</strong> = margaríta (não 'mardjerita').",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "REGRA 3",
+      "headline_capa": null,
+      "headline_interna": "O 'CI' e 'CE'",
+      "bloco1": "Antes de 'e' ou 'i', o 'c' italiano vira <strong>'tch'</strong>. Sem aviso, sem exceção.",
+      "bloco2": "<strong>Ciao</strong> = tchao. <strong>Cinema</strong> = tchinema. <strong>Cento</strong> = tchento. <strong>Dieci</strong> = diétchi.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "REGRA 4",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O '<strong>gli</strong>' italiano vira o som '<strong>lhi</strong>' do português. É o som mais difícil pro brasileiro porque parece quase igual — mas não é.",
+      "bloco2": "<strong>Figlio</strong> = filhio (não 'fíglio'). <strong>Famiglia</strong> = familhia. <strong>Meglio</strong> = mélhio. <strong>Olio</strong> NÃO tem 'gli' — é 'ólio' normal.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "5 minutos por dia, 14 dias",
+      "bloco1": "Pegue uma lista de <strong>50 pratos italianos</strong>. Pronuncie em voz alta, grave no celular.",
+      "bloco2": "Compare com áudios nativos no <strong>Forvo.com</strong> ou <strong>Reverso</strong>. Em duas semanas sua boca aprende o reflexo — antes da gramática travar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Quem corrige a pronúncia <strong>antes</strong> de aprender vocabulário avançado fica fluente em metade do tempo.",
+      "bloco2": "É o caminho que método tradicional nunca vende — porque não cabe em 12 módulos pagos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer o guia com os 30 sons italianos que mais travam o brasileiro?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com 30 palavras + áudios nativos"
+    }
+  ]
+}

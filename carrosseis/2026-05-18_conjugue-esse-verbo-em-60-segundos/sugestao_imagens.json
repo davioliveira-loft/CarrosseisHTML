@@ -1,0 +1,23 @@
+{
+  "total_imagens_sugeridas": 3,
+  "slides_com_imagem": [
+    {
+      "numero": 1,
+      "tipo_imagem": "full-bleed",
+      "descricao_sugestao": "Foto de impacto relacionada ao italiano: rua de Roma, detalhe arquitetônico, pessoa conversando em ambiente europeu, ou livro/caderno com anotações em italiano. Sujeito preferencialmente no terço superior da imagem para não colidir com a headline.",
+      "obrigatorio": true
+    },
+    {
+      "numero": 6,
+      "tipo_imagem": "background-overlay",
+      "descricao_sugestao": "Slide dark com 64 palavras — densidade média, candidato ideal para imagem de fundo. Sugerir foto ambiente (café italiano, placa de rua, mapa da Itália) com overlay 80% opacity. O texto permanece totalmente legível.",
+      "obrigatorio": false
+    },
+    {
+      "numero": 8,
+      "tipo_imagem": "img-box",
+      "descricao_sugestao": "Slide grad com apenas 2 palavras — área quase vazia. Um img-box no topo do conteúdo (360px de altura) preencheria o espaço com imagem contextual (ex: pessoa estudando, mapa da Itália, ícone de idioma) antes da headline de direção.",
+      "obrigatorio": false
+    }
+  ]
+}

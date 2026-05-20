@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "POR QUE DESCREVER SUA ROTINA DE ONTEM É UM DOS MAIORES TESTES NO ITALIANO?",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você já sabe que 'mi sveglio' é eu acordo. E sabe que o passado simples usa 'avere' ('ho mangiato'). Então, 'eu acordei' vira 'ho mi svegliato'? O tradutor pisca vermelho.",
+      "bloco2": "Verbos reflexivos formam uma das armadilhas mais sutis do passado em italiano, exigindo uma combinação de gramática que parece um quebra-cabeça, mas tem um padrão claríssimo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "A REGRA DE OURO",
+      "headline_capa": null,
+      "headline_interna": "Reflexivos usam Essere, sempre",
+      "bloco1": "Qualquer verbo que tenha uma partícula reflexiva (mi, ti, si, ci, vi) usa obrigatoriamente o verbo auxiliar essere no passado, nunca o avere.",
+      "bloco2": "A fórmula é: pronome + essere + particípio. Portanto: Mi + sono + svegliato (eu acordei). Si + è + lavato (ele se lavou).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "CONCORDÂNCIA DE GÊNERO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Lembra que o essere pede concordância? Mulheres devem adaptar o final do verbo à sua identidade de gênero na ação rotineira.",
+      "bloco2": "O homem diz: 'Mi sono svegliato'. A mulher diz obrigatoriamente: 'Mi sono svegliata'. O plural também muda: 'Ci siamo svegliati' (nós acordamos).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "EXEMPLOS CLÁSSICOS",
+      "headline_capa": null,
+      "headline_interna": "Do acordar ao dormir",
+      "bloco1": "'Mi sono alzato/a tardi' (Levantei tarde). 'Mi sono vestito/a in fretta' (Me vesti com pressa).",
+      "bloco2": "'Mi sono divertito/a' (Me diverti). 'Mi sono addormentato/a davanti alla TV' (Peguei no sono na frente da TV). Repara como o 'sono' abraça todos eles.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "MUDANÇA DE SENTIDO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Um cuidado extra: a presença do pronome muda a gramática e às vezes o foco da ação. 'Ho lavato l'auto' (eu lavei o carro - sem mi, com ho).",
+      "bloco2": "Mas: 'Mi sono lavato la faccia' (Eu lavei a minha cara - com mi, com sono). A ação voltou para o seu próprio corpo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Diário falado do passado",
+      "bloco1": "Toda manhã de segunda, crie três frases descrevendo as ações do seu próprio corpo no domingo. Use a sua identidade de gênero correta (-o ou -a).",
+      "bloco2": "O reflexivo é o que mais precisa de 'memória muscular' na língua, porque em português nós misturamos ('eu me acordei', 'eu me lavei'). Em italiano a estrutura é matemática.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Falar sobre sua rotina no passado é o passaporte da independência em qualquer bate-papo de escritório, escola ou primeiro encontro.",
+      "bloco2": "Internalizar a trinca (Pronome + Sono + Particípio) liberta sua fala para contar histórias de fim de semana de forma rica e sem travamentos sintáticos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer desmistificar os verbos do dia a dia no passado com exemplos práticos?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com a tabela dos reflexivos + como contar seu dia no passado em diálogos práticos"
+    }
+  ]
+}

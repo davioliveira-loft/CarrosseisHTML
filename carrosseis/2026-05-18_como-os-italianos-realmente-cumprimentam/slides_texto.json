@@ -1,0 +1,77 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "A CONTRADIÇÃO DO ITALIANO FLUENTE: DOMINAR O VOCABULÁRIO E AINDA ASSIM SOAR COMO TURISTA NA PRIMEIRA SAUDAÇÃO",
+      "bloco1": null,
+      "bloco2": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "O PARADOXO",
+      "headline_capa": null,
+      "bloco1": "Meses de estudo, conjugação no subjuntivo, leitura de cardápio sem dicionário — e então alguém abre a porta em Nápoles e fala 'Uè!'. O aprendiz congela. O italiano está certo. A leitura social, não.",
+      "bloco2": "Nenhum curso ensina que cumprimentos são um sistema de identificação — de origem, de classe, de relação. Errar o registro soa mais estranho para um nativo do que errar a conjugação verbal."
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O SISTEMA REAL",
+      "headline_capa": null,
+      "bloco1": "Cumprimentos em italiano não são palavras de abertura: são marcadores sociais que nativos leem em frações de segundo. 'Salve' num bar de Roma indica distância formal. O mesmo 'Salve' em Palermo funciona como saudação casual — sem qualquer conotação de distância.",
+      "bloco2": "O ensino formal captura menos de 20% desse sistema porque foi construído sobre o italiano padrão toscano — uma variante literária que nenhum italiano usa no cotidiano. O aprendiz aprende a falar certo e ainda assim é lido como estrangeiro em cada interação."
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "POR QUE ISSO ACONTECE",
+      "headline_capa": null,
+      "bloco1": "'Ciao' entre desconhecidos no Norte soa invasivo. No Sul, é neutro. O erro não é de vocabulário — é de mapeamento regional. E o aprendiz que usou o livro didático não tem como saber, porque o livro não registra essa distinção.",
+      "bloco2": "O resultado é um tipo específico de ruído comunicativo: o nativo percebe o estranhamento, não corrige, e a conversa esfria sem explicação. O aprendiz sai achando que o problema foi a conjugação."
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "O QUE OS DADOS MOSTRAM",
+      "headline_capa": null,
+      "bloco1": "O italiano tem pelo menos seis variantes regionais principais — napolitano, siciliano, veneziano, romano, lombardo e toscano — com cumprimentos distintos documentados pelo Atlas Linguístico Italiano e pelo Dizionario dei Dialetti Italiani de Manlio Cortelazzo. 'Uè' e 'Ué' no Sul, 'Cossa feto?' no Vêneto, 'Sciò' na Ligúria.",
+      "bloco2": "Uma pesquisa da Università degli Studi di Firenze sobre pragmática intercultural identificou que falantes não-nativos cometem mais erros de registro em saudações do que em gramática — e que esses erros são percebidos pelos nativos como distância social, não como deslize linguístico."
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "A PROFUNDIDADE DO PROBLEMA",
+      "headline_capa": null,
+      "bloco1": "O Vocabolario Treccani classifica 'Salve' como cumprimento neutro. Estudos de variação sociolinguística do italiano contemporâneo mostram outra realidade: formal-distante para falantes do Centro-Norte, informal no Sul. A mesma palavra, dois registros opostos, dependendo de onde a conversa acontece.",
+      "bloco2": "Esse tipo de variação não aparece em exercício de livro e não tem correção automática. Só se torna visível quando o nativo responde com frieza — e não explica o motivo."
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO O SISTEMA FUNCIONA",
+      "headline_capa": null,
+      "bloco1": "O mapa dos cumprimentos italianos segue três eixos simultâneos: região — onde a conversa acontece; geração — quem fala com quem; e grau de intimidade — primeiro contato ou relação estabelecida.",
+      "bloco2": "Um cumprimento errado em qualquer um desses eixos não provoca correção. Provoca estranhamento silencioso — o tipo de ruído que não aparece na gramática e só se revela quando a interação não engaja do jeito esperado."
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": "O QUE MUDA",
+      "headline_interna": "VOCABULÁRIO CERTO. LEITURA SOCIAL ERRADA. RESULTADO: TURISTA.",
+      "bloco1": null,
+      "bloco2": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "frase_ponte": "O vocabulário de cumprimentos regionais é aprendível — mas exige mapeamento de contexto, não lista de palavras. Quem domina esse sistema chega à Itália sendo lido como alguém que conhece o país, não apenas o idioma.",
+      "cta_headline": "QUER O GUIA COMPLETO?",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "o mapa dos cumprimentos italianos por região, geração e grau de intimidade — direto no seu direct"
+    }
+  ]
+}

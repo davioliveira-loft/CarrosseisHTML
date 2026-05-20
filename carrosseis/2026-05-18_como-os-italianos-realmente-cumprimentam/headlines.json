@@ -1,0 +1,57 @@
+{
+  "triagem_resumo": "Aprender a cumprimentar em italiano vai além do vocabulário — envolve registros sociais, hierarquia e códigos regionais que os cursos tradicionais ignoram.",
+  "eixo": "Cultura",
+  "funil": "Topo",
+  "headlines": [
+    {
+      "numero": 1,
+      "texto": "A Morte do 'Buongiorno' de Sala de Aula: Por que Quem Estudou Italiano Ainda Parece Estrangeiro na Itália",
+      "gatilhos": "Curiosidade · Identidade"
+    },
+    {
+      "numero": 2,
+      "texto": "O Código Social que os Cursos de Italiano Escondem: Como uma Única Saudação Errada Te Entrega Como Forasteiro",
+      "gatilhos": "Medo · Curiosidade"
+    },
+    {
+      "numero": 3,
+      "texto": "Investigando o Sistema de Cumprimentos que Divide a Itália em Quatro Registros Paralelos — e Por que Nenhum Deles é 'Ciao'",
+      "gatilhos": "Curiosidade · Indignação"
+    },
+    {
+      "numero": 4,
+      "texto": "A Contradição do Italiano Fluente: Dominar o Vocabulário e Ainda Assim Soar Como Turista na Primeira Saudação",
+      "gatilhos": "Identidade · Medo"
+    },
+    {
+      "numero": 5,
+      "texto": "O Que Roma, Milão e o Sul do País Ensinam Sobre Cumprimentos Que Nenhum Curso Básico Menciona",
+      "gatilhos": "Curiosidade · Aspiração"
+    },
+    {
+      "numero": 6,
+      "texto": "Italianos usam pelo menos quatro sistemas de cumprimento paralelos. Cursos ensinam apenas um. O marcador mais rápido de quem aprendeu o idioma na vida real é saber qual sistema aplicar — e com quem.",
+      "gatilhos": "Curiosidade · Indignação"
+    },
+    {
+      "numero": 7,
+      "texto": "'Ciao' com um desconhecido adulto é considerado indelicado no centro e sul da Itália. A maioria dos estudantes aprende o contrário. O resultado é um italiano tecnicamente correto que soa imediatamente errado.",
+      "gatilhos": "Medo · Identidade"
+    },
+    {
+      "numero": 8,
+      "texto": "O beijo no rosto segue regras diferentes em Roma e em Milão. Uma bochecha a mais ou a menos é marcador social imediato de forasteiro. O vocabulário certo não salva quem não conhece a geografia dos gestos.",
+      "gatilhos": "Curiosidade · Nostalgia"
+    },
+    {
+      "numero": 9,
+      "texto": "'Salve' existe exatamente porque italianos precisam de um registro entre o formal e o informal. Os cursos básicos nunca ensinam essa palavra. Quem a usa soa nativo — quem não a conhece fica preso entre dois extremos.",
+      "gatilhos": "Aspiração · Identidade"
+    },
+    {
+      "numero": 10,
+      "texto": "Aprender italiano em sala de aula produz falantes que conhecem as palavras e erram os códigos. O sistema de cumprimentos tem camadas de hierarquia, faixa etária e regionalidade que o vocabulário sozinho não cobre.",
+      "gatilhos": "Indignação · Curiosidade"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "total_imagens_sugeridas": 3,
+  "slides_com_imagem": [
+    {
+      "numero": 1,
+      "tipo_imagem": "full-bleed",
+      "descricao_sugestao": "Foto de impacto relacionada ao italiano — ruas de Roma, mesa com espresso, ou pessoa estudando com caderno. Sujeito no terço superior, base escura para contraste com headline.",
+      "obrigatorio": true
+    },
+    {
+      "numero": 7,
+      "tipo_imagem": "img-box",
+      "descricao_sugestao": "Slide light com 76 palavras — abaixo do limiar de 100, tem espaço no terço superior. Box retangular no topo com imagem de contexto (ex: aplicativo de idiomas, flashcards, conversa em italiano).",
+      "obrigatorio": false
+    },
+    {
+      "numero": 8,
+      "tipo_imagem": "img-box",
+      "descricao_sugestao": "Slide grad com apenas 3 palavras — espaço amplo disponível. Box de imagem no topo reforça o impacto visual do slide de direção. Imagem sugerida: paisagem italiana ou símbolo de progresso no idioma.",
+      "obrigatorio": false
+    }
+  ],
+  "notas": {
+    "slides_descartados": [
+      {
+        "numero": 2,
+        "motivo": "86 palavras em dark — próximo do limite de 80, sem espaço seguro para img-box"
+      },
+      {
+        "numero": 3,
+        "motivo": "113 palavras em light — acima do limite de 100, slide denso"
+      },
+      {
+        "numero": 4,
+        "motivo": "113 palavras em dark — acima do limite de 80 para dark, overlay comprometeria legibilidade"
+      },
+      {
+        "numero": 5,
+        "motivo": "94 palavras em light — preenchimento adequado, sem espaço sobrando"
+      },
+      {
+        "numero": 6,
+        "motivo": "110 palavras em dark — acima do limite, background-overlay inviável sem comprometer leitura"
+      }
+    ]
+  }
+}

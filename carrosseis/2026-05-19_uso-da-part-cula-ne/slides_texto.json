@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "SE VOCÊ FOR COMPRAR COMIDA NA ITÁLIA, VAI PRECISAR DESTA ÚNICA SÍLABA",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Na padaria, você pede pães. O padeiro pergunta: 'Quanti ne vuole?'. Você entende o 'quantos', mas e esse 'ne'? Você hesita. Ele repete apontando para o pão.",
+      "bloco2": "A partícula ne é a irmã do 'ci'. Enquanto o 'ci' substitui lugares, o ne substitui partes de uma quantidade. E nos mercados e lojas, ele é o rei.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "A REGRA DA QUANTIDADE",
+      "headline_capa": null,
+      "headline_interna": "Substituindo o que já foi dito",
+      "bloco1": "Quando se fala de quantidade em italiano, não se pode omitir o objeto sem colocar o ne. 'Vuoi dei biscotti?' (Quer biscoitos?) -> 'Sì, ne voglio due' (Sim, quero dois [deles]).",
+      "bloco2": "Em português, a gente diz só 'quero dois'. Em italiano, dizer 'voglio due' soa incompleto, como se a frase ficasse solta no ar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "NENHUM",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "A mesma regra vale para o zero. Se te perguntam 'Hai figli?' (Você tem filhos?), a resposta natural não é 'Non ho'. É 'Non ne ho' (Não tenho [nenhum deles]).",
+      "bloco2": "Sempre que houver um número ou uma palavra de quantidade (molti, pochi, niente) referente a algo já mencionado, o ne tem que aparecer.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "FALAR SOBRE",
+      "headline_capa": null,
+      "headline_interna": "Substituindo 'di questo'",
+      "bloco1": "O ne também significa 'disso' ou 'sobre isso'. 'Che ne pensi?' significa 'O que você pensa disso/sobre isso?'. Uma frase fundamental para pedir opiniões.",
+      "bloco2": "Outro exemplo clássico: 'Non ne so niente' (Não sei nada sobre isso). Repare que ele sempre vem antes do verbo principal.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "ANDARSENE",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Existe um verbo que os italianos usam todos os dias: andarsene (ir embora). 'Me ne vado' significa 'Vou me embora daqui'.",
+      "bloco2": "Neste caso, os pronomes se acumulam (me + ne + verbo). 'Se ne va' (Ele vai embora). É a forma mais autêntica e expressiva de anunciar que você está saindo de um lugar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Faça listas de quantidades",
+      "bloco1": "Pense nas coisas que você tem em casa e faça perguntas e respostas: 'Quanti libri hai?' -> 'Ne ho molti'. 'Quante mele ci sono?' -> 'Ne abbiamo tre'.",
+      "bloco2": "Fazer esse ping-pong mental toda vez que for quantificar algo ajuda a automatizar a inclusão do 'ne' na frase antes que o número saia da sua boca.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Assim como o 'ci', o ne é uma peça de alta eficiência da língua italiana. Ele economiza fôlego e mostra que você domina a gramática sem parecer um livro.",
+      "bloco2": "Quando você começar a usar 'ne voglio due' no mercado, o sorriso dos vendedores vai mudar. É a língua viva acontecendo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um material para destravar de vez o 'Ci' e o 'Ne'?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com teoria mastigada + exemplos reais de mercado + exercícios com áudio"
+    }
+  ]
+}

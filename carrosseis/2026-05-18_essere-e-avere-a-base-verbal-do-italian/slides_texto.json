@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "ESSERE E AVERE: OS DOIS VERBOS QUE SUSTENTAM TODO O ITALIANO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você tenta construir sua primeira frase em italiano: 'Eu sou brasileiro'. Sabe que 'sou' vem de <strong>essere</strong>, mas qual forma usar? <strong>Sono</strong>? <strong>Ho</strong>? <strong>È</strong>? A dúvida paralisa — e você ainda nem chegou no 'brasileiro'.",
+      "bloco2": "Em italiano, <strong>essere</strong> (ser/estar) e <strong>avere</strong> (ter) são os dois auxiliares do idioma. Eles aparecem em toda construção de tempo composto, em toda descrição, em toda identificação. Dominá-los é o primeiro passo real.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "REGRA 1",
+      "headline_capa": null,
+      "headline_interna": "Essere no presente: as seis formas",
+      "bloco1": "<strong>Sono</strong> (eu sou/estou), <strong>sei</strong> (tu és/estás), <strong>è</strong> (ele/ela é/está), <strong>siamo</strong> (nós somos/estamos), <strong>siete</strong> (vós sois/estais), <strong>sono</strong> (eles/elas são/estão). A primeira e a terceira plural são iguais — o contexto resolve.",
+      "bloco2": "Exemplos diretos: <strong>Sono brasiliano</strong> (Sou brasileiro), <strong>Sei stanco?</strong> (Você está cansado?), <strong>È una bella città</strong> (É uma cidade bonita). O <strong>essere</strong> serve tanto para identidade quanto para estado — como o 'ser' e o 'estar' do português, unidos numa forma só.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "REGRA 2",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Avere</strong> no presente: <strong>ho</strong> (eu tenho), <strong>hai</strong> (tu tens), <strong>ha</strong> (ele/ela tem), <strong>abbiamo</strong> (nós temos), <strong>avete</strong> (vós tendes), <strong>hanno</strong> (eles/elas têm). O <strong>h</strong> inicial de <strong>ho</strong>, <strong>hai</strong>, <strong>ha</strong>, <strong>hanno</strong> é mudo — existe só na escrita.",
+      "bloco2": "Exemplos: <strong>Ho fame</strong> (Estou com fome — literalmente: tenho fome), <strong>Hai un momento?</strong> (Tem um momento?), <strong>Ha due figli</strong> (Ele/ela tem dois filhos). Note: em italiano, diz-se <strong>ho fame</strong> (tenho fome) onde o português diz 'estou com fome'.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "COMPARAÇÃO COM PORTUGUÊS",
+      "headline_capa": null,
+      "headline_interna": "Essere vs Avere: onde o italiano difere do português",
+      "bloco1": "Em português: 'Estou com frio / calor / sono / medo'. Em italiano: <strong>ho freddo / caldo / sonno / paura</strong> — literalmente 'tenho frio / calor / sono / medo'. O italiano usa <strong>avere</strong> onde o português usa 'estar com'.",
+      "bloco2": "Para idade: em português 'tenho 30 anos', em italiano também — <strong>ho trent'anni</strong>. Esse uso do <strong>avere</strong> para idade é idêntico ao português. Quando os idiomas coincidem assim, a transferência é direta e imediata.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "USO NOS TEMPOS COMPOSTOS",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Nos tempos compostos (como o passato prossimo), tanto <strong>essere</strong> quanto <strong>avere</strong> funcionam como auxiliares. Verbos transitivos geralmente usam <strong>avere</strong>: <strong>ho mangiato</strong> (comi). Verbos de movimento e estado usam <strong>essere</strong>: <strong>sono andato</strong> (fui).",
+      "bloco2": "Quando o auxiliar é <strong>essere</strong>, o particípio concorda com o sujeito em gênero e número: <strong>sono andato</strong> (masc.), <strong>sono andata</strong> (fem.), <strong>siamo andati</strong> (plural). Esse detalhe aparece o tempo todo no italiano escrito e falado.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Memorize as formas com frases completas",
+      "bloco1": "Não memorize as formas isoladas — memorize frases inteiras: <strong>sono stanco</strong>, <strong>ho fame</strong>, <strong>siamo pronti</strong>, <strong>hanno ragione</strong>. O verbo entra na memória junto com o contexto em que aparece.",
+      "bloco2": "Use o Anki com flashcards de frases completas. Um deck específico para <strong>essere</strong> e <strong>avere</strong> com 20 frases cada já é suficiente para a base. Revise por cinco minutos todo dia — a repetição espaçada faz o trabalho.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Essere</strong> e <strong>avere</strong> aparecem em absolutamente todas as conversas em italiano. Quem tem essas formas automáticas na memória libera processamento mental para o vocabulário e o conteúdo — não fica travado na estrutura.",
+      "bloco2": "São 12 formas no total — seis para cada verbo. Um investimento pequeno de memorização que abre portas para construir qualquer tempo verbal do italiano. É a base mais rentável que existe para um iniciante.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer o guia completo com essere, avere e os primeiros tempos verbais em italiano?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com tabelas de essere e avere + 80 frases de exemplo + áudios de conjugação"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "POR QUE O ITALIANO SOA DIFERENTE DO QUE VOCÊ LÊ: O GUIA DE PRONÚNCIA PARA INICIANTES",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você lê '<strong>gnocchi</strong>' no cardápio e pronuncia 'gnóqui'. O garçom entende pelo contexto, mas o som que saiu não foi italiano — foi uma tentativa respeitável. Ou você lê '<strong>lasagne</strong>' e fala 'laságnê', sem saber que o <strong>gn</strong> tem som de <strong>nh</strong>.",
+      "bloco2": "O italiano é muito mais fonético do que o português — quase tudo se lê como se escreve. Mas há algumas combinações de letras que seguem regras próprias. Conhecê-las muda completamente como você soa.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "VOGAIS",
+      "headline_capa": null,
+      "headline_interna": "As vogais italianas são claras e abertas",
+      "bloco1": "O italiano tem cinco vogais puras: <strong>a, e, i, o, u</strong>. Sem nasalização como no português ('ão', 'em'). Cada vogal tem som claro e definido — mesmo no final de palavras, onde o português frequentemente engole o som.",
+      "bloco2": "Isso é bom para brasileiros: o italiano exige que você pronuncie cada vogal claramente. '<strong>Amore</strong>' tem quatro sílabas: a-mo-re. '<strong>Camera</strong>' tem três: ca-me-ra. Nada é engolido. Abrir bem a boca e articular cada vogal já coloca seu sotaque bem mais próximo do italiano real.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "COMBINAÇÕES",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "As combinações que mais confundem iniciantes: <strong>gn</strong> = nh (como em <strong>gnocchi</strong>, <strong>lasagne</strong>, <strong>bagno</strong>). <strong>gl</strong> antes de 'i' = lh (como em <strong>figlio</strong>, <strong>foglio</strong>, <strong>meglio</strong>). <strong>sc</strong> antes de 'e' e 'i' = sh (como em <strong>scena</strong>, <strong>sciopero</strong>).",
+      "bloco2": "<strong>C</strong> antes de 'e' e 'i' = tch (como em <strong>cena</strong> = 'tchena', <strong>cinema</strong> = 'tchinema'). <strong>Ch</strong> antes de 'e' e 'i' = k (como em <strong>chiave</strong> = 'kiave'). Esse par <strong>c/ch</strong> é o que mais confunde — a letra <strong>h</strong> endurece o som.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "CONSOANTES DUPLAS",
+      "headline_capa": null,
+      "headline_interna": "As consoantes dobradas mudam o significado",
+      "bloco1": "Em italiano, consoante dobrada é pronunciada com ênfase — a pausa antes da consoante é levemente mais longa. '<strong>Palla</strong>' (bola) soa diferente de '<strong>pala</strong>' (pá). '<strong>Anno</strong>' (ano) é diferente de '<strong>ano</strong>' (ânus). A distinção existe e os italianos a percebem.",
+      "bloco2": "Brasileiro tende a ignorar a diferença e pronunciar igual. Vale praticar palavras como <strong>caffè</strong>, <strong>pizza</strong>, <strong>mozzarella</strong> dando a ênfase devida à consoante dupla. Não precisa exagerar — só não ignorar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "LETRAS AUSENTES",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O alfabeto italiano oficial tem 21 letras — faltam <strong>j, k, w, x, y</strong> do alfabeto latino. Essas letras aparecem em palavras estrangeiras incorporadas ao italiano: '<strong>jeans</strong>', '<strong>weekend</strong>', '<strong>yoga</strong>', '<strong>taxi</strong>'.",
+      "bloco2": "Na prática, você vai encontrá-las bastante, especialmente em vocabulário moderno. Mas em italiano 'puro', elas não existem. Isso também significa que palavras que em português usam 'k' ou 'w' em italiano ganham substitutos: <strong>karate</strong> às vezes escrito <strong>carate</strong>, por exemplo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Use o Forvo para calibrar sua pronúncia",
+      "bloco1": "O site Forvo (forvo.com) tem pronúncias de palavras italianas gravadas por falantes nativos de diferentes regiões. É gratuito e funciona no celular. Toda vez que encontrar uma palavra nova, ouça antes de tentar pronunciar.",
+      "bloco2": "Outra técnica eficaz: leia em voz alta qualquer texto italiano simples — uma receita, uma notícia curta, a descrição de um produto. Leia devagar, articulando cada vogal. Depois ouça um nativo lendo o mesmo texto se possível. A diferença mostra exatamente onde ajustar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "A pronúncia italiana tem uma lógica muito mais consistente do que a portuguesa ou a inglesa. Uma vez que você aprende as regras das combinações de letras, consegue ler qualquer texto em voz alta com razoável precisão — sem precisar ter visto a palavra antes.",
+      "bloco2": "Isso é um presente enorme para quem está aprendendo. Invista algumas horas nessas regras básicas e você vai soar muito mais natural desde o início — o que dá uma confiança enorme para continuar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um guia de pronúncia italiana com áudio e exercícios para iniciantes?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com regras de pronúncia + tabela de combinações + links de áudio com voz nativa"
+    }
+  ]
+}

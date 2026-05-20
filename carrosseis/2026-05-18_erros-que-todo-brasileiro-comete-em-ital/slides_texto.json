@@ -1,0 +1,77 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "A CONTRADIÇÃO DO DESCENDENTE ITALIANO: O PAÍS COM 30 MILHÕES DE PESSOAS COM ASCENDÊNCIA ITALIANA FORMA FALANTES QUE OS ITALIANOS NÃO ENTENDEM",
+      "bloco1": null,
+      "bloco2": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "O PARADOXO",
+      "headline_capa": null,
+      "bloco1": "O Brasil tem cerca de 30 milhões de pessoas com ascendência italiana — a maior comunidade fora da Itália. O italiano é o quarto idioma mais estudado no mundo, e o mercado brasileiro figura entre os que mais crescem em número de aprendizes.",
+      "bloco2": "Mesmo assim, o brasileiro que chega a Roma ou Milão confiante na própria pronúncia ouve, do nativo, uma pergunta que desestrutura: <strong>\"De que idioma você está falando?\"</strong> O problema não está na dedicação de quem estudou. Está no que foi ensinado."
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O SISTEMA DE SONS",
+      "headline_capa": null,
+      "bloco1": "O italiano ensinado no Brasil prioriza estrutura gramatical e trata a fonética como etapa final — quando deveria ser o ponto de partida. O resultado é um aprendiz que constrói um sotaque inteiro antes de entender o sistema de sons que os nativos aplicam automaticamente desde criança.",
+      "bloco2": "A Accademia della Crusca, principal autoridade normativa da língua italiana, documenta um dado que a maioria das salas de aula ignora: o alfabeto italiano padrão tem apenas 21 letras. As letras j, k, w, x e y existem no idioma só em palavras estrangeiras incorporadas — e as combinações que restam seguem regras que contradizem diretamente a intuição de quem fala português."
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "ONDE O ERRO ACONTECE",
+      "headline_capa": null,
+      "bloco1": "A combinação <strong>\"ch\"</strong> em italiano produz o som /k/ — como em \"che\", pronunciado \"ke\". O falante de português ouve essa grafia e automaticamente produz /ʃ/, o som de \"chave\". A combinação <strong>\"sci\"</strong> produz /ʃ/ — como em \"scienza\", pronunciado \"shênza\" — mas a grafia sugere /sk/ para quem veio do português.",
+      "bloco2": "Esses não são erros pontuais de pronúncia. São conflitos sistemáticos entre dois sistemas fonéticos que usam grafias parecidas para sons diferentes. O aprendiz que não aprende esse mapa antes de começar a falar vai reforçar o erro a cada hora de prática — porque o ouvido se acostuma com a versão errada antes de conhecer a certa."
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "OS DADOS",
+      "headline_capa": null,
+      "bloco1": "O Instituto Italiano di Cultura documenta no relatório anual que o italiano ocupa a quarta posição entre os idiomas mais estudados no mundo. O crescimento de aprendizes brasileiros é um dos mais expressivos do levantamento — impulsionado por uma população de descendentes estimada em 30 milhões pelo IBGE.",
+      "bloco2": "São décadas de demanda real por um idioma com raízes familiares concretas. Mas o método que atende essa demanda na maioria das escolas brasileiras foi desenhado para transferir gramática — não para transferir o sistema fonético que torna o falante reconhecível para um nativo."
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "A LACUNA DO MÉTODO",
+      "headline_capa": null,
+      "bloco1": "O gap entre o italiano da sala de aula e o italiano da rua não é culpa do aluno. É uma lacuna de método. Quando o ensino parte da gramática e chega à fonética só no final, o aprendiz já construiu hábitos de pronúncia consolidados — e corrigir hábito consolidado exige muito mais esforço do que construir o hábito certo desde o começo.",
+      "bloco2": "Criadores de conteúdo de idiomas que expõem essa contradição com exemplos sonoros concretos — não com regras abstratas — capturam o público que mais cresce nesse nicho: quem já estudou por anos, ainda assim sente que algo falta, e finalmente entende por quê."
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "FONÉTICA APLICADA",
+      "headline_capa": null,
+      "bloco1": "A diferença entre \"ghi\" e \"gi\" não é ortográfica — é fonética. A diferença entre \"sce\" e \"sche\" muda completamente o som produzido. O ritmo do italiano falado tem pausas e alongamentos onde o português não tem nenhum dos dois.",
+      "bloco2": "Quem aprende o sistema de sons antes de memorizar vocabulário chega à Itália com algo que nenhum dicionário entrega: uma pronúncia que o nativo reconhece como italiana — não como brasileira tentando soar italiana."
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": "O PRÓXIMO PASSO",
+      "headline_interna": "FONÉTICA ANTES DE GRAMÁTICA",
+      "bloco1": null,
+      "bloco2": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "frase_ponte": "Se você já estudou italiano e ainda sente que o nativo não te entende, o problema provavelmente não está no seu vocabulário.",
+      "cta_headline": "COMENTA GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "Você recebe o guia completo de fonética italiana para brasileiros — com os pares de sons que mais causam confusão e como corrigi-los."
+    }
+  ]
+}

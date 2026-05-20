@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @aprendaitaliano_</title>
+<style>
+
+/* ── Fontes (injetadas pelo template_engine como base64) ── */
+
+
+/* ── Variáveis globais da marca ── */
+:root {
+  --P:      #008C45;
+  --PL:     #33A36A;
+  --PD:     #006230;
+  --LB:     #F0F2F5;
+  --LR:     #E4E5E8;
+  --DB:     #0C0D10;
+  --G:      linear-gradient(165deg, #006230 0%, #008C45 50%, #33A36A 100%);
+  --F-HEAD: 'Barlow Condensed', sans-serif;
+  --F-BODY: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Reset e página ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #1a1a1a; font-family: var(--F-BODY); }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #111; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: var(--P); color: #fff; border: none;
+  padding: 8px 20px; border-radius: 6px; font-size: 14px;
+  font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+/* ── Wrapper dos slides ── */
+.slides-wrap {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 24px;
+  padding: 32px 24px;
+}
+.slides-wrap.preview {
+  flex-direction: row; flex-wrap: wrap;
+  justify-content: center; gap: 16px;
+}
+
+/* ── Slide base ── */
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28);
+  transform-origin: top left;
+  margin-bottom: -972px;
+  margin-right: -777px;
+}
+
+/* ── Accent bar ── */
+.accent-bar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 7px; z-index: 30;
+  background: var(--G);
+}
+.on-grad .accent-bar { background: rgba(255,255,255,0.18); }
+
+/* ── Brand bar ── */
+.brand-bar {
+  position: absolute; top: 7px; left: 0; right: 0;
+  padding: 32px 56px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 20; font-family: var(--F-BODY);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.brand-bar.on-light { color: rgba(15,13,12,0.45); }
+.brand-bar.on-dark  { color: rgba(255,255,255,0.45); }
+.brand-bar.on-grad  { color: rgba(255,255,255,0.50); }
+
+/* ── Progress bar ── */
+.prog {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 0 56px 30px; z-index: 20;
+  display: flex; align-items: center; gap: 16px;
+  font-family: var(--F-BODY);
+}
+.prog-track { flex: 1; height: 3px; border-radius: 2px; overflow: hidden; }
+.prog-fill  { height: 100%; border-radius: 2px; }
+.prog-num   { font-size: 15px; font-weight: 600; }
+
+.on-light .prog-track { background: rgba(0,0,0,0.08); }
+.on-light .prog-fill  { background: var(--P); }
+.on-light .prog-num   { color: rgba(0,0,0,0.22); }
+
+.on-dark .prog-track  { background: rgba(255,255,255,0.10); }
+.on-dark .prog-fill   { background: #fff; }
+.on-dark .prog-num    { color: rgba(255,255,255,0.22); }
+
+.on-grad .prog-track  { background: rgba(255,255,255,0.15); }
+.on-grad .prog-fill   { background: rgba(255,255,255,0.6); }
+.on-grad .prog-num    { color: rgba(255,255,255,0.30); }
+
+/* ── Tag / label ── */
+.tag {
+  font-family: var(--F-BODY); font-size: 13px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
+}
+.on-light .tag { color: var(--P); }
+.on-dark  .tag { color: var(--PL); }
+.on-grad  .tag { color: rgba(255,255,255,0.55); }
+
+/* ── Área de conteúdo padrão ── */
+.content {
+  position: absolute;
+  top: 110px; left: 56px; right: 56px; bottom: 80px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-bottom: 40px;
+}
+
+/* ══════════════════════════════════════════════════
+   SLIDE DE CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: #000; }
+
+.capa-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.capa-grad {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,  rgba(0,0,0,0.08) 25%,
+    rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.65) 55%,
+    rgba(0,0,0,0.92) 75%, rgba(0,0,0,0.99) 100%
+  );
+}
+.capa-headline-area {
+  position: absolute; bottom: 120px; left: 0; right: 0;
+  padding: 0 52px; z-index: 10;
+}
+.capa-badge {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(0,0,0,0.38);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 60px; padding: 12px 26px 12px 14px;
+  backdrop-filter: blur(10px); width: fit-content; margin-bottom: 32px;
+}
+.badge-dot {
+  width: 36px; height: 36px; border-radius: 50%; background: var(--G);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--F-BODY); font-size: 16px; font-weight: 900; color: #fff;
+}
+.badge-handle {
+  font-family: var(--F-BODY); font-size: 22px; font-weight: 700;
+  color: #fff; letter-spacing: 0.3px;
+}
+.capa-headline {
+  font-family: var(--F-HEAD); font-size: 108px; font-weight: 900;
+  line-height: 0.93; letter-spacing: -3px; text-transform: uppercase; color: #fff;
+}
+.capa-headline em { color: var(--P); font-style: normal; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE DARK
+══════════════════════════════════════════════════ */
+.slide-dark { background: var(--DB); }
+
+.dark-h1 {
+  font-family: var(--F-HEAD); font-size: 80px; font-weight: 900;
+  line-height: 0.97; letter-spacing: -2px; text-transform: uppercase;
+  color: #fff; margin-bottom: 36px;
+}
+.dark-h1 em { color: var(--P); font-style: normal; }
+
+.dark-body {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 400;
+  line-height: 1.5; letter-spacing: -0.2px; color: rgba(255,255,255,0.55);
+}
+.dark-body + .dark-body { margin-top: 24px; }
+.dark-body strong { color: #fff; font-weight: 700; }
+.dark-body em     { color: var(--PL); font-style: normal; }
+
+.dark-card {
+  background: rgba(255,255,255,0.04);
+  border-left: 6px solid var(--P);
+  border-radius: 16px; padding: 44px 48px;
+}
+
+.dark-arrow-row {
+  display: flex; align-items: flex-start; gap: 20px; margin-bottom: 28px;
+}
+.dark-arrow-row::before {
+  content: '→'; font-size: 32px; color: rgba(255,255,255,0.3);
+  flex-shrink: 0; margin-top: 4px; font-family: var(--F-BODY);
+}
+
+/* Slide dark com imagem de fundo */
+.slide-img-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center; z-index: 0;
+}
+.slide-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4,4,22,0.80) 0%, rgba(4,4,22,0.70) 30%,
+    rgba(4,4,22,0.75) 60%, rgba(4,4,22,0.90) 100%
+  );
+  z-index: 1;
+}
+.with-img .content { z-index: 2; }
+.with-img .brand-bar,
+.with-img .prog,
+.with-img .accent-bar { z-index: 3; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE LIGHT
+══════════════════════════════════════════════════ */
+.slide-light { background: var(--LB); }
+
+.light-h1 {
+  font-family: var(--F-HEAD); font-size: 72px; font-weight: 900;
+  line-height: 1.0; letter-spacing: -1.5px; text-transform: uppercase;
+  color: var(--DB); margin-bottom: 32px;
+}
+.light-h1 em { color: var(--P); font-style: normal; }
+
+.light-body {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 400;
+  line-height: 1.55; letter-spacing: -0.2px; color: rgba(15,13,12,0.60);
+}
+.light-body + .light-body { margin-top: 24px; }
+.light-body strong { color: var(--DB); font-weight: 800; }
+.light-body em     { color: var(--P); font-style: normal; }
+
+.light-card {
+  background: #fff; border-left: 7px solid var(--P);
+  border-radius: 18px; padding: 52px 56px;
+}
+
+.light-table { width: 100%; border-collapse: collapse; }
+.light-table th {
+  background: var(--P); color: #fff; padding: 20px 24px;
+  font-size: 16px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; text-align: left; font-family: var(--F-BODY);
+}
+.light-table td {
+  padding: 22px 24px; font-size: 26px; font-weight: 500;
+  border-bottom: 1px solid var(--LR); font-family: var(--F-BODY);
+  color: var(--DB);
+}
+.light-table tr:last-child td { border-bottom: none; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE GRADIENT
+══════════════════════════════════════════════════ */
+.slide-grad { background: var(--G); }
+
+.grad-h1 {
+  font-family: var(--F-HEAD); font-size: 80px; font-weight: 900;
+  line-height: 0.97; letter-spacing: -2px; text-transform: uppercase;
+  color: #fff; margin-bottom: 40px;
+}
+
+.grad-body {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 400;
+  line-height: 1.55; letter-spacing: -0.2px; color: rgba(255,255,255,0.65);
+}
+.grad-body + .grad-body { margin-top: 24px; }
+.grad-body strong { color: #fff; font-weight: 700; }
+
+.grad-row {
+  display: flex; align-items: flex-start; gap: 22px; margin-bottom: 30px;
+}
+.grad-arrow {
+  font-size: 34px; color: rgba(255,255,255,0.4);
+  flex-shrink: 0; margin-top: 4px; font-family: var(--F-BODY);
+}
+.grad-text {
+  font-family: var(--F-BODY); font-size: 32px; font-weight: 500;
+  line-height: 1.45; letter-spacing: -0.2px; color: rgba(255,255,255,0.72);
+}
+.grad-text strong { color: #fff; font-weight: 800; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--LB); }
+
+.cta-bridge {
+  font-family: var(--F-BODY); font-size: 38px; font-weight: 500;
+  line-height: 1.5; letter-spacing: -0.2px;
+  color: rgba(15,13,12,0.55); margin-bottom: 48px;
+}
+.cta-bridge strong { color: var(--DB); font-weight: 800; }
+
+.cta-headline {
+  font-family: var(--F-HEAD); font-size: 72px; font-weight: 900;
+  line-height: 0.97; letter-spacing: -2px; text-transform: uppercase;
+  color: var(--DB); margin-bottom: 40px;
+}
+.cta-headline em { color: var(--P); font-style: normal; }
+
+.cta-kbox {
+  background: #fff; border: 3px solid rgba(0,0,0,0.08);
+  border-radius: 20px; padding: 40px 48px; margin-bottom: 32px;
+}
+.cta-kinstr {
+  font-family: var(--F-BODY); font-size: 20px; font-weight: 500;
+  color: rgba(15,13,12,0.42); margin-bottom: 12px;
+}
+.cta-kword {
+  font-family: var(--F-HEAD); font-size: 80px; font-weight: 900;
+  color: var(--P); letter-spacing: -2px; line-height: 1; margin-bottom: 14px;
+}
+.cta-kbenefit {
+  font-family: var(--F-BODY); font-size: 22px; font-weight: 500;
+  line-height: 1.5; color: rgba(15,13,12,0.50);
+}
+
+.cta-footer {
+  display: flex; align-items: center; gap: 16px;
+}
+.cta-footer-dot {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--G);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--F-BODY); font-size: 16px; font-weight: 900; color: #fff;
+}
+.cta-footer-text {
+  font-family: var(--F-BODY); font-size: 18px; color: rgba(15,13,12,0.35);
+}
+
+/* ── Image box (slides com espaço sobrando) ── */
+.img-box {
+  width: 100%; height: 360px; border-radius: 20px;
+  overflow: hidden; margin-bottom: 36px;
+}
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.on-dark .img-box  { border: 1.5px solid rgba(255,255,255,0.08); }
+.on-light .img-box { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="slide slide-capa" id="slide-1">
+    
+    <div class="capa-bg" style="background: linear-gradient(160deg, var(--PD) 0%, var(--DB) 100%);"></div>
+    
+    <div class="capa-grad"></div>
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-dark">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="capa-headline-area">
+      <div class="capa-badge">
+        <div class="badge-dot">A</div>
+        <span class="badge-handle">@aprendaitaliano_</span>
+      </div>
+      <div class="capa-headline">O ITALIANO QUE O BRASIL ENSINA: POR QUE 30 MILHÕES DE DESCENDENTES CHEGAM À ITÁLIA E NÃO ENTENDEM NADA</div>
+    </div>
+    
+  <div class="prog on-dark">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 11%;"></div>
+    </div>
+    <span class="prog-num">1/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-dark on-dark" id="slide-2">
+    
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-dark">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">O PARADOXO</div>
+      
+      
+      <div class="dark-body">Trinta milhões de brasileiros têm ascendência italiana. Uma parcela significativa estudou o idioma — em escola, em curso, com a família — e ainda assim trava no primeiro diálogo real com um nativo.</div>
+      <div class="dark-body">O problema não é falta de estudo. O italiano ensinado nas salas de aula brasileiras e o italiano falado nas ruas de Milão ou Nápoles funcionam como dois sistemas distintos — e quem aprendeu o primeiro chega despreparado para o segundo.</div>
+    </div>
+    
+  <div class="prog on-dark">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 22%;"></div>
+    </div>
+    <span class="prog-num">2/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-light on-light" id="slide-3">
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-light">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">O QUE FOI ENSINADO</div>
+      
+      
+      <div class="light-body">O ensino de italiano no Brasil foi estruturado historicamente em torno da gramática formal: conjugação verbal, vocabulário temático e regras de concordância. É um modelo que produz falantes capazes de preencher exercícios e ler textos simples.</div>
+      <div class="light-body">O que ficou sistematicamente de fora desse modelo é o sistema fonético — as combinações de letras que contradizem a intuição de quem cresceu falando português e que determinam se alguém consegue ou não se comunicar numa conversa espontânea.</div>
+    </div>
+    
+  <div class="prog on-light">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 33%;"></div>
+    </div>
+    <span class="prog-num">3/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-dark on-dark" id="slide-4">
+    
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-dark">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">O MECANISMO DO ERRO</div>
+      
+      
+      <div class="dark-body">O falante de português aplica automaticamente a lógica sonora do próprio idioma ao italiano — e erra de forma sistemática, não por acaso. A combinação 'ch' em italiano produz o som /k/, então 'che' se lê 'ke'. A combinação 'sci' produz /ʃ/, então 'scienza' se lê 'shênza'.</div>
+      <div class="dark-body">Para o brasileiro, 'ch' é /ʃ/ — como em 'chave'. Essa associação está automatizada depois de anos de leitura em português. Ao encontrar 'che' em italiano, o cérebro entrega /ʃe/ antes de qualquer raciocínio consciente. O erro não é de memória. É de sobrescrição: o sistema antigo interfere no novo porque nunca houve treinamento fonético para separá-los.</div>
+    </div>
+    
+  <div class="prog on-dark">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 44%;"></div>
+    </div>
+    <span class="prog-num">4/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-light on-light" id="slide-5">
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-light">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">OS DADOS</div>
+      
+      
+      <div class="light-body">O alfabeto italiano padrão tem 21 letras — as letras j, k, w, x e y existem no idioma apenas em palavras estrangeiras incorporadas, fato documentado pela Accademia della Crusca, a principal autoridade normativa do italiano desde 1583. Um sistema menor que o português, mas com lógica sonora radicalmente diferente.</div>
+      <div class="light-body">O italiano é o quarto idioma mais estudado no mundo, segundo o relatório anual do Istituto Italiano di Cultura, com crescimento expressivo de aprendizes brasileiros — impulsionado por uma base estimada em 30 milhões de descendentes de acordo com o IBGE. Mais estudantes, mas o modelo de ensino permanece o mesmo.</div>
+    </div>
+    
+  <div class="prog on-light">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 55%;"></div>
+    </div>
+    <span class="prog-num">5/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-dark on-dark" id="slide-6">
+    
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-dark">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">A RAIZ DO PROBLEMA</div>
+      
+      
+      <div class="dark-body">A gramática formal tem um papel real no aprendizado de qualquer idioma. O problema é a sequência: quando ela vem antes da fonética, o aluno passa meses conjugando verbos que não consegue pronunciar em tempo real — e a fluência oral fica represada atrás de uma barreira que a gramática, sozinha, não remove.</div>
+      <div class="dark-body">Os nativos automatizam os sons antes de aprender qualquer regra. Uma criança italiana não estuda fonética conscientemente — ela absorve os padrões sonoros pela exposição contínua, antes de saber o que é um verbo. O aprendiz adulto precisa fazer esse trabalho de forma deliberada, e a maioria dos cursos brasileiros nunca propõe isso.</div>
+    </div>
+    
+  <div class="prog on-dark">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 66%;"></div>
+    </div>
+    <span class="prog-num">6/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-light on-light" id="slide-7">
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-light">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">O QUE MUDA NA PRÁTICA</div>
+      
+      
+      <div class="light-body">Quem aprende fonética antes de gramática chega à Itália e consegue se virar numa conversa, mesmo com vocabulário limitado. Os sons saem certos, os nativos entendem, a comunicação acontece. Quem inverte essa ordem chega sabendo conjugar o passato prossimo mas trava ao ouvir 'ciao, come stai?' numa velocidade normal.</div>
+      <div class="light-body">A diferença não está no volume de estudo. Está na sequência. Ajustar essa ordem nos primeiros 30 dias de aprendizado elimina o principal motivo de bloqueio numa conversa real — e esse ajuste é técnico, não motivacional.</div>
+    </div>
+    
+  <div class="prog on-light">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 77%;"></div>
+    </div>
+    <span class="prog-num">7/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-grad on-grad" id="slide-8">
+    
+  <div class="accent-bar on-grad"></div>
+
+    
+  <div class="brand-bar on-grad">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      <div class="tag">A SEQUÊNCIA CORRETA</div>
+      <div class="grad-h1">FONÉTICA PRIMEIRO. GRAMÁTICA DEPOIS.</div>
+      
+      
+    </div>
+    
+  <div class="prog on-grad">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 88%;"></div>
+    </div>
+    <span class="prog-num">8/9</span>
+  </div>
+
+  </div>
+
+  
+  
+
+
+  
+  
+  <div class="slide slide-cta on-light" id="slide-9">
+    
+  <div class="accent-bar "></div>
+
+    
+  <div class="brand-bar on-light">
+    <span>@aprendaitaliano_</span>
+    <span>2026 ®</span>
+  </div>
+
+    <div class="content">
+      
+      <div class="cta-bridge">A sequência de aprendizado define o resultado — e montar essa sequência corretamente desde o início é o que separa quem trava de quem se comunica.</div>
+      
+      
+      <div class="cta-headline">COMECE PELO QUE OS NATIVOS DOMINAM PRIMEIRO</div>
+      
+      <div class="cta-kbox">
+        <div class="cta-kinstr">Comenta a palavra abaixo:</div>
+        <div class="cta-kword">GUIA</div>
+        <div class="cta-kbenefit">um guia prático de fonética italiana para falantes de português, com os sons que mais causam erro e como corrigi-los</div>
+      </div>
+      <div class="cta-footer">
+        <div class="cta-footer-dot">A</div>
+        <span class="cta-footer-text">@aprendaitaliano_ · Envio automático via DM</span>
+      </div>
+    </div>
+    
+  <div class="prog on-light">
+    <div class="prog-track">
+      <div class="prog-fill" style="width: 100%;"></div>
+    </div>
+    <span class="prog-num">9/9</span>
+  </div>
+
+  </div>
+
+  
+
+
+</div><!-- /slides-wrap -->
+
+<script>
+var isPreview = true;
+function toggleView() {
+  var wrap = document.getElementById('slides-wrap');
+  var label = document.getElementById('view-label');
+  isPreview = !isPreview;
+  if (isPreview) {
+    wrap.classList.add('preview');
+    label.textContent = 'Modo: Preview lado a lado';
+  } else {
+    wrap.classList.remove('preview');
+    label.textContent = 'Modo: Tamanho real (1080×1350)';
+  }
+}
+</script>
+</body>
+</html>

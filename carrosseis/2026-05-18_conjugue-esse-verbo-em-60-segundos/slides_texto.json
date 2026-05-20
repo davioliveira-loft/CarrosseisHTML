@@ -1,0 +1,77 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "O MÉTODO DE 60 SEGUNDOS QUE ESTÁ ACABANDO COM ANOS DE ESTUDO DE CONJUGAÇÃO ITALIANA",
+      "bloco1": null,
+      "bloco2": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "O PROBLEMA",
+      "headline_capa": null,
+      "bloco1": "Quem estudou italiano sabe o ritual: tabelas de conjugação, paradigmas decorados, blocos de 20 minutos com gramática. Na hora de falar, o verbo não sai.",
+      "bloco2": "Um formato de 60 segundos está produzindo retenção que horas de estudo tradicional não conseguem — e a explicação não está na motivação do aluno, está na arquitetura do cérebro adulto."
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O MECANISMO",
+      "headline_capa": null,
+      "bloco1": "O cérebro adulto não consolida padrões linguísticos por acúmulo de tempo — consolida por repetição dentro de janelas de atenção ativas, antes que a sobrecarga cognitiva interrompa o processo.",
+      "bloco2": "Sessões longas de gramática ultrapassam essa janela. O sistema entra em modo de processamento analítico, que é o oposto do modo de assimilação de padrão. Sessões de 60 segundos entram e saem antes disso acontecer."
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "A VANTAGEM ESTRUTURAL",
+      "headline_capa": null,
+      "bloco1": "O italiano tem uma vantagem que a maioria das línguas não tem: os verbos da primeira conjugação (-are) seguem terminações regulares para todas as seis pessoas — io, tu, lui, noi, voi, loro.",
+      "bloco2": "Isso torna a exposição ao paradigma completo em 60 segundos estruturalmente viável. Em inglês ou alemão, com irregularidades sistemáticas espalhadas por toda a conjugação, o mesmo formato não funcionaria da mesma forma — porque o cérebro não consegue ancorar o padrão sem um padrão real para ancorar."
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "OS DADOS",
+      "headline_capa": null,
+      "bloco1": "Uma pesquisa da Universidade de Michigan publicada em 2019 mostrou que sessões de vocabulário de 60 segundos com repetição espaçada produzem retenção equivalente a blocos de 20 minutos sem espaçamento — com menos da sexta parte do tempo.",
+      "bloco2": "O TikTok reportou em 2023 que vídeos de aprendizado de idiomas com duração entre 45 e 90 segundos têm taxa de conclusão 2,3 vezes maior do que vídeos acima de 3 minutos na mesma categoria. O público está completando o conteúdo — e voltando no dia seguinte para o próximo verbo."
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "O DESLOCAMENTO",
+      "headline_capa": null,
+      "bloco1": "Criadores que adotaram o formato de conjugação em 60 segundos acumulam taxas de salvamento e compartilhamento consistentemente acima dos criadores de conteúdo gramatical longo na mesma categoria.",
+      "bloco2": "O público que antes desistia na terceira tabela de conjugação está completando o vídeo inteiro. O formato não simplifica o conteúdo — ele reorganiza a entrega para respeitar como a memória de adultos realmente funciona."
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "A APLICAÇÃO",
+      "headline_capa": null,
+      "bloco1": "Verbos isolados não retêm. O formato que funciona entrega conjugação completa, exemplo de uso em contexto e um gancho para o próximo verbo — tudo dentro da janela de 60 segundos.",
+      "bloco2": "Ancoragem sonora, visual e contextual no mesmo minuto é o que transforma exposição em memória. Quem está produzindo só a tabela está fazendo metade do trabalho — e colhendo menos da metade do resultado."
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": "A CURVA",
+      "headline_interna": "O ENSINO TRADICIONAL AINDA NÃO PERCEBEU QUE PERDEU",
+      "bloco1": null,
+      "bloco2": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "frase_ponte": "Quem dominar o formato de 60 segundos agora está na frente de uma curva que o ensino tradicional de idiomas ainda não percebeu que perdeu.",
+      "cta_headline": "QUER O GUIA COMPLETO?",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "Envio o guia com a estrutura exata do formato de 60 segundos para conjugação italiana — ancoragem sonora, visual e contextual em um único modelo."
+    }
+  ]
+}

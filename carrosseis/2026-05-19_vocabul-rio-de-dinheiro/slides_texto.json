@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "NA HORA DE PAGAR A CONTA NA ITÁLIA: AS PALAVRAS QUE O GOOGLE TRADUTOR NÃO TE CONTA",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "A conta deu 18 euros. Você estende uma nota de 50. O caixa faz uma pergunta rápida apontando pra sua carteira. Você trava e só dá os ombros. Ele bufa e te devolve uma pilha de moedas.",
+      "bloco2": "Ele provavelmente te perguntou se você não tinha 'spiccioli' (moedas) para facilitar o troco. Lidar com dinheiro em italiano exige vocabulário específico do cotidiano comercial.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "CARTÃO VS DINHEIRO",
+      "headline_capa": null,
+      "headline_interna": "Contanti e Carta",
+      "bloco1": "Na Itália, dinheiro vivo é chamado de 'contanti'. Cartão de crédito ou débito é 'carta' ou 'bancomat' (o equivalente ao cartão de débito deles).",
+      "bloco2": "'Posso pagare con la carta?' (Posso pagar com cartão?). Dica de ouro: em muitos lugares pequenos ou bancas de jornal, eles ainda preferem contanti para pequenos valores.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "O TROCO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O troco em italiano é 'il resto'. Quando você paga no restaurante, pode dizer: 'Tenga il resto' (Fique com o troco / Guarde o troco).",
+      "bloco2": "Gorjeta (la mancia) não é obrigatória na Itália, pois o serviço costuma estar incluso no 'coperto', mas deixar 'il resto' em moedas é muito bem visto.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "MOEDAS",
+      "headline_capa": null,
+      "headline_interna": "Spiccioli ou Monete",
+      "bloco1": "'Ha degli spiccioli?' (Você tem trocado/moedas?). Moedas soltas são 'spiccioli' ou 'monete'. Os comerciantes italianos amam e precisam de moedas de 1 e 2 euros.",
+      "bloco2": "Quando o caixa pergunta 'Ha i venti centesimi?' (Você tem os vinte centavos?), ele está tentando evitar te dar uma montanha de moedas pequenas de troco.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "O RECIBO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "'Lo scontrino' é o recibo ou cupom fiscal. Na Itália, por lei, o comerciante é obrigado a emitir e te entregar o scontrino.",
+      "bloco2": "Em bares e cafés, a frase que você mais vai ouvir é: 'Prenda lo scontrino' (pegue o recibo), pois você precisa dele para apresentar no balcão e pegar seu pedido.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Prepare as frases do bolso",
+      "bloco1": "Anote e pratique as respostas: 'Pago con carta', 'Pago in contanti', 'Non ho spiccioli' (não tenho trocado).",
+      "bloco2": "Saber essas três pequenas frases te tira do estado de choque na hora que a fila do caixa está grande atrás de você e o comerciante fala rápido.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Situações financeiras, por menores que sejam, sempre causam microestresses quando não sabemos o vocabulário. Você fica vulnerável.",
+      "bloco2": "Antecipar as palavras do comércio te dá controle. Você entende o que o vendedor quer, paga com tranquilidade e finaliza a compra com um belo 'Arrivederci'.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer mais frases e vocabulário prático para lojas e transações na Itália?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com diálogos de supermercado e pagamentos + vocabulário de loja com áudio"
+    }
+  ]
+}

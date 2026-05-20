@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "NÚMEROS EM ITALIANO: DO ZERO AO CEM SEM COMPLICAÇÃO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você está num mercado em Bolonha. O vendedor de queijo diz o preço: '<strong>Sette euro e cinquanta</strong>'. Você ouviu '<strong>sette</strong>' mas não sabia se era sete ou setenta. Pagou com uma nota de 20, torcendo para ser suficiente.",
+      "bloco2": "Números aparecem em preços, horários, endereços, idades, datas — em praticamente toda interação prática. Conhecer os padrões italianos do 0 ao 100 já resolve a grande maioria das situações do dia a dia.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "DE 0 A 10",
+      "headline_capa": null,
+      "headline_interna": "A base de tudo: os dez primeiros números",
+      "bloco1": "<strong>Zero, uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci.</strong> Repara que <strong>tre</strong> (3) não tem acento, mas quando aparece no final de números compostos, ganha: <strong>ventitré</strong> (23), <strong>trentatré</strong> (33).",
+      "bloco2": "A pronúncia que mais confunde brasileiros: <strong>sei</strong> (6) soa como 'séi', não como 'sei' do português. E <strong>sette</strong> (7) tem o 'tt' pronunciado com ênfase — dobra a consoante, como em 'otto' (8). Ouvir áudio de nativos no Forvo ajuda a calibrar esses sons rapidamente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "DE 11 A 20",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Os números de 11 a 16 têm forma própria: <strong>undici</strong> (11), <strong>dodici</strong> (12), <strong>tredici</strong> (13), <strong>quattordici</strong> (14), <strong>quindici</strong> (15), <strong>sedici</strong> (16). De 17 em diante, a lógica muda.",
+      "bloco2": "De 17 a 19 o padrão é <strong>dici</strong> + número: <strong>diciassette</strong> (17), <strong>diciotto</strong> (18), <strong>diciannove</strong> (19). Note que <strong>diciotto</strong> não tem duplo 'i' — a vogal final de <strong>dici</strong> some antes de <strong>otto</strong> por eufonia. O italiano evita sons desconfortáveis.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "DE 20 A 100",
+      "headline_capa": null,
+      "headline_interna": "Dezenas e como montar os compostos",
+      "bloco1": "Dezenas: <strong>venti</strong> (20), <strong>trenta</strong> (30), <strong>quaranta</strong> (40), <strong>cinquanta</strong> (50), <strong>sessanta</strong> (60), <strong>settanta</strong> (70), <strong>ottanta</strong> (80), <strong>novanta</strong> (90), <strong>cento</strong> (100).",
+      "bloco2": "Para compor números, junte dezena + unidade: <strong>ventidue</strong> (22), <strong>trentasei</strong> (36), <strong>quarantotto</strong> (48). Regra de ouro: quando a unidade começa com vogal (<strong>uno</strong>, <strong>otto</strong>), a dezena perde a vogal final — <strong>ventuno</strong> (21), <strong>ventotto</strong> (28).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "USO PRÁTICO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Preços: '<strong>Costa dodici euro</strong>' (custa doze euros). Horas: '<strong>Sono le tre e mezza</strong>' (são três e meia). Endereços: '<strong>Al numero quarantadue</strong>' (no número quarenta e dois). Idades: '<strong>Ho ventisei anni</strong>' (tenho vinte e seis anos).",
+      "bloco2": "Datas usam os números cardinais para todos os dias exceto o primeiro: '<strong>il primo marzo</strong>' (primeiro de março), mas '<strong>il quindici aprile</strong>' (quinze de abril). É diferente do português, que usa 'dia quinze' com ordinal ou cardinal conforme o contexto.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Conte em italiano nas atividades do dia",
+      "bloco1": "Substitua mentalmente a contagem em português por italiano nas atividades físicas: flexões, escadas, repetições na academia. Quando você conta '<strong>uno, due, tre...</strong>' com foco numa atividade, o cérebro associa o número a uma sensação física — e isso grava.",
+      "bloco2": "Outra técnica: quando ver um número qualquer — placa, preço, horário — tente lê-lo em italiano antes de ler em português. Dois segundos de atenção por vez que você pratica isso de forma consistente ao longo do dia.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Números parecem mecânicos de aprender, mas na prática são o vocabulário que aparece em toda interação concreta — do mercado ao museu, do horário do trem ao preço do cappuccino.",
+      "bloco2": "E diferente de vocabulário temático, números não têm contexto específico: aparecem em qualquer conversa, a qualquer hora. Investir neles cedo acelera todo o resto do aprendizado.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um guia com números, datas e horas em italiano com exercícios práticos?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com tabela de números + frases de uso real + áudio de pronúncia dos nativos"
+    }
+  ]
+}

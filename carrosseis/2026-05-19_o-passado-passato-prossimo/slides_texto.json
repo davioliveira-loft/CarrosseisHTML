@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "COMO CONTAR O QUE VOCÊ FEZ ONTEM EM ITALIANO (SEM PRECISAR DE TEMPOS VERBAIS DIFÍCEIS)",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Na segunda-feira, um colega pergunta: 'Cosa hai fatto nel weekend?'. Você sabe dizer 'mangio la pizza' (no presente), mas quer falar que comeu pizza no sábado. A trava é real.",
+      "bloco2": "O italiano tem a grande vantagem de resolver quase todo o passado do dia a dia com um único tempo verbal simples e estruturado como um lego: o Passato Prossimo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O SISTEMA LEGO",
+      "headline_capa": null,
+      "headline_interna": "Auxiliar + Particípio",
+      "bloco1": "O Passato Prossimo é sempre feito de duas peças: um verbo auxiliar (avere ou essere) no presente + o verbo principal no particípio.",
+      "bloco2": "Por exemplo: 'Ho mangiato' (Eu comi). 'Ho' é o verbo avere (tenho), 'mangiato' é o particípio de mangiare. Literalmente 'tenho comido', mas traduzido como passado simples.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "FORMANDO O PARTICÍPIO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "A regra para formar a segunda peça é quase automática. Verbos terminados em -are viram -ato (parlare -> parlato). Em -ere viram -uto (vendere -> venduto). Em -ire viram -ito (capire -> capito).",
+      "bloco2": "Então: 'Ho parlato' (eu falei), 'Ho venduto' (eu vendi), 'Ho capito' (eu entendi). Com essa fórmula, você já conjuga 80% dos verbos no passado.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "O DILEMA",
+      "headline_capa": null,
+      "headline_interna": "Quando usar essere e quando usar avere?",
+      "bloco1": "A maioria dos verbos usa avere. Mas verbos que indicam movimento, mudança de estado ou que são reflexivos usam essere como auxiliar.",
+      "bloco2": "Exemplo de movimento: 'Sono andato' (Eu fui). O auxiliar é 'sono' (essere). Exemplo reflexivo: 'Mi sono svegliato' (Eu acordei).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "A CONCORDÂNCIA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Aqui está o pulo do gato: quando você usa o essere, a terminação do particípio tem que concordar com quem fala, como se fosse um adjetivo.",
+      "bloco2": "Se for um homem falando: 'Sono andato'. Se for mulher: 'Sono andata'. No plural: 'Siamo andati' (nós fomos). Se usar avere, termina sempre em -o ('ho mangiato').",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Liste seu fim de semana",
+      "bloco1": "Pegue um papel e anote 5 coisas que você fez ontem. 'Ho guardato un film', 'Ho mangiato la pasta', 'Sono andato al parco', 'Mi sono riposato/a'.",
+      "bloco2": "Dividir em ações rotineiras usa os mesmos verbos repetidamente. Você não precisa decorar listas, só precisa internalizar as suas próprias memórias em italiano.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Falar no passado é o marco que te tira do 'sobrevivência turística' e te coloca numa conversa real com italianos. Ninguém vive só no presente.",
+      "bloco2": "O sistema do Passato Prossimo é matemático. Uma vez que você entende o padrão (peça 1 + peça 2), você passa a construir suas histórias com independência e clareza.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer dominar o passado e os particípios irregulares que os italianos mais usam?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com a regra do Passato Prossimo + lista de particípios + áudios"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "nome": "Alternado Claro/Escuro",
+  "descricao": "Template padrão BrandsDecoded: capa + dark + light alternados + gradient + CTA",
+  "num_slides_suportados": [5, 7, 9, 12],
+  "fonte_headline_padrao": "Barlow Condensed",
+  "fonte_body_padrao": "Plus Jakarta Sans"
+}

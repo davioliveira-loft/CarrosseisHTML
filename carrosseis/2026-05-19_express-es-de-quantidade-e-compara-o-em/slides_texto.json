@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "COMO COMPARAR EM ITALIANO: MAIS, MENOS, TÃO E AS ESTRUTURAS QUE VOCÊ PRECISA",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você está numa loja em Milão. O vendedor mostra dois casacos. Um é mais caro, o outro é mais bonito. Você quer dizer 'o segundo é mais  bonito, mas o primeiro é mais barato'. Sabe os adjetivos — mas como dizer 'mais' em italiano?",
+      "bloco2": "Comparação e quantidade aparecem em toda conversa prática — compras, receitas, viagens, descrições. Com um pequeno conjunto de  estruturas, você consegue expressar gradações e preferências com precisão.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "COMPARATIVO",
+      "headline_capa": null,
+      "headline_interna": "Più e meno — mais e menos",
+      "bloco1": "O comparativo em italiano usa '<strong>più</strong>' (mais) ou '<strong>meno</strong>' (menos) antes do adjetivo: '<strong>più bello</strong>'  (mais bonito), '<strong>meno caro</strong>' (menos caro). Para comparar dois elementos: '<strong>X è più [adj] di Y</strong>' ou '<strong>X è più [adj] che  Y</strong>'.",
+      "bloco2": "Use '<strong>di</strong>' quando compara dois substantivos diferentes: '<strong>Roma è più grande di Milano</strong>' (Roma é maior que  Milão). Use '<strong>che</strong>' quando compara dois adjetivos ou verbos aplicados ao mesmo sujeito: '<strong>È più simpatico che intelligente</strong>' (é  mais simpático do que inteligente). A distinção '<strong>di</strong>' / '<strong>che</strong>' é o que mais confunde iniciantes.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "SUPERLATIVO RELATIVO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Para dizer 'o mais' (superlativo relativo), use artigo + '<strong>più</strong>' + adjetivo: '<strong>il più bello</strong>' (o mais bonito), '<strong>la  più cara</strong>' (a mais cara), '<strong>i più famosi</strong>' (os mais famosos).",
+      "bloco2": "'<strong>È il ristorante più buono della città</strong>' (é o restaurante mais gostoso da cidade). '<strong>È la cosa più difficile che abbia mai  fatto</strong>' (é a coisa mais difícil que já fiz). O superlativo relativo é muito frequente em recomendações, opiniões e descrições entusiasmadas — algo que os  italianos fazem muito.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "QUANTO E TANTO",
+      "headline_capa": null,
+      "headline_interna": "Tanto, poco, abbastanza — para quantificar",
+      "bloco1": "<strong>Tanto/tanta/tanti/tante</strong> (tanto/a, muitos/as — quando adjetivo, concorda). <strong>Molto</strong> (muito — adjetivo ou  advérbio). <strong>Poco</strong> (pouco). <strong>Abbastanza</strong> (bastante, suficiente). '<strong>Ho tanta fame</strong>' (estou com muita fome).  '<strong>Parla poco</strong>' (fala pouco). '<strong>È abbastanza buono</strong>' (é razoavelmente bom).",
+      "bloco2": "Como advérbios (modificando verbos ou outros adjetivos), <strong>molto, tanto, poco, abbastanza</strong> não variam: '<strong>mangia  molto</strong>' (come muito), '<strong>sono tanto stanchi</strong>' (estão muito cansados), '<strong>parla poco chiaro</strong>' (fala pouco claro). Só como  adjetivo acompanhando substantivo é que concordam.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "IRREGULARES",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Alguns comparativos e superlativos são irregulares — assim como em português 'bom/melhor/ótimo'. Em italiano: <strong>buono</strong> (bom)  → <strong>migliore</strong> (melhor) → <strong>ottimo</strong> (ótimo). <strong>Cattivo</strong> (ruim) → <strong>peggiore</strong> (pior) →  <strong>pessimo</strong> (péssimo).",
+      "bloco2": "<strong>Grande</strong> (grande) → <strong>maggiore</strong> (maior — em sentido abstrato, como 'a maior parte'). <strong>Piccolo</strong>  (pequeno) → <strong>minore</strong> (menor — também em sentido abstrato ou de importância). Para tamanho físico concreto, os italianos geralmente usam  '<strong>più grande</strong>' e '<strong>più piccolo</strong>'.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Compare dois lugares, pratos ou pessoas que você conhece",
+      "bloco1": "Escreva três comparações sobre coisas que você conhece bem: duas cidades, dois restaurantes, dois filmes. '<strong>São Paulo è più grande di  Rio de Janeiro, ma Rio è più bella</strong>'. Use <strong>più, meno, di, che</strong> e os superlativos que aprendeu.",
+      "bloco2": "Comparar coisas reais que você conhece força o uso criativo da estrutura — porque você precisa decidir o que é 'mais' e o que é 'menos', e  escolher o adjetivo certo. É um exercício que ativa vocabulário e gramática ao mesmo tempo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Comparar e quantificar é essencial para dar opiniões, fazer recomendações, descrever escolhas. Sem essas estruturas, tudo fica no absoluto —  'é bom', 'é caro'. Com elas, você consegue matizar: 'é melhor', 'é menos caro do que parece'.",
+      "bloco2": "E os italianos adoram comparar — cidades, comidas, times, regiões. Entrar nessa conversa com as estruturas certas é uma das formas mais  rápidas de criar conexão com um nativo e mostrar que você vai além do básico.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um guia com as estruturas gramaticais para dar opiniões e comparar em italiano?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com comparativo, superlativo, quantificadores + exemplos em frases reais + áudio nativo"
+    }
+  ]
+}

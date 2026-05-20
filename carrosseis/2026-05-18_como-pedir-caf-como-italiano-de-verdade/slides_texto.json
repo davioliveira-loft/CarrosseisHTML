@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "VOCÊ PEDE 'LATTE' EM ROMA E RECEBE UM COPO DE LEITE PURO: AS 5 REGRAS NÃO ESCRITAS DO CAFÉ ITALIANO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CILADA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você entra num bar perto da Fontana di Trevi e pede '<strong>un latte, per favore</strong>', achando que vai receber café com leite. Em vez disso, vem <strong>um copo grande de leite puro</strong>, sem café.",
+      "bloco2": "'Latte' em italiano significa só leite. O que você queria era '<strong>caffè latte</strong>' — ou '<strong>cappuccino</strong>', dependendo do horário.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "REGRA 1",
+      "headline_capa": null,
+      "headline_interna": "Caffè = espresso",
+      "bloco1": "Quando italiano diz '<strong>caffè</strong>', está falando de <strong>espresso curto</strong>. Não precisa especificar.",
+      "bloco2": "Quer americano? Peça '<strong>caffè americano</strong>'. Quer mais forte? '<strong>Ristretto</strong>'. Quer com muito leite vaporizado? '<strong>Cappuccino</strong>'. Cada palavra é uma bebida diferente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "REGRA 2",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Cappuccino só de manhã.</strong> Tradicionalmente, italiano não toma cappuccino depois das 11h — leite após refeição é visto como ruim pra digestão.",
+      "bloco2": "Você pode pedir, ninguém vai negar. Mas o garçom vai te identificar como turista na hora. Italiano almoçando com cappuccino é cena rara.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "REGRA 3",
+      "headline_capa": null,
+      "headline_interna": "Al banco vs al tavolo",
+      "bloco1": "<strong>Al banco</strong> (no balcão, em pé) = preço normal, geralmente 1-1,5 €.",
+      "bloco2": "<strong>Al tavolo</strong> (na mesa, sentado) = preço dobra ou triplica, especialmente em zona turística. Mesmo café, mesma máquina — só a posição muda.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "REGRA 4",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Açúcar vai por cima</strong> da espuma do espresso, sem mexer muito. O peso do açúcar atravessa o creme e fica no fundo — você toma o creme primeiro, o doce depois.",
+      "bloco2": "Mexer demais quebra a crema e descaracteriza a bebida. Reparar em quem está no balcão ao lado ensina mais que qualquer manual.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "REGRA 5",
+      "headline_capa": null,
+      "headline_interna": "To go não existe",
+      "bloco1": "Italiano toma café <strong>na hora, no lugar</strong>. Pegar copo de papel pra levar é prática americana — bares de fora dos circuitos turísticos nem oferecem.",
+      "bloco2": "Quer o ritual? Entra, pede no caixa, paga, leva o recibo ao balcão, espera 30 segundos, toma em 1 minuto, sai. Tudo isso por 1 euro. <strong>É o sistema.</strong>",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Pedir café como italiano não é frescura — é o <strong>primeiro código social</strong> que sinaliza se você está visitando ou vivendo a cidade.",
+      "bloco2": "Aprender essas 5 regras muda a forma como o bar te trata, o preço que você paga e a velocidade que você se integra.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer o guia completo do vocabulário de bar italiano com 25 termos e fotos?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF + cardápio comentado + áudios de pedido"
+    }
+  ]
+}

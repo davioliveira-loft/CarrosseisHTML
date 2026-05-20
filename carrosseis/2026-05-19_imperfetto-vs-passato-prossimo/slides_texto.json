@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "O ERRO DE INICIANTE AO CONTAR UMA HISTÓRIA: QUANDO USAR O IMPERFETTO EM ITALIANO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você quer dizer 'Quando eu era criança, comia muito doce'. Você já sabe o Passato Prossimo, então traduz: 'Quando sono stato bambino, ho mangiato...'. O nativo faz uma careta.",
+      "bloco2": "O Passato Prossimo é ótimo para ações pontuais. Mas para contar histórias, descrever o passado e falar de hábitos, o italiano exige outro tempo: L'Imperfetto.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O CENÁRIO",
+      "headline_capa": null,
+      "headline_interna": "Imperfetto é o fundo da foto",
+      "bloco1": "Pense no Imperfetto como o cenário de uma peça de teatro. Ele descreve o tempo, a idade, o clima, o sentimento. 'Era una bella giornata, il sole brillava...' (Era um dia bonito, o sol brilhava).",
+      "bloco2": "O Passato Prossimo é a ação que acontece na frente desse cenário. '...quando ho visto il mio amico.' (...quando vi o meu amigo).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "HÁBITOS NO PASSADO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Para falar do que você fazia regularmente (costumava fazer), use sempre o Imperfetto. 'Da bambino, giocavo a calcio ogni giorno' (Quando criança, jogava/costumava jogar futebol todo dia).",
+      "bloco2": "Se você disser 'ho giocato' soa como se você tivesse jogado uma vez só em um momento específico do passado, não um hábito prolongado.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "CONJUGAÇÃO SIMPLES",
+      "headline_capa": null,
+      "headline_interna": "A letra 'V' mágica",
+      "bloco1": "A boa notícia: o Imperfetto é um dos tempos mais fáceis de conjugar. Para os verbos regulares, a característica central é o som de 'v'.",
+      "bloco2": "Mangiare -> 'mangiavo, mangiavi, mangiava...'. Leggere -> 'leggevo, leggevi, leggeva...'. Dormire -> 'dormivo, dormivi, dormiva...'. Não tem auxiliar, é uma palavra só.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "O VERBO ESSERE",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O único verbo irregular que você precisa dominar agora no Imperfetto é o essere (ser/estar). Como não tem 'v', a forma é: 'ero, eri, era, eravamo, eravate, erano'.",
+      "bloco2": "'Ero stanco' (eu estava cansado). 'Era molto tardi' (era muito tarde). Essas duas frases já resolvem metade das suas histórias em italiano.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "A técnica do 'Enquanto eu...'",
+      "bloco1": "Para fixar os dois passados juntos, crie frases com 'Mentre' (enquanto). O 'enquanto' exige o Imperfetto, seguido de uma ação no Passato Prossimo.",
+      "bloco2": "'Mentre guardavo la tv, il telefono ha squillato' (Enquanto eu assistia tv, o telefone tocou). Treine cinco frases assim e seu cérebro entende a diferença mecânica e visual dos dois tempos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Misturar o Imperfetto e o Passato Prossimo é o que te dá a capacidade de contar anedotas, fofocas e experiências de viagem como um ser humano normal, com ritmo.",
+      "bloco2": "Você pinta o cenário com o Imperfetto e insere o impacto com o Passato Prossimo. Essa dinâmica transforma seu nível de conversação instantaneamente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer entender a gramática narrativa e contar suas histórias sem travar?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com contraste entre os passados + exercícios de contação de história + áudio"
+    }
+  ]
+}

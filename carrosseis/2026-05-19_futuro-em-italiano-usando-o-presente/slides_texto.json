@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "A MELHOR NOTÍCIA DA GRAMÁTICA ITALIANA: COMO FALAR DO FUTURO SEM APRENDER NADA NOVO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você quer dizer que vai a Roma no próximo fim de semana. Você pensa na regra do futuro em português ('eu irei') ou inglês ('I will go') e vai procurar como conjugar o futuro em italiano.",
+      "bloco2": "Pare. O italiano coloquial tem uma preferência incrivelmente preguiçosa (e eficiente) que resolve quase tudo sobre planos imediatos e agendamentos: eles usam o tempo presente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "O FUTURO IMINENTE",
+      "headline_capa": null,
+      "headline_interna": "O marcador de tempo faz o trabalho",
+      "bloco1": "Para coisas que vão acontecer logo e estão planejadas, use o presente do indicativo com um marcador de futuro. 'Domani vado a Roma' (Amanhã vou a Roma - presente).",
+      "bloco2": "Você não precisa dizer 'io andrò' (eu irei). A palavra 'Domani' já empurra a ação do presente ('vado') para o futuro de forma elegante e 100% natural na fala diária.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "OUTROS MARCADORES",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "'Stasera mangio una pizza' (Esta noite eu como uma pizza). 'L'anno prossimo compro una macchina' (O ano que vem eu compro um carro).",
+      "bloco2": "As expressões 'fra due giorni' (daqui a dois dias), 'più tardi' (mais tarde), ou 'stasera' ancoram o verbo presente no futuro perfeitamente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "O FUTURO REAL",
+      "headline_capa": null,
+      "headline_interna": "Quando conjugar no futuro?",
+      "bloco1": "A conjugação real do Futuro Simples (andrò, farò, sarò) entra quando você está fazendo previsões, promessas distantes ou hipóteses incertas.",
+      "bloco2": "'Un giorno vivrò in Italia' (Um dia viverei na Itália). Aqui é uma aspiração distante, não um plano da semana que vem. O futuro gramatical soa solene ou distante.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "HIPÓTESES E INCERTEZAS",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Curiosidade: os italianos usam o futuro muito para expressar dúvida no presente. A campainha toca. Você diz: 'Chi sarà?' (Quem será?).",
+      "bloco2": "Não é uma pergunta sobre amanhã. É uma dúvida sobre agora. 'Sarà Marco' (Deve ser o Marco). Uma característica muito sutil e avançada do idioma.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Planeje a sua semana",
+      "bloco1": "Escreva seus planos da semana usando apenas o verbo no presente e uma palavra de tempo. 'Sabato lavoro' (Sábado trabalho). 'Domenica riposo' (Domingo descanso).",
+      "bloco2": "Aceite que não há um verbo 'ir' auxiliando (como o nosso 'vou trabalhar'). O verbo principal abraça o plano sozinho. É economia de esforço mental e vocal.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Saber que você pode se comunicar nos três tempos (passado, presente, futuro) usando basicamente as conjugações que aprende na primeira semana reduz sua ansiedade pela metade.",
+      "bloco2": "O italiano cotidiano ama a simplicidade. Se você se apoiar nas âncoras de tempo, a sua fluência em descrever os próximos passos da viagem será imediata.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer as regras práticas e listas das palavras que expressam o futuro e tempo?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com guias práticos de tempo, marcadores para o presente + como usar o futuro simples"
+    }
+  ]
+}

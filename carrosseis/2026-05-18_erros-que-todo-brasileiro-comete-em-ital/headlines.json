@@ -1,0 +1,57 @@
+{
+  "triagem_resumo": "O gap entre o italiano da sala de aula e o italiano da rua expõe que o brasileiro aprende estrutura gramatical mas não os mecanismos fonéticos que nativos usam automaticamente",
+  "eixo": "Cultura",
+  "funil": "Topo",
+  "headlines": [
+    {
+      "numero": 1,
+      "texto": "O Italiano que o Brasil Ensina: Por que 30 Milhões de Descendentes Chegam à Itália e Não Entendem Nada",
+      "gatilhos": "Identidade · Curiosidade"
+    },
+    {
+      "numero": 2,
+      "texto": "A Morte do Italiano de Sala de Aula: Como a Fonética que os Brasileiros Nunca Aprenderam Separa Quem Fala de Quem Só Estuda",
+      "gatilhos": "Medo · Indignação"
+    },
+    {
+      "numero": 3,
+      "texto": "O Alfabeto com 21 Letras e o Erro Que Nenhum Curso Corrige: A Regra do 'ch' Que Derruba o Brasileiro na Primeira Conversa com um Nativo",
+      "gatilhos": "Curiosidade · Medo"
+    },
+    {
+      "numero": 4,
+      "texto": "A Contradição do Descendente Italiano: O País com 30 Milhões de Pessoas com Ascendência Italiana Forma Falantes Que os Italianos Não Entendem",
+      "gatilhos": "Identidade · Indignação"
+    },
+    {
+      "numero": 5,
+      "texto": "O Quarto Idioma Mais Estudado no Mundo e o Método Que Garante o Fracasso: Por Que o Italiano Ensinado no Brasil Prioriza Gramática e Ignora o Único Detalhe Que Importa na Rua",
+      "gatilhos": "Indignação · Curiosidade"
+    },
+    {
+      "numero": 6,
+      "texto": "A Accademia della Crusca documenta 21 letras no alfabeto italiano. O brasileiro aprende as 26 do português e aplica a mesma lógica fonética. O resultado é uma pronúncia que os nativos identificam como estrangeira antes da segunda frase.",
+      "gatilhos": "Curiosidade · Medo"
+    },
+    {
+      "numero": 7,
+      "texto": "O 'ch' em italiano soa como /k/, não como /x/. Quem aprendeu português aplica o som errado por reflexo. A sala de aula nunca corrigiu esse reflexo porque priorizou conjugação.",
+      "gatilhos": "Indignação · Curiosidade"
+    },
+    {
+      "numero": 8,
+      "texto": "Trinta milhões de brasileiros têm ascendência italiana segundo o IBGE. A maioria que tenta aprender o idioma abandona antes de chegar à Itália. O que os separa não é vocabulário — é a fonética que o método padrão descartou.",
+      "gatilhos": "Identidade · Medo"
+    },
+    {
+      "numero": 9,
+      "texto": "O microconteúdo de choque cultural desbancou a gramática nos cursos de italiano mais acessados do Brasil. Não foi tendência — foi diagnóstico. O que viraliza revela o que o método tradicional ignorou por décadas.",
+      "gatilhos": "Curiosidade · Indignação"
+    },
+    {
+      "numero": 10,
+      "texto": "'Scienza' se pronuncia 'shênza'. Nenhum curso padrão no Brasil ensina isso antes do intermediário. Quem descobre na Itália entende, naquele momento, por que estudou anos sem conseguir se comunicar.",
+      "gatilhos": "Medo · Identidade"
+    }
+  ]
+}

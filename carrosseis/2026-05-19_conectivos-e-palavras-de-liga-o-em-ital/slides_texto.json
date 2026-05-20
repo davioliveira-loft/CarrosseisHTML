@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "AS PALAVRINHAS QUE COLAM O ITALIANO: CONECTIVOS PARA SAIR DO BÁSICO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você consegue dizer frases simples em italiano. '<strong>Mi piace la pizza</strong>.' '<strong>Non mi piace il pesce</strong>.' Mas quando tenta  conectar as duas ideias — 'gosto de pizza, mas não gosto de peixe' — a frase não sai. O '<strong>ma</strong>' existe? Como se usa?",
+      "bloco2": "Conectivos são as palavras que transformam frases isoladas em discurso real. Eles aparecem em toda conversa, em toda história, em todo  argumento. Com um pequeno conjunto deles, seu italiano salta do telegráfico para o fluido.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "BÁSICOS",
+      "headline_capa": null,
+      "headline_interna": "E, ma, o, anche — os quatro pilares",
+      "bloco1": "<strong>E</strong> (e), <strong>ma</strong> (mas), <strong>o</strong> (ou), <strong>anche</strong> (também). '<strong>Parlo italiano e  spagnolo</strong>' (falo italiano e espanhol). '<strong>Mi piace la pasta, ma non mangio carne</strong>' (gosto de macarrão, mas não como carne). '<strong>Vuoi  caffè o tè?</strong>' (quer café ou chá?).",
+      "bloco2": "'<strong>Anche io</strong>' (eu também) é uma das expressões mais usadas em conversas — reage a qualquer afirmação positiva concordando.  '<strong>Anche tu parli italiano?</strong>' (você também fala italiano?). Simples e indispensável. O equivalente negativo é '<strong>neanche io</strong>' (eu  também não).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "CAUSA E CONCLUSÃO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Perché</strong> (porque — como conjunção de causa), <strong>quindi</strong> (portanto, então — conclusão lógica),  <strong>allora</strong> (então — retomada ou conclusão). '<strong>Non vengo perché sono stanco</strong>' (não vou porque estou cansado). '<strong>Piove,  quindi resto a casa</strong>' (está chovendo, portanto fico em casa).",
+      "bloco2": "'<strong>Allora</strong>' é especialmente rico: pode introduzir uma conclusão ('<strong>allora, andiamo?</strong>' — então, vamos?), retomar  uma conversa ('<strong>allora, come stai?</strong>' — então, como você está?), ou preencher uma pausa natural na fala — exatamente como o brasileiro usa  'então' no começo de uma resposta.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "CONTRASTE E ADIÇÃO",
+      "headline_capa": null,
+      "headline_interna": "'Però', 'invece', 'inoltre' — para matizar e expandir",
+      "bloco1": "<strong>Però</strong> (mas, porém — mais enfático que <strong>ma</strong>): '<strong>È caro, però è buonissimo</strong>' (é caro, mas é  delicioso). <strong>Invece</strong> (ao invés, já — contraste): '<strong>Io prendo il caffè, lei invece prende il tè</strong>' (eu tomo café, ela já toma chá).",
+      "bloco2": "<strong>Inoltre</strong> (além disso), <strong>comunque</strong> (de qualquer forma, de qualquer jeito), <strong>tuttavia</strong> (no entanto  — mais formal). '<strong>Comunque, ci vediamo domani</strong>' (de qualquer forma, nos vemos amanhã) — <strong>comunque</strong> é uma das palavras  mais versáteis do italiano coloquial, usada para retomar, concluir ou suavizar.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "TEMPO E SEQUÊNCIA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Prima</strong> (primeiro, antes), <strong>poi</strong> (depois, então), <strong>dopo</strong> (depois — de um evento específico),  <strong>infine</strong> (por fim, finalmente). '<strong>Prima faccio colazione, poi vado a lavorare</strong>' (primeiro tomo café, depois vou trabalhar).",
+      "bloco2": "'<strong>Intanto</strong>' (enquanto isso, por enquanto) é muito usado na fala cotidiana: '<strong>intanto, aspettiamo</strong>' (enquanto isso,  esperamos). '<strong>Nel frattempo</strong>' (no meio tempo, nesse interim) é uma versão mais formal do mesmo significado — aparece muito em textos e  notícias.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Conecte frases que você já sabe",
+      "bloco1": "Pegue cinco pares de frases em italiano que você já sabe dizer e conecte-as com diferentes conectivos. '<strong>Parlo italiano. Studio ogni  giorno</strong>' → '<strong>Parlo italiano perché studio ogni giorno</strong>' ou '<strong>Studio ogni giorno, quindi parlo italiano</strong>'.",
+      "bloco2": "Brincar com os conectivos num mesmo par de frases mostra como cada um muda a relação lógica entre as ideias — e treina o ouvido para  perceber essas nuances quando você ouvi-las em filmes, séries ou conversas reais.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Conectivos são pequenos, mas são responsáveis por grande parte da fluidez de um idioma. Sem eles, você fala em rajadas de frases soltas. Com  eles, você constrói argumentos, conta histórias, expressa contradições.",
+      "bloco2": "E a boa notícia é que muitos desses conectivos já existem em formas parecidas no português. <strong>Ma, e, o, anche</strong> — seu cérebro  já tem a lógica. Só precisa aprender a palavra italiana que veste essa lógica.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um guia com as estruturas de frase e conectivos mais usados no italiano?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com conectivos, marcadores de discurso e estruturas de conversa + exemplos em contexto"
+    }
+  ]
+}

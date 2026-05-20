@@ -1,0 +1,73 @@
+{
+  "carrosseis": [
+    {
+      "ideia": "Erros que todo brasileiro comete em italiano",
+      "headline": "Você Pede 'Pizza Margherita' e o Garçom Sorri: O Som do 'gh' que Nenhuma Aula Brasileira Ensina",
+      "slides": [
+        {
+          "numero": 1,
+          "tipo": "capa",
+          "headline_capa": "VOCÊ PEDE 'PIZZA MARGHERITA' E O GARÇOM SORRI: O SOM DO 'GH' QUE NENHUMA AULA BRASILEIRA ENSINA"
+        },
+        {
+          "numero": 2,
+          "tipo": "dark",
+          "tag": "O DETALHE ESCONDIDO",
+          "bloco1": "Você chega numa pizzaria em Roma confiante. Pede '<strong>margherita</strong>' do jeito que aprendeu. O garçom sorri — entendeu, mas marcou: você é estrangeiro.",
+          "bloco2": "O 'gh' italiano não soa como 'gui'. É um <strong>g duro puro</strong>, como em 'guerra' — sem o 'i' colado. A diferença é mínima, mas presente em centenas de palavras."
+        },
+        {
+          "numero": 3,
+          "tipo": "light",
+          "tag": "COMO FUNCIONA",
+          "headline_interna": "A regra do GH",
+          "bloco1": "Antes de 'e' ou 'i', o italiano usa 'gh' para preservar o som duro do 'g'. Sem ele, viraria 'j' ou 'dj' (como em 'gelato').",
+          "bloco2": "Exemplos: <strong>spaghetti</strong> (não 'spadjeti'), <strong>funghi</strong> (não 'fundji'), <strong>ghiaccio</strong> (gelo)."
+        },
+        {
+          "numero": 4,
+          "tipo": "dark",
+          "tag": "POR QUE NINGUÉM ENSINA",
+          "bloco1": "Métodos tradicionais focam em <strong>conjugação verbal</strong> nas primeiras 20 aulas. Fonética entra no nível intermediário — quando o sotaque já está cristalizado.",
+          "bloco2": "Resultado: estudantes saem fluentes em gramática e travados na primeira conversa real."
+        },
+        {
+          "numero": 5,
+          "tipo": "light",
+          "tag": "DADOS",
+          "bloco1": "Pesquisas de aquisição fonológica mostram que <strong>os primeiros 30 dias</strong> de exposição definem a base de pronúncia.",
+          "bloco2": "Depois disso, cada som novo exige 5x mais repetições para fixar."
+        },
+        {
+          "numero": 6,
+          "tipo": "dark",
+          "tag": "OUTROS SONS PERIGOSOS",
+          "bloco1": "<strong>'sc' antes de e/i</strong> vira 'sh' (sciare = shiare). <strong>'gn'</strong> vira 'nh' (gnocchi = nhoqui). <strong>'gli'</strong> vira 'lhi' (figlio = filhio).",
+          "bloco2": "Três regras, dezenas de palavras do cardápio. Saber isso muda a primeira semana inteira."
+        },
+        {
+          "numero": 7,
+          "tipo": "light",
+          "tag": "COMO TREINAR",
+          "headline_interna": "Atalho de 5 minutos por dia",
+          "bloco1": "Pegue uma <strong>lista de pratos italianos</strong> (são 50). Pronuncie cada um em voz alta, gravando.",
+          "bloco2": "Compare com áudios de nativos no Forvo. Em duas semanas, sua boca aprende o reflexo."
+        },
+        {
+          "numero": 8,
+          "tipo": "grad",
+          "bloco1": "Quem corrige a pronúncia <strong>antes</strong> de aprender vocabulário fica fluente em metade do tempo.",
+          "bloco2": "É o caminho mais curto que ninguém vende — porque não dá pra empacotar em 12 módulos."
+        },
+        {
+          "numero": 9,
+          "tipo": "cta",
+          "frase_ponte": "Quer o guia completo de sons italianos que travam o brasileiro?",
+          "cta_headline": "BAIXE O GUIA",
+          "cta_keyword": "GUIA",
+          "cta_beneficio": "PDF com 30 palavras-chave e áudios"
+        }
+      ]
+    }
+  ]
+}

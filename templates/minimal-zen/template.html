@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @{{ handle }}</title>
+<style>
+{{ font_face_css }}
+
+:root {
+  --P:      {{ paleta.P }};
+  --PL:     {{ paleta.PL }};
+  --PD:     {{ paleta.PD }};
+  --YELLOW: {{ paleta.ACCENT }};
+  --PAPER:  {{ paleta.LB }};
+  --PAPER2: {{ paleta.LR }};
+  --INK:    {{ paleta.DB }};
+  --G:      {{ paleta.G }};
+  --F-HEAD: '{{ paleta.F_HEAD }}', system-ui, sans-serif;
+  --F-BODY: '{{ paleta.F_BODY }}', system-ui, sans-serif;
+  --F-MONO: ui-monospace, 'SF Mono', 'JetBrains Mono', Consolas, monospace;
+  --HAIR: color-mix(in srgb, var(--INK) 14%, transparent);
+  --MUTED: color-mix(in srgb, var(--INK) 55%, transparent);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #18171a; font-family: var(--F-BODY); }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #0e0d10; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 20px; font-size: 13px;
+  font-weight: 500; cursor: pointer; letter-spacing: 1px;
+  font-family: var(--F-MONO);
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; font-family: var(--F-MONO); }
+
+.slides-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 32px 24px; }
+.slides-wrap.preview { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+  background: var(--PAPER);
+  color: var(--INK);
+  font-family: var(--F-BODY);
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28); transform-origin: top left;
+  margin-bottom: -972px; margin-right: -777px;
+}
+
+/* ── HEADER MINIMAL ── */
+.zen-head {
+  position: absolute; top: 60px; left: 80px; right: 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 10;
+  font-family: var(--F-MONO); font-size: 13px;
+  letter-spacing: 0.5px;
+  color: var(--MUTED);
+}
+.zen-head .lhs { display: flex; align-items: center; gap: 14px; }
+.zen-head .dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--YELLOW);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--YELLOW) 25%, transparent);
+}
+.zen-head .pgnum { color: var(--INK); font-weight: 600; }
+
+/* ── FOOTER MINIMAL ── */
+.zen-foot {
+  position: absolute; bottom: 60px; left: 80px; right: 80px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 10;
+  font-family: var(--F-MONO); font-size: 12px;
+  color: var(--MUTED); letter-spacing: 0.5px;
+}
+.zen-foot .progress {
+  flex: 1; height: 1px; background: var(--HAIR);
+  margin: 0 24px; position: relative;
+}
+.zen-foot .progress::after {
+  content: ''; position: absolute; left: 0; top: -1px; height: 3px;
+  background: var(--YELLOW); width: var(--w, 0%);
+}
+
+/* ── CONTEÚDO BASE ── */
+.zen-content {
+  position: absolute;
+  top: 200px; left: 80px; right: 80px; bottom: 160px;
+  display: flex; flex-direction: column; justify-content: center;
+  z-index: 5;
+}
+
+.zen-num {
+  font-family: var(--F-MONO);
+  font-size: 13px; color: var(--MUTED);
+  margin-bottom: 36px; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 14px;
+}
+.zen-num::before {
+  content: ''; width: 28px; height: 3px; background: var(--YELLOW);
+}
+
+.zen-tag {
+  font-family: var(--F-MONO);
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--INK); font-weight: 600;
+  margin-bottom: 26px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 6px 12px 6px 10px;
+  background: color-mix(in srgb, var(--YELLOW) 22%, transparent);
+  border-left: 3px solid var(--YELLOW);
+  align-self: flex-start;
+}
+
+.zen-h1 {
+  font-family: var(--F-HEAD);
+  font-size: 76px; font-weight: 300; line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 44px; max-width: 880px;
+}
+.zen-h1 strong { font-weight: 700; }
+.zen-h1 em {
+  font-style: normal; color: var(--P); font-weight: 700;
+  background: linear-gradient(transparent 65%, color-mix(in srgb, var(--YELLOW) 50%, transparent) 65%);
+  padding: 0 4px;
+}
+
+.zen-body {
+  font-size: 26px; font-weight: 400; line-height: 1.6;
+  color: color-mix(in srgb, var(--INK) 75%, transparent);
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+.zen-body strong { color: var(--INK); font-weight: 700; background: color-mix(in srgb, var(--YELLOW) 32%, transparent); padding: 0 4px; }
+.zen-body em { font-style: italic; color: var(--P); font-weight: 600; }
+
+.zen-rule {
+  width: 60px; height: 3px;
+  background: var(--YELLOW); margin: 36px 0;
+}
+
+.zen-imgbox {
+  width: 100%; max-width: 700px;
+  height: 360px; margin: 0 0 32px;
+  overflow: hidden;
+  border: 1px solid var(--HAIR);
+}
+.zen-imgbox img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.2); }
+
+/* Slides escuros / grad */
+.slide-dark { background: var(--INK); color: var(--PAPER); }
+.slide-dark { --HAIR: color-mix(in srgb, var(--PAPER) 18%, transparent); --MUTED: color-mix(in srgb, var(--PAPER) 55%, transparent); }
+.slide-dark .zen-h1 em {
+  color: var(--YELLOW);
+  background: linear-gradient(transparent 65%, color-mix(in srgb, var(--YELLOW) 25%, transparent) 65%);
+}
+.slide-dark .zen-tag { color: var(--YELLOW); }
+.slide-dark .zen-rule { background: var(--YELLOW); }
+.slide-dark .zen-body { color: color-mix(in srgb, var(--PAPER) 70%, transparent); }
+.slide-dark .zen-body strong { color: var(--PAPER); }
+.slide-dark .zen-num::before { background: var(--YELLOW); }
+.slide-dark .zen-head .dot { background: var(--YELLOW); }
+.slide-dark .zen-head .pgnum { color: var(--PAPER); }
+.slide-dark .zen-foot .progress::after { background: var(--YELLOW); }
+
+.slide-grad { background: var(--P); color: var(--PAPER); }
+.slide-grad { --HAIR: color-mix(in srgb, var(--PAPER) 24%, transparent); --MUTED: color-mix(in srgb, var(--PAPER) 65%, transparent); }
+.slide-grad .zen-h1 em {
+  color: var(--YELLOW); background: none;
+  font-style: italic;
+}
+.slide-grad .zen-tag { color: var(--YELLOW); }
+.slide-grad .zen-rule { background: var(--YELLOW); }
+.slide-grad .zen-body { color: color-mix(in srgb, var(--PAPER) 80%, transparent); }
+.slide-grad .zen-body strong { color: var(--PAPER); }
+.slide-grad .zen-num::before { background: var(--YELLOW); }
+.slide-grad .zen-head .dot { background: var(--YELLOW); }
+.slide-grad .zen-head .pgnum { color: var(--PAPER); }
+.slide-grad .zen-foot .progress::after { background: var(--YELLOW); }
+
+/* ══════════════════════════════════════════════════
+   CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: var(--PAPER2); color: var(--INK); }
+.capa-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.4) brightness(0.95) contrast(1.05);
+  opacity: 0.85;
+}
+.capa-bg-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--PAPER) 50%, transparent);
+}
+.capa-content {
+  position: absolute; top: 200px; left: 80px; right: 80px; bottom: 160px;
+  display: flex; flex-direction: column; justify-content: center; z-index: 5;
+}
+.capa-meta {
+  font-family: var(--F-MONO);
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--MUTED); margin-bottom: 32px;
+}
+.capa-meta strong {
+  color: var(--INK); font-weight: 700;
+  background: color-mix(in srgb, var(--YELLOW) 35%, transparent);
+  padding: 2px 6px;
+}
+.capa-headline {
+  font-family: var(--F-HEAD);
+  font-weight: 300; color: var(--INK);
+  letter-spacing: -2.5px; line-height: 1.0;
+}
+.capa-headline.len-xl { font-size: 116px; }
+.capa-headline.len-lg { font-size: 100px; }
+.capa-headline.len-md { font-size: 84px;  }
+.capa-headline.len-sm { font-size: 70px;  line-height: 1.04; }
+.capa-headline.len-xs { font-size: 58px;  line-height: 1.08; }
+.capa-headline strong { font-weight: 700; }
+.capa-headline em {
+  font-style: normal; color: var(--P); font-weight: 700;
+  background: linear-gradient(transparent 70%, color-mix(in srgb, var(--YELLOW) 60%, transparent) 70%);
+  padding: 0 6px;
+}
+.capa-foot-meta {
+  margin-top: 60px;
+  font-family: var(--F-MONO);
+  font-size: 13px; letter-spacing: 1.5px;
+  color: var(--MUTED);
+  display: flex; gap: 36px;
+}
+.capa-foot-meta .label { color: var(--INK); font-weight: 600; }
+
+/* Slides com imagem de fundo (dark/light) */
+.slide-img-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: grayscale(0.5) brightness(0.45);
+}
+.slide-img-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--INK) 60%, transparent);
+}
+
+/* ══════════════════════════════════════════════════
+   CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--PAPER); }
+.cta-content {
+  position: absolute; top: 200px; left: 80px; right: 80px; bottom: 160px;
+  display: flex; flex-direction: column; justify-content: center; z-index: 5;
+}
+.cta-num {
+  font-family: var(--F-MONO);
+  font-size: 13px; color: var(--MUTED);
+  margin-bottom: 36px; letter-spacing: 1px;
+}
+.cta-bridge {
+  font-family: var(--F-HEAD);
+  font-size: 30px; font-weight: 300; line-height: 1.45;
+  color: var(--INK); margin-bottom: 32px;
+  max-width: 760px;
+}
+.cta-bridge strong { font-weight: 600; color: var(--P); }
+.cta-headline {
+  font-family: var(--F-HEAD);
+  font-size: 88px; font-weight: 300;
+  color: var(--INK); margin-bottom: 56px;
+  letter-spacing: -2.5px; line-height: 0.98;
+  max-width: 880px;
+}
+.cta-headline strong { font-weight: 700; color: var(--P); }
+.cta-kbox {
+  padding: 36px 0;
+  border-top: 1px solid var(--HAIR);
+  border-bottom: 1px solid var(--HAIR);
+  max-width: 720px;
+  display: flex; align-items: baseline; gap: 36px;
+}
+.cta-kinstr {
+  font-family: var(--F-MONO);
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--MUTED); flex: 0 0 auto;
+  padding-top: 18px;
+}
+.cta-kmid { flex: 1; }
+.cta-kword {
+  font-family: var(--F-HEAD);
+  font-size: 72px; font-weight: 700;
+  color: var(--P); letter-spacing: -1px;
+  line-height: 1.0; margin-bottom: 10px;
+  display: inline-block; border-bottom: 3px solid var(--YELLOW); padding-bottom: 4px;
+}
+.cta-kbenefit {
+  font-size: 16px;
+  color: var(--MUTED);
+}
+.cta-foot-meta {
+  margin-top: 48px;
+  font-family: var(--F-MONO);
+  font-size: 12px; letter-spacing: 1.5px;
+  color: var(--MUTED);
+}
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT
+══════════════════════════════════════════════════ */
+
+/* V2 — VERTICAL RULE: barra vertical fina à esquerda, conteúdo indentado */
+[data-v="2"] .zen-content {
+  padding-left: 56px;
+  border-left: 3px solid var(--YELLOW);
+}
+[data-v="2"] .zen-num::before { display: none; }
+[data-v="2"] .zen-num { padding-left: 0; }
+[data-v="2"] .zen-h1 { font-size: 64px; }
+[data-v="2"] .zen-rule { display: none; }
+[data-v="2"].slide-capa .capa-content {
+  padding-left: 56px; border-left: 3px solid var(--YELLOW);
+}
+[data-v="2"].slide-capa .capa-headline { font-size: 88px; }
+[data-v="2"].slide-cta .cta-content {
+  padding-left: 56px; border-left: 3px solid var(--YELLOW);
+}
+[data-v="2"].slide-dark .zen-content,
+[data-v="2"].slide-grad .zen-content { border-left-color: var(--YELLOW); }
+
+/* V3 — CENTRO + ESPAÇO: tudo centralizado, espaçamento amplo */
+[data-v="3"] .zen-content {
+  align-items: center; text-align: center;
+  top: 240px; bottom: 200px;
+}
+[data-v="3"] .zen-h1 {
+  max-width: 720px; font-size: 62px;
+  text-align: center;
+}
+[data-v="3"] .zen-body {
+  text-align: center; max-width: 620px;
+  margin-left: auto; margin-right: auto;
+}
+[data-v="3"] .zen-num {
+  margin: 0 auto 36px;
+}
+[data-v="3"] .zen-num::before { display: none; }
+[data-v="3"] .zen-num::after {
+  content: ''; width: 28px; height: 3px; background: var(--YELLOW);
+}
+[data-v="3"] .zen-tag { text-align: center; }
+[data-v="3"] .zen-rule { margin: 36px auto; }
+[data-v="3"] .zen-imgbox { margin: 0 auto 32px; }
+[data-v="3"].slide-dark .zen-num::after,
+[data-v="3"].slide-grad .zen-num::after { background: var(--YELLOW); }
+[data-v="3"].slide-capa .capa-content {
+  align-items: center; text-align: center;
+}
+[data-v="3"].slide-capa .capa-headline { text-align: center; max-width: 880px; }
+[data-v="3"].slide-capa .capa-foot-meta { justify-content: center; }
+[data-v="3"].slide-cta .cta-content {
+  align-items: center; text-align: center;
+}
+[data-v="3"].slide-cta .cta-headline { text-align: center; }
+[data-v="3"].slide-cta .cta-kbox { margin: 0 auto; }
+[data-v="3"].slide-cta .cta-bridge { margin: 0 auto 32px; text-align: center; }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">{{ template_nome }}</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+{% macro head(slide) %}
+<div class="zen-head">
+  <div class="lhs">
+    <span class="dot"></span>
+    <span>@{{ handle }}</span>
+  </div>
+  <div class="pgnum">{{ '%02d'|format(slide.numero) }} / {{ '%02d'|format(total_slides) }}</div>
+</div>
+{% endmacro %}
+
+{% macro foot(slide) %}
+<div class="zen-foot">
+  <span>{{ '%02d'|format(slide.numero) }}</span>
+  <div class="progress" style="--w: {{ (slide.numero / total_slides * 100)|int }}%;"></div>
+  <span>{{ '%02d'|format(total_slides) }}</span>
+</div>
+{% endmacro %}
+
+{% for slide in slides %}
+
+  {% if slide.tipo == 'capa' %}
+  <div class="slide slide-capa" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.imagem_base64 %}<div class="capa-bg-img" style="background-image: url('{{ slide.imagem_base64 }}');"></div>{% endif %}
+    {{ head(slide) }}
+    <div class="capa-content">
+      <div class="capa-meta">Carrossel <strong>nº {{ '%03d'|format(slide.numero) }}</strong> · @{{ handle }}</div>
+      {% set _hlen = (slide.headline_capa | striptags | length) if slide.headline_capa else 0 %}
+      {% if _hlen < 40 %}{% set _hsize = 'len-xl' %}
+      {% elif _hlen < 70 %}{% set _hsize = 'len-lg' %}
+      {% elif _hlen < 100 %}{% set _hsize = 'len-md' %}
+      {% elif _hlen < 130 %}{% set _hsize = 'len-sm' %}
+      {% else %}{% set _hsize = 'len-xs' %}{% endif %}
+      <div class="capa-headline {{ _hsize }}">{{ slide.headline_capa | safe if slide.headline_capa else '' }}</div>
+      <div class="capa-foot-meta">
+        <span><span class="label">Total</span> · {{ total_slides }} slides</span>
+        <span><span class="label">Lê em</span> · {{ (total_slides * 12)|int }}s</span>
+      </div>
+    </div>
+    {{ foot(slide) }}
+  </div>
+
+  {% elif slide.tipo in ['dark', 'light'] %}
+  <div class="slide slide-{{ slide.tipo }}" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.tipo_imagem == 'background-overlay' and slide.imagem_base64 %}
+      <div class="slide-img-bg" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% endif %}
+    {{ head(slide) }}
+    <div class="zen-content">
+      <div class="zen-num">{{ '%03d'|format(slide.numero) }} {% if slide.tag %}— {{ slide.tag }}{% endif %}</div>
+      {% if slide.headline_interna %}<div class="zen-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.tipo_imagem == 'img-box' and slide.imagem_base64 %}
+        <div class="zen-imgbox"><img src="{{ slide.imagem_base64 }}" alt=""></div>
+      {% endif %}
+      {% if slide.bloco1 %}<div class="zen-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="zen-rule"></div><div class="zen-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ foot(slide) }}
+  </div>
+
+  {% elif slide.tipo == 'grad' %}
+  <div class="slide slide-grad" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ head(slide) }}
+    <div class="zen-content">
+      <div class="zen-num">{{ '%03d'|format(slide.numero) }} — em síntese</div>
+      {% if slide.headline_interna %}<div class="zen-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.bloco1 %}<div class="zen-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="zen-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+    {{ foot(slide) }}
+  </div>
+
+  {% elif slide.tipo == 'cta' %}
+  <div class="slide slide-cta" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ head(slide) }}
+    <div class="cta-content">
+      <div class="cta-num">{{ '%03d'|format(slide.numero) }} — call to action</div>
+      {% if slide.frase_ponte %}<div class="cta-bridge">{{ slide.frase_ponte | safe }}</div>{% endif %}
+      {% if slide.cta_headline %}<div class="cta-headline">{{ slide.cta_headline | safe }}</div>{% endif %}
+      <div class="cta-kbox">
+        <div class="cta-kinstr">Comenta<br>abaixo</div>
+        <div class="cta-kmid">
+          <div class="cta-kword">{{ slide.cta_keyword or 'GUIA' }}</div>
+          <div class="cta-kbenefit">{{ slide.cta_beneficio or 'e recebe o material direto na DM' }}</div>
+        </div>
+      </div>
+      <div class="cta-foot-meta">@{{ handle }} · resposta automática via direct</div>
+    </div>
+    {{ foot(slide) }}
+  </div>
+
+  {% endif %}
+{% endfor %}
+
+</div>
+
+<script>
+function toggleView() {
+  var wrap = document.getElementById('slides-wrap');
+  var label = document.getElementById('view-label');
+  wrap.classList.toggle('preview');
+  label.textContent = wrap.classList.contains('preview') ? 'Modo: Preview lado a lado' : 'Modo: Tamanho real (1080×1350)';
+}
+</script>
+</body>
+</html>

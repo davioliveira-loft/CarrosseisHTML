@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "O 'BICHO-PAPÃO' DA GRAMÁTICA ITALIANA: COMO USAR O CONGIUNTIVO (E POR QUE ELE IMPORTA)",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você está numa mesa e diz com segurança: 'Penso che Marco è intelligente'. Ninguém te corrige, mas um nativo diria 'Penso che Marco SIA intelligente'.",
+      "bloco2": "O Congiuntivo (subjuntivo) é o terror de quem estuda italiano, mas ignorá-lo marca seu sotaque como 'aluno eterno'. Entender o gatilho dele, porém, é bem lógico.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "CERTEZA VS DÚVIDA",
+      "headline_capa": null,
+      "headline_interna": "O reino da subjetividade",
+      "bloco1": "O Indicativo (que você já usa) descreve certezas: 'Marco è intelligente'. O Congiuntivo descreve dúvida, esperança, emoção ou opinião pessoal.",
+      "bloco2": "Se a frase começa com uma opinião ('eu acho', 'eu acredito', 'eu espero'), tudo que vem DEPOIS dessa opinião na frase tem que usar a roupagem do Congiuntivo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "OS GATILHOS CLÁSSICOS",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O Congiuntivo nunca vem do nada. Ele sempre é acionado por verbos ou estruturas gatilho: 'Penso che...' (Acho que), 'Credo che...' (Acredito que), 'Spero che...' (Espero que).",
+      "bloco2": "O gatilho quebra a certeza do mundo real e te joga no mundo da subjetividade. E o 'che' (que) é a porta de entrada.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "O VERBO ESSERE",
+      "headline_capa": null,
+      "headline_interna": "O subjuntivo que você mais vai usar",
+      "bloco1": "O verbo essere muda de 'è' para 'sia'. E surpreendentemente, para as 3 primeiras pessoas do singular, a conjugação é a mesma: 'che io sia, che tu sia, che lui/lei sia'.",
+      "bloco2": "Dica prática: 'Spero che tu sia felice' (Espero que você seja feliz). 'Credo che sia vero' (Acredito que seja verdade). Esse verbo resolve metade dos casos cotidianos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "A ELEGÂNCIA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Muitos italianos, especialmente mais jovens, fogem do congiuntivo e erram. Usá-lo corretamente dá à sua fala uma aura de elegância e erudição que impressiona nativos.",
+      "bloco2": "Dizer 'Voglio che tu venga' (Quero que você venha - congiuntivo de venire) no lugar do errado 'voglio che tu vieni' mostra que você domina as engrenagens finas da língua.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Decore as expressões fixas",
+      "bloco1": "Não memorize tabelas de conjugação no início. Memorize frases de bolso: 'Penso che sia...', 'Spero che vada tutto bene', 'Bisogna che io vada'.",
+      "bloco2": "Lançar essas três ou quatro estruturas prontas numa conversa demonstra nível avançado, enquanto você ganha tempo para aprender o resto com calma.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O congiuntivo assusta, mas é a diferença linguística entre narrar os fatos como um robô e expressar seus sentimentos como um ser humano.",
+      "bloco2": "Dominar os dois verbos principais (essere e avere) no Congiuntivo já te coloca no topo 10% de quem aprende italiano como segunda língua.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer desmistificar o congiuntivo de uma vez por todas com macetes práticos?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF: O atalho para o Congiuntivo + lista dos gatilhos verbais + frases prontas nativas"
+    }
+  ]
+}

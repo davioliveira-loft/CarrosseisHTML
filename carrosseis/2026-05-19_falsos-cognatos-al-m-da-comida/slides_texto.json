@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "O ITALIANO É PARECIDO COM O PORTUGUÊS, ATÉ VOCÊ PRECISAR 'TIRAR UMA DÚVIDA' (E OFENDER ALGUÉM)",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você está numa loja, o vendedor tenta te explicar como a máquina de café funciona e você quer dizer 'Quero tirar uma dúvida'. Você diz: 'Voglio tirare un dubbio'. Ele te olha assustado.",
+      "bloco2": "O verbo 'tirare' existe em italiano, mas significa arremessar, puxar violentamente ou atirar. Você basicamente disse 'quero arremessar uma dúvida'. Falsos amigos de ação são as maiores pegadinhas.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "PREGO",
+      "headline_capa": null,
+      "headline_interna": "Não é martelo nem ferro",
+      "bloco1": "Se você pisar no pé de alguém e pedir 'scusa', a pessoa pode dizer 'prego'. Se perguntar se pode sentar, dizem 'prego'. Se entregar dinheiro, o caixa diz 'prego'.",
+      "bloco2": "Prego é a palavra mais versátil do italiano: significa 'de nada', 'por favor (sente-se, passe)', 'à vontade'. Mas 'prego' (o objeto de metal para madeira) em italiano se chama 'chiodo'.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "ASSINATURA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "No trabalho, o italiano pede a sua 'firma' no documento. E você diz o nome da sua empresa (sua firma)?",
+      "bloco2": "Em italiano, 'la firma' é a assinatura. Para falar da sua empresa ou firma, eles dizem 'l'azienda' ou 'la ditta'.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "OFICINA E LABORATÓRIO",
+      "headline_capa": null,
+      "headline_interna": "Onde consertar o carro?",
+      "bloco1": "Seu carro alugado quebra na Toscana. Você procura uma 'oficina'. Se você achar um 'ufficio', vai encontrar um escritório de contabilidade ou despachante.",
+      "bloco2": "Para consertar o carro, você precisa de uma 'officina' (mecânica). E se você vai a um curso prático de pintura, você vai a um 'laboratorio', não uma oficina de artes.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "SALIR E PARTIR",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você pega o elevador e aperta o botão para ir para cima. O visor indica 'Sale'. Sair? Não, subir. O verbo salire significa subir.",
+      "bloco2": "Se quiser sair, o verbo é uscire. E se você quiser ir embora numa viagem, o verbo é partire. Confundir sair/subir/partir é um clássico latino na Itália.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Post-it mental e contexto",
+      "bloco1": "Falso cognato não se decora em lista cega, se decora em frases de alerta. Anote: 'Uscire para rua, salire a escada, firmare o papel'.",
+      "bloco2": "Criar imagens absurdas (como você atirando uma dúvida com a mão) faz o cérebro registrar a diferença permanentemente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "As armadilhas linguísticas são a parte mais divertida de aprender um idioma tão próximo do nosso. Cada falso cognato é uma micro-história cultural.",
+      "bloco2": "Quando você ajusta esses dez ou quinze verbos e palavras enganosas, seu italiano imediatamente parece mais 'limpo' para o nativo, sem as interferências do português.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer evitar esses constrangimentos e saber exatamente o que falar?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com top 50 falsos cognatos em situações reais + áudios e testes"
+    }
+  ]
+}

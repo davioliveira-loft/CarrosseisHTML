@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "TRANSPORTE EM ITALIANO: AS PALAVRAS QUE VOCÊ PRECISA PARA NÃO PERDER O TREM",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você chega na Stazione Termini em Roma com uma mala e um horário apertado. O painel mostra '<strong>binario 12, partenza 14:47, in  orario</strong>'. Você entende '<strong>partenza</strong>' (partida) e '<strong>in orario</strong>' (no horário). Mas o que é '<strong>binario</strong>'? É a  plataforma — e você tem três minutos.",
+      "bloco2": "Trens, metrôs e ônibus são o cotidiano de quem está na Itália — seja como turista ou como estudante. Conhecer o vocabulário de transporte evita  atrasos, confusão e situações de pânico completamente evitáveis.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "ESTAÇÃO E TREM",
+      "headline_capa": null,
+      "headline_interna": "Dalla stazione al binario — os termos essenciais",
+      "bloco1": "<strong>La stazione</strong> (a estação), <strong>il binario</strong> (a plataforma/via), <strong>il treno</strong> (o trem), <strong>il  biglietto</strong> (o bilhete/passagem), <strong>la partenza</strong> (a partida), <strong>l'arrivo</strong> (a chegada), <strong>il ritardo</strong> (o atraso),  <strong>la coincidenza</strong> (a conexão/baldeação).",
+      "bloco2": "'<strong>Devo fare la coincidenza a Firenze</strong>' (preciso fazer conexão em Florença). '<strong>Il treno è in ritardo di venti minuti</strong>'  (o trem está 20 minutos atrasado). '<strong>Devo timbrare il biglietto?</strong>' (preciso validar o bilhete?) — importantíssimo para trens regionais italianos.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "METRÔ E ÔNIBUS",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>La metropolitana / il metro</strong> (o metrô), <strong>l'autobus / il bus</strong> (o ônibus), <strong>la fermata</strong> (a parada),  <strong>la linea</strong> (a linha), <strong>il capolinea</strong> (o terminal final da linha), <strong>la direzione</strong> (a direção/sentido).",
+      "bloco2": "'<strong>Questa è la fermata giusta?</strong>' (essa é a parada certa?). '<strong>Devo scendere alla prossima fermata?</strong>' (preciso  descer na próxima parada?). '<strong>Quante fermate mancano?</strong>' (quantas paradas faltam?). Essas três perguntas resolvem qualquer dúvida num  trajeto desconhecido.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "TÁXI E OUTROS",
+      "headline_capa": null,
+      "headline_interna": "Taxi, noleggio e a pé — outras formas de se mover",
+      "bloco1": "'<strong>Mi chiami un taxi, per favore</strong>' (pode me chamar um táxi, por favor). '<strong>Quanto viene fino all'aeroporto?</strong>' (quanto  fica até o aeroporto?). '<strong>Noleggio auto</strong>' (aluguel de carro — <strong>noleggiare</strong> = alugar veículo). '<strong>Parcheggio</strong>'  (estacionamento).",
+      "bloco2": "'<strong>A piedi</strong>' (a pé) — e é a forma mais italiana de conhecer uma cidade. '<strong>In bicicletta</strong>' (de bicicleta). '<strong>In  motorino</strong>' (de motocicleta/scooter). Nas cidades italianas, o <strong>motorino</strong> é ubíquo e '<strong>andare in motorino</strong>' é uma  experiência cultural em si.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "FRECCIAROSSA E TRENITALIA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "O sistema ferroviário italiano tem dois operadores principais: <strong>Trenitalia</strong> e <strong>Italo</strong>. O trem de alta velocidade da  Trenitalia se chama <strong>Frecciarossa</strong> (flecha vermelha) — conecta as principais cidades em poucas horas. Existe também o  <strong>Frecciargento</strong> e <strong>Frecciabianca</strong> para rotas secundárias.",
+      "bloco2": "Para destinos regionais, use os trens '<strong>Regionale</strong>' — mais baratos, mais lentos, e são eles que exigem a  '<strong>timbratura</strong>' (validação) do bilhete antes de embarcar. Embarcar sem validar, mesmo com bilhete pago, resulta em multa. Os fiscais verificam  regularmente.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Simule um trajeto antes de fazer um de verdade",
+      "bloco1": "No site da Trenitalia ou no Google Maps em modo italiano, pesquise uma rota italiana que você faria numa viagem imaginária — de Roma a  Florença, de Milão a Veneza. Leia as informações do trajeto em italiano: binario, partenza, arrivo, durata.",
+      "bloco2": "Fazer essa simulação antes de precisar de verdade te prepara para os painéis, os anúncios e as situações da estação sem ansiedade. O  vocabulário de transporte é um dos que mais se fixa por associação visual — ver um painel real (mesmo que virtual) é muito mais eficiente do que uma lista.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Saber se locomover numa cidade italiana é a diferença entre uma viagem tranquila e uma série de micro-estresses. Trens, metrôs e ônibus são  baratos, eficientes e estão por toda parte — mas exigem que você entenda o básico do sistema.",
+      "bloco2": "E além da utilidade prática, as estações de trem italianas são experiências em si — cheias de vida, barulho e conversa. Quando você entende o  que está acontecendo ao redor, participa da cena em vez de apenas atravessá-la.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer um guia de sobrevivência para se locomover na Itália sem sufoco?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com vocabulário de transporte + frases prontas para estação, metrô e táxi + áudio nativo"
+    }
+  ]
+}

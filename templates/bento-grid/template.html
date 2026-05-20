@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @{{ handle }}</title>
+<style>
+{{ font_face_css }}
+
+:root {
+  --P:      {{ paleta.P }};
+  --PL:     {{ paleta.PL }};
+  --PD:     {{ paleta.PD }};
+  --YELLOW: {{ paleta.ACCENT }};
+  --PAPER:  {{ paleta.LB }};
+  --PAPER2: {{ paleta.LR }};
+  --INK:    {{ paleta.DB }};
+  --G:      {{ paleta.G }};
+  --F-HEAD: '{{ paleta.F_HEAD }}', system-ui, sans-serif;
+  --F-BODY: '{{ paleta.F_BODY }}', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #14141a; font-family: var(--F-BODY); }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: #0c0c12; padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: var(--P); color: #fff; border: none;
+  padding: 8px 20px; border-radius: 10px; font-size: 14px;
+  font-weight: 700; cursor: pointer;
+}
+.page-controls span { color: rgba(255,255,255,0.45); font-size: 13px; }
+
+.slides-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 32px 24px; }
+.slides-wrap.preview { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+  background: var(--PAPER);
+  color: var(--INK);
+  font-family: var(--F-BODY);
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28); transform-origin: top left;
+  margin-bottom: -972px; margin-right: -777px;
+}
+
+/* ── HEADER ── */
+.bento-header {
+  position: absolute; top: 48px; left: 56px; right: 56px;
+  display: flex; justify-content: space-between; align-items: center; z-index: 20;
+}
+.bento-handle {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--PAPER2);
+  border: 1px solid color-mix(in srgb, var(--INK) 8%, transparent);
+  border-radius: 100px; padding: 8px 18px 8px 8px;
+  font-weight: 700; font-size: 15px; letter-spacing: 0.3px;
+}
+.bento-handle .av {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--G);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--PAPER); font-weight: 900; font-size: 14px;
+  overflow: hidden;
+}
+.bento-handle .av img { width: 100%; height: 100%; object-fit: cover; }
+.bento-pgnum {
+  font-family: var(--F-BODY);
+  font-size: 13px; font-weight: 700;
+  color: color-mix(in srgb, var(--INK) 45%, transparent);
+  background: var(--PAPER2);
+  border: 1px solid color-mix(in srgb, var(--INK) 8%, transparent);
+  border-radius: 100px; padding: 8px 16px;
+  letter-spacing: 2px;
+}
+
+/* ── CONTAINER GERAL ── */
+.bento-content {
+  position: absolute;
+  top: 130px; left: 56px; right: 56px; bottom: 110px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+
+/* ── CARD BASE ── */
+.b-card {
+  background: var(--PAPER2);
+  border: 1px solid color-mix(in srgb, var(--INK) 6%, transparent);
+  border-radius: 28px; padding: 44px 44px 44px 52px;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--PAPER) 60%, transparent) inset;
+}
+.b-card.flex-grow { flex: 1; }
+.b-card.headline-card { position: relative; overflow: hidden; }
+.b-card.headline-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 6px; bottom: 0;
+  background: var(--YELLOW);
+}
+.b-card.tone-primary {
+  background: var(--P); color: var(--PAPER);
+  border: none;
+}
+.b-card.tone-primary-soft {
+  background: color-mix(in srgb, var(--P) 12%, var(--PAPER2));
+  border: 1px solid color-mix(in srgb, var(--P) 25%, transparent);
+}
+.b-card.tone-ink { background: var(--INK); color: var(--PAPER); border: none; }
+.b-card.tone-grad { background: var(--G); color: var(--PAPER); border: none; }
+
+/* ── TAGS ── */
+.b-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--YELLOW); color: var(--INK);
+  border-radius: 100px; padding: 8px 16px 8px 12px;
+  font-size: 13px; font-weight: 800;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.b-tag::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--INK); flex-shrink: 0;
+}
+.b-card.tone-primary .b-tag,
+.b-card.tone-ink .b-tag,
+.b-card.tone-grad .b-tag {
+  background: var(--YELLOW); color: var(--INK);
+}
+
+/* ── TIPOGRAFIA ── */
+.b-h1 {
+  font-family: var(--F-HEAD);
+  font-size: 64px; font-weight: 900; line-height: 1.02;
+  letter-spacing: -1.5px; margin-bottom: 26px;
+  word-wrap: break-word;
+}
+.b-h1 strong, .b-h1 em {
+  background: var(--YELLOW); color: var(--INK);
+  font-style: normal; padding: 0 8px; border-radius: 8px;
+}
+.b-body strong { background: color-mix(in srgb, var(--YELLOW) 40%, transparent); padding: 0 4px; border-radius: 4px; }
+.b-body {
+  font-size: 26px; font-weight: 400; line-height: 1.45;
+  letter-spacing: -0.2px;
+  color: color-mix(in srgb, currentColor 80%, transparent);
+}
+.b-body + .b-body { margin-top: 16px; }
+.b-body strong { color: currentColor; font-weight: 800; }
+.b-body em { font-style: italic; color: var(--P); }
+.b-card.tone-primary .b-body em,
+.b-card.tone-ink .b-body em,
+.b-card.tone-grad .b-body em { color: var(--YELLOW); }
+
+/* ── FOOTER / PROGRESS ── */
+.bento-footer {
+  position: absolute; bottom: 40px; left: 56px; right: 56px;
+  display: flex; align-items: center; gap: 14px; z-index: 20;
+}
+.bento-prog-track {
+  flex: 1; height: 6px; border-radius: 100px;
+  background: color-mix(in srgb, var(--INK) 8%, transparent);
+  overflow: hidden;
+}
+.bento-prog-fill { height: 100%; background: var(--YELLOW); border-radius: 100px; }
+.bento-prog-lbl {
+  font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+  color: color-mix(in srgb, var(--INK) 50%, transparent);
+}
+.slide-dark .bento-prog-track,
+.slide-grad .bento-prog-track { background: color-mix(in srgb, var(--PAPER) 12%, transparent); }
+.slide-dark .bento-prog-fill,
+.slide-grad .bento-prog-fill { background: var(--YELLOW); }
+.slide-dark .bento-prog-lbl,
+.slide-grad .bento-prog-lbl { color: color-mix(in srgb, var(--PAPER) 65%, transparent); }
+.slide-dark .bento-handle,
+.slide-grad .bento-handle {
+  background: color-mix(in srgb, var(--PAPER) 10%, transparent);
+  border-color: color-mix(in srgb, var(--PAPER) 18%, transparent);
+  color: var(--PAPER);
+}
+.slide-dark .bento-pgnum,
+.slide-grad .bento-pgnum {
+  background: color-mix(in srgb, var(--PAPER) 10%, transparent);
+  border-color: color-mix(in srgb, var(--PAPER) 18%, transparent);
+  color: color-mix(in srgb, var(--PAPER) 70%, transparent);
+}
+
+/* ══════════════════════════════════════════════════
+   CAPA
+══════════════════════════════════════════════════ */
+.slide-capa { background: var(--INK); color: var(--PAPER); }
+.capa-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: brightness(0.55) contrast(1.05);
+}
+.capa-grid {
+  position: absolute;
+  top: 130px; left: 56px; right: 56px; bottom: 110px;
+  display: flex; flex-direction: column; gap: 18px; z-index: 5;
+}
+.capa-meta-card {
+  background: color-mix(in srgb, var(--PAPER) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--PAPER) 16%, transparent);
+  backdrop-filter: blur(20px);
+  border-radius: 24px; padding: 24px 30px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 14px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--PAPER) 75%, transparent);
+}
+.capa-headline-card {
+  flex: 1; position: relative;
+  background: color-mix(in srgb, var(--PAPER) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--PAPER) 14%, transparent);
+  backdrop-filter: blur(24px);
+  border-radius: 36px; padding: 48px 44px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  overflow: hidden;
+}
+.capa-headline-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 6px; background: var(--YELLOW);
+}
+.capa-kicker {
+  font-size: 14px; font-weight: 800; letter-spacing: 4px;
+  text-transform: uppercase; margin-bottom: 28px;
+  color: var(--YELLOW);
+  display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
+}
+.capa-kicker::before {
+  content: ''; width: 24px; height: 2px; background: var(--YELLOW);
+}
+.capa-headline {
+  font-family: var(--F-HEAD);
+  font-weight: 900; color: var(--PAPER);
+  letter-spacing: -2px;
+  word-wrap: break-word;
+}
+.capa-headline.len-xl { font-size: 96px;  line-height: 0.98; }
+.capa-headline.len-lg { font-size: 80px;  line-height: 1.00; }
+.capa-headline.len-md { font-size: 68px;  line-height: 1.04; }
+.capa-headline.len-sm { font-size: 58px;  line-height: 1.08; }
+.capa-headline.len-xs { font-size: 50px;  line-height: 1.12; }
+.capa-headline strong, .capa-headline em {
+  background: var(--YELLOW); color: var(--INK);
+  font-style: normal; padding: 0 10px; border-radius: 10px;
+}
+
+/* ══════════════════════════════════════════════════
+   DARK / LIGHT / GRAD
+══════════════════════════════════════════════════ */
+.slide-dark { background: var(--INK); color: var(--PAPER); }
+.slide-light { background: var(--PAPER); }
+.slide-grad { background: var(--G); color: var(--PAPER); }
+
+.slide-img-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: brightness(0.5);
+}
+.slide-img-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: color-mix(in srgb, var(--INK) 60%, transparent);
+}
+
+.b-imgcard {
+  border-radius: 24px; overflow: hidden;
+  background-size: cover; background-position: center;
+  flex: 1; min-height: 200px;
+}
+
+/* ══════════════════════════════════════════════════
+   CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--PAPER); }
+.cta-grid {
+  position: absolute;
+  top: 130px; left: 56px; right: 56px; bottom: 110px;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.cta-bridge-card {
+  background: var(--PAPER2);
+  border: 1px solid color-mix(in srgb, var(--INK) 8%, transparent);
+  border-radius: 24px; padding: 28px 36px;
+  font-size: 22px; line-height: 1.45;
+  color: color-mix(in srgb, var(--INK) 75%, transparent);
+}
+.cta-bridge-card strong { color: var(--INK); font-weight: 800; background: color-mix(in srgb, var(--YELLOW) 45%, transparent); padding: 0 4px; }
+.cta-headline-card {
+  background: var(--P); color: var(--PAPER);
+  border-radius: 28px; padding: 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.cta-headline {
+  font-family: var(--F-HEAD);
+  font-size: 78px; font-weight: 900;
+  letter-spacing: -2.5px; line-height: 0.95;
+  text-transform: uppercase;
+}
+.cta-grid-row { display: flex; gap: 18px; flex: 1; }
+.cta-kbox {
+  flex: 1;
+  background: var(--INK); color: var(--PAPER);
+  border-radius: 28px; padding: 36px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.cta-kinstr {
+  font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--YELLOW) 75%, transparent);
+  margin-bottom: 12px; font-weight: 800;
+}
+.cta-kword {
+  font-family: var(--F-HEAD);
+  font-size: 80px; font-weight: 900;
+  color: var(--YELLOW); letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.cta-kbenefit {
+  font-size: 18px; line-height: 1.4;
+  color: color-mix(in srgb, var(--PAPER) 80%, transparent);
+}
+.cta-side {
+  width: 280px;
+  background: var(--YELLOW); color: var(--INK);
+  border-radius: 28px; padding: 28px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.cta-side .num {
+  font-family: var(--F-HEAD);
+  font-size: 100px; line-height: 0.85; font-weight: 900;
+}
+.cta-side .lbl {
+  font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 800;
+}
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT
+══════════════════════════════════════════════════ */
+
+/* V2 — SPLIT HORIZONTAL: dois cards lado a lado */
+[data-v="2"] .bento-content { flex-direction: row; }
+[data-v="2"] .bento-content > .b-card:first-child { width: 380px; flex: 0 0 380px; }
+[data-v="2"] .b-h1 { font-size: 60px; }
+[data-v="2"] .b-card { padding: 36px; }
+[data-v="2"].slide-capa .capa-grid { flex-direction: row; }
+[data-v="2"].slide-capa .capa-meta-card { width: 280px; flex-direction: column; align-items: flex-start; justify-content: flex-end; }
+[data-v="2"].slide-cta .cta-grid-row { flex-direction: column; }
+[data-v="2"].slide-cta .cta-side { width: 100%; flex-direction: row; align-items: center; }
+
+/* V3 — STACK MINI CARDS: vários cards pequenos empilhados */
+[data-v="3"] .bento-content { gap: 12px; }
+[data-v="3"] .b-card { padding: 28px 36px; border-radius: 20px; }
+[data-v="3"] .b-card.flex-grow { flex: 0; }
+[data-v="3"] .b-card.headline-card { flex: 1; }
+[data-v="3"] .b-h1 { font-size: 64px; margin-bottom: 16px; }
+[data-v="3"] .b-tag {
+  background: transparent; padding: 0;
+  border-bottom: 2px solid currentColor; border-radius: 0;
+}
+[data-v="3"].slide-capa .capa-headline-card { border-radius: 24px; padding: 40px 44px; }
+[data-v="3"].slide-capa .capa-headline.len-xl { font-size: 96px; }
+[data-v="3"].slide-capa .capa-headline.len-lg { font-size: 84px; }
+[data-v="3"].slide-cta .cta-headline { font-size: 64px; }
+[data-v="3"].slide-cta .cta-headline-card { padding: 36px; border-radius: 22px; }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">{{ template_nome }}</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+{% macro header(slide) %}
+<div class="bento-header">
+  <div class="bento-handle">
+    <div class="av">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+    @{{ handle }}
+  </div>
+  <div class="bento-pgnum">{{ '%02d'|format(slide.numero) }} / {{ '%02d'|format(total_slides) }}</div>
+</div>
+{% endmacro %}
+
+{% macro footer(slide) %}
+<div class="bento-footer">
+  <div class="bento-prog-track">
+    <div class="bento-prog-fill" style="width: {{ (slide.numero / total_slides * 100)|int }}%;"></div>
+  </div>
+  <div class="bento-prog-lbl">PARTE {{ slide.numero }}</div>
+</div>
+{% endmacro %}
+
+{% for slide in slides %}
+
+  {% if slide.tipo == 'capa' %}
+  <div class="slide slide-capa" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.imagem_base64 %}
+      <div class="capa-bg-img" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% endif %}
+    {{ header(slide) }}
+    <div class="capa-grid">
+      <div class="capa-meta-card">
+        <span>Carrossel · @{{ handle }}</span>
+        <span>{{ total_slides }} slides</span>
+      </div>
+      <div class="capa-headline-card">
+        <div class="capa-kicker">— Edição #{{ '%03d'|format(slide.numero) }} —</div>
+        {% set _hlen = (slide.headline_capa | striptags | length) if slide.headline_capa else 0 %}
+        {% if _hlen < 40 %}{% set _hsize = 'len-xl' %}
+        {% elif _hlen < 70 %}{% set _hsize = 'len-lg' %}
+        {% elif _hlen < 100 %}{% set _hsize = 'len-md' %}
+        {% elif _hlen < 130 %}{% set _hsize = 'len-sm' %}
+        {% else %}{% set _hsize = 'len-xs' %}{% endif %}
+        <div class="capa-headline {{ _hsize }}">{{ slide.headline_capa | safe if slide.headline_capa else '' }}</div>
+      </div>
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% elif slide.tipo in ['dark', 'light'] %}
+  <div class="slide slide-{{ slide.tipo }}" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.tipo_imagem == 'background-overlay' and slide.imagem_base64 %}
+      <div class="slide-img-bg" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% endif %}
+    {{ header(slide) }}
+    <div class="bento-content">
+      <div class="b-card flex-grow headline-card {% if slide.tipo == 'dark' %}tone-ink{% endif %}">
+        {% if slide.tag %}<div class="b-tag">{{ slide.tag }}</div>{% endif %}
+        {% if slide.headline_interna %}<div class="b-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+        {% if slide.bloco1 %}<div class="b-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      </div>
+      {% if slide.tipo_imagem == 'img-box' and slide.imagem_base64 %}
+        <div class="b-imgcard" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+      {% elif slide.bloco2 %}
+        <div class="b-card {% if slide.tipo == 'dark' %}tone-primary{% else %}tone-primary-soft{% endif %}">
+          <div class="b-body">{{ slide.bloco2 | safe }}</div>
+        </div>
+      {% endif %}
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% elif slide.tipo == 'grad' %}
+  <div class="slide slide-grad" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ header(slide) }}
+    <div class="bento-content">
+      <div class="b-card flex-grow headline-card tone-grad" style="background: transparent; border: none;">
+        {% if slide.tag %}<div class="b-tag">{{ slide.tag }}</div>{% endif %}
+        {% if slide.headline_interna %}<div class="b-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+        {% if slide.bloco1 %}<div class="b-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+        {% if slide.bloco2 %}<div class="b-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+      </div>
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% elif slide.tipo == 'cta' %}
+  <div class="slide slide-cta" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ header(slide) }}
+    <div class="cta-grid">
+      {% if slide.frase_ponte %}
+      <div class="cta-bridge-card">{{ slide.frase_ponte | safe }}</div>
+      {% endif %}
+      <div class="cta-headline-card">
+        {% if slide.cta_headline %}<div class="cta-headline">{{ slide.cta_headline | safe }}</div>{% endif %}
+      </div>
+      <div class="cta-grid-row">
+        <div class="cta-kbox">
+          <div class="cta-kinstr">Comenta abaixo:</div>
+          <div class="cta-kword">{{ slide.cta_keyword or 'GUIA' }}</div>
+          <div class="cta-kbenefit">{{ slide.cta_beneficio or 'e recebe o material direto na DM' }}</div>
+        </div>
+        <div class="cta-side">
+          <div class="num">DM</div>
+          <div class="lbl">Resposta<br>automática</div>
+        </div>
+      </div>
+    </div>
+    {{ footer(slide) }}
+  </div>
+
+  {% endif %}
+{% endfor %}
+
+</div>
+
+<script>
+function toggleView() {
+  var wrap = document.getElementById('slides-wrap');
+  var label = document.getElementById('view-label');
+  wrap.classList.toggle('preview');
+  label.textContent = wrap.classList.contains('preview') ? 'Modo: Preview lado a lado' : 'Modo: Tamanho real (1080×1350)';
+}
+</script>
+</body>
+</html>

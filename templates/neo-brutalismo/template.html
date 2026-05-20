@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Carrossel — @{{ handle }}</title>
+<style>
+{{ font_face_css }}
+
+:root {
+  --P:      {{ paleta.P }};
+  --PL:     {{ paleta.PL }};
+  --PD:     {{ paleta.PD }};
+  --INK:    {{ paleta.DB }};
+  --PAPER:  {{ paleta.LB }};
+  --YELLOW: {{ paleta.ACCENT }};
+  --SHADOW: 12px 12px 0 var(--INK);
+  --SHADOW-SM: 6px 6px 0 var(--INK);
+  --BORDER: 6px solid var(--INK);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #2a2a2a; font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif; }
+
+.page-controls {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--INK); padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.page-controls button {
+  background: var(--YELLOW); color: var(--INK); border: 2px solid var(--INK);
+  padding: 8px 20px; font-size: 14px;
+  font-weight: 900; cursor: pointer; letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.page-controls span { color: rgba(255,255,255,0.5); font-size: 13px; }
+
+.slides-wrap {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 28px;
+  padding: 32px 24px;
+}
+.slides-wrap.preview {
+  flex-direction: row; flex-wrap: wrap;
+  justify-content: center; gap: 18px;
+}
+
+.slide {
+  position: relative;
+  width: 1080px; height: 1350px;
+  overflow: hidden; flex-shrink: 0;
+  background: var(--PAPER);
+  color: var(--INK);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.slides-wrap.preview .slide {
+  transform: scale(0.28);
+  transform-origin: top left;
+  margin-bottom: -972px;
+  margin-right: -777px;
+}
+
+/* ── HEADER fixo no topo: handle em caixa ── */
+.bru-header {
+  position: absolute; top: 40px; left: 40px; right: 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 20;
+}
+.bru-handle-box {
+  background: var(--INK); color: var(--YELLOW);
+  border: var(--BORDER); padding: 12px 22px;
+  font-weight: 900; font-size: 22px;
+  letter-spacing: 1px; text-transform: uppercase;
+  box-shadow: var(--SHADOW-SM);
+  display: flex; align-items: center; gap: 14px;
+}
+.bru-handle-box .logo-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--P); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--PAPER); font-size: 16px; font-weight: 900;
+  border: 2px solid var(--YELLOW);
+}
+.bru-handle-box .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+.bru-slidenum {
+  background: var(--P); color: var(--PAPER);
+  border: var(--BORDER); padding: 12px 22px;
+  font-weight: 900; font-size: 22px;
+  box-shadow: var(--SHADOW-SM);
+}
+.slide-capa .bru-slidenum {
+  background: var(--YELLOW); color: var(--INK);
+}
+
+/* ══════════════════════════════════════════════════
+   SLIDE CAPA
+══════════════════════════════════════════════════ */
+.slide-capa {
+  background: var(--P);
+}
+.capa-bg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: contrast(1.15);
+}
+.capa-bg-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--PD); mix-blend-mode: multiply;
+  opacity: 0.82;
+}
+
+.capa-content {
+  position: absolute; left: 56px; right: 56px;
+  bottom: 200px; z-index: 10;
+}
+.capa-sticker {
+  display: inline-block;
+  background: var(--YELLOW); color: var(--INK);
+  border: var(--BORDER); padding: 10px 24px;
+  font-weight: 900; font-size: 18px;
+  letter-spacing: 3px; text-transform: uppercase;
+  transform: rotate(-2deg);
+  box-shadow: var(--SHADOW-SM);
+  margin-bottom: 32px;
+}
+.capa-headline-box {
+  background: var(--PAPER);
+  border: var(--BORDER);
+  padding: 40px 44px;
+  box-shadow: var(--SHADOW);
+}
+.capa-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900; color: var(--INK);
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+.capa-headline.len-xl { font-size: 110px; line-height: 0.96; }
+.capa-headline.len-lg { font-size: 92px;  line-height: 0.98; }
+.capa-headline.len-md { font-size: 76px;  line-height: 1.00; }
+.capa-headline.len-sm { font-size: 62px;  line-height: 1.04; }
+.capa-headline.len-xs { font-size: 52px;  line-height: 1.08; }
+.capa-headline strong, .capa-headline em {
+  background: var(--YELLOW); color: var(--INK); font-style: normal;
+  padding: 0 8px;
+}
+
+.capa-bottom {
+  position: absolute; bottom: 40px; left: 40px; right: 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 10;
+}
+.capa-arrow {
+  font-size: 60px; font-weight: 900; color: var(--YELLOW);
+  transform: rotate(-90deg);
+}
+.capa-marker {
+  background: var(--INK); color: var(--YELLOW);
+  padding: 8px 18px; font-size: 14px; font-weight: 900;
+  letter-spacing: 3px; text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════════
+   SLIDES INTERNOS
+══════════════════════════════════════════════════ */
+.slide-content {
+  position: absolute; left: 56px; right: 56px;
+  top: 160px; bottom: 100px;
+  display: flex; flex-direction: column; justify-content: center;
+  z-index: 5;
+}
+
+.slide-tag {
+  display: inline-block;
+  background: var(--YELLOW); color: var(--INK);
+  padding: 10px 22px;
+  font-size: 18px; font-weight: 900;
+  letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 36px; width: fit-content;
+  border: var(--BORDER);
+  box-shadow: var(--SHADOW-SM);
+}
+
+.slide-h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 76px; font-weight: 900; line-height: 0.98;
+  text-transform: uppercase; letter-spacing: -2px;
+  color: var(--INK); margin-bottom: 36px;
+}
+.slide-h1 strong { background: var(--YELLOW); color: var(--INK); padding: 0 8px; }
+
+.slide-body {
+  background: var(--PAPER);
+  border: 5px solid var(--INK);
+  padding: 28px 32px;
+  font-size: 28px; line-height: 1.42; font-weight: 500;
+  color: var(--INK); margin-bottom: 20px;
+  box-shadow: 8px 8px 0 var(--INK);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.slide-body strong {
+  background: var(--YELLOW); color: var(--INK);
+  padding: 0 6px; font-weight: 800;
+}
+.slide-body em { font-style: italic; }
+
+/* ── LIGHT ── */
+.slide-light { background: var(--PAPER); }
+.slide-light .slide-body { background: var(--PAPER); border-color: var(--YELLOW); box-shadow: 8px 8px 0 var(--YELLOW); }
+
+/* ── DARK ── */
+.slide-dark { background: var(--INK); color: var(--PAPER); }
+.slide-dark .bru-handle-box { background: var(--YELLOW); color: var(--INK); border-color: var(--PAPER); box-shadow: 6px 6px 0 var(--P); }
+.slide-dark .bru-handle-box .logo-circle { border-color: var(--INK); }
+.slide-dark .bru-slidenum { background: var(--YELLOW); color: var(--INK); border-color: var(--PAPER); box-shadow: 6px 6px 0 var(--P); }
+.slide-dark .slide-tag { background: var(--YELLOW); color: var(--INK); }
+.slide-dark .slide-h1 { color: var(--PAPER); }
+.slide-dark .slide-h1 strong { background: var(--YELLOW); color: var(--INK); }
+.slide-dark .slide-body {
+  background: color-mix(in srgb, var(--PAPER) 4%, transparent);
+  border-color: var(--YELLOW);
+  color: var(--PAPER);
+  box-shadow: 8px 8px 0 var(--YELLOW);
+}
+
+/* ── GRAD (cor primária bloco) ── */
+.slide-grad { background: var(--P); color: var(--PAPER); }
+.slide-grad .bru-handle-box { background: var(--INK); color: var(--PAPER); box-shadow: 6px 6px 0 var(--YELLOW); }
+.slide-grad .bru-slidenum { background: var(--YELLOW); color: var(--INK); box-shadow: 6px 6px 0 var(--INK); }
+.slide-grad .slide-tag { background: var(--YELLOW); color: var(--INK); }
+.slide-grad .slide-h1 {
+  color: var(--PAPER);
+  font-size: 88px; line-height: 1.0;
+}
+.slide-grad .slide-h1 strong { background: var(--INK); color: var(--YELLOW); }
+.slide-grad .slide-body {
+  background: var(--INK); color: var(--PAPER);
+  border-color: var(--YELLOW);
+  box-shadow: 8px 8px 0 var(--YELLOW);
+}
+.slide-grad .slide-body strong { background: var(--YELLOW); color: var(--INK); }
+
+/* ── Imagem com overlay (slides dark) ── */
+.slide-img-bru {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.slide-img-bru::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--INK); opacity: 0.75; mix-blend-mode: multiply;
+}
+
+.img-box-bru {
+  width: 100%; height: 320px;
+  margin-bottom: 28px;
+  border: var(--BORDER);
+  box-shadow: var(--SHADOW-SM);
+  overflow: hidden;
+}
+.img-box-bru img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ══════════════════════════════════════════════════
+   SLIDE CTA
+══════════════════════════════════════════════════ */
+.slide-cta { background: var(--P); }
+.cta-content {
+  position: absolute; inset: 0;
+  padding: 160px 56px 120px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+}
+.cta-bridge {
+  font-size: 32px; font-weight: 700; line-height: 1.3;
+  color: var(--PAPER); margin-bottom: 32px; max-width: 800px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.cta-bridge strong { background: var(--YELLOW); color: var(--INK); padding: 0 6px; }
+.cta-headline {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 96px; font-weight: 900;
+  color: var(--INK); margin-bottom: 50px;
+  text-transform: uppercase; letter-spacing: -3px;
+  background: var(--PAPER);
+  border: var(--BORDER);
+  padding: 24px 50px;
+  transform: rotate(-1.5deg);
+  box-shadow: var(--SHADOW);
+}
+.cta-kbox {
+  background: var(--INK); color: var(--YELLOW);
+  border: var(--BORDER); border-color: var(--INK);
+  padding: 36px 56px; margin-bottom: 48px;
+  box-shadow: 14px 14px 0 var(--YELLOW);
+  max-width: 720px; width: 100%;
+}
+.cta-kinstr {
+  font-size: 16px; letter-spacing: 4px; text-transform: uppercase;
+  color: color-mix(in srgb, var(--YELLOW) 70%, transparent); margin-bottom: 16px;
+  font-weight: 700;
+}
+.cta-kword {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 84px; font-weight: 900;
+  color: var(--YELLOW); margin-bottom: 16px;
+  letter-spacing: 4px;
+}
+.cta-kbenefit {
+  font-size: 18px; color: color-mix(in srgb, var(--PAPER) 85%, transparent);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.cta-footer {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 16px; font-weight: 700;
+  color: var(--INK);
+  background: var(--PAPER); border: 4px solid var(--INK);
+  padding: 12px 24px;
+  box-shadow: var(--SHADOW-SM);
+}
+.cta-footer .dot {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--P); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--PAPER); font-weight: 900; font-size: 16px;
+  border: 2px solid var(--INK);
+}
+.cta-footer .dot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ══════════════════════════════════════════════════
+   VARIANTES DE LAYOUT (data-v="1" é o default acima)
+══════════════════════════════════════════════════ */
+
+/* V2 — ROTAÇÃO + ZIG-ZAG: títulos com rotação, tags alternadas */
+[data-v="2"] .slide-h1 {
+  display: inline-block;
+  background: var(--INK); color: var(--YELLOW);
+  padding: 14px 22px; transform: rotate(-1.5deg);
+  box-shadow: 8px 8px 0 var(--P);
+}
+[data-v="2"].slide-light .slide-h1 { background: var(--P); color: var(--PAPER); }
+[data-v="2"].slide-dark .slide-h1 { background: var(--YELLOW); color: var(--INK); }
+[data-v="2"] .slide-tag { transform: rotate(2deg); }
+[data-v="2"] .slide-body { transform: rotate(0.4deg); }
+[data-v="2"] .slide-body:nth-of-type(2) { transform: rotate(-0.4deg); margin-left: 30px; }
+[data-v="2"].slide-capa .capa-sticker { transform: rotate(3deg); }
+[data-v="2"].slide-capa .capa-headline-box { transform: rotate(-0.8deg); }
+[data-v="2"].slide-cta .cta-headline { transform: rotate(-3deg); }
+[data-v="2"].slide-cta .cta-kbox { transform: rotate(1deg); }
+
+/* V3 — STACK MINIMAL: sem rotações, blocos empilhados sem shadow, frame full */
+[data-v="3"] .slide-content {
+  border: var(--BORDER); padding: 36px;
+  background: var(--PAPER); top: 200px; bottom: 140px;
+  left: 56px; right: 56px;
+}
+[data-v="3"].slide-dark .slide-content {
+  background: var(--INK); color: var(--PAPER);
+}
+[data-v="3"].slide-grad .slide-content {
+  background: var(--PD); color: var(--PAPER); border-color: var(--YELLOW);
+}
+[data-v="3"] .slide-h1 { font-size: 64px; margin-bottom: 24px; }
+[data-v="3"] .slide-body {
+  border: none; box-shadow: none;
+  padding: 16px 0; border-top: 4px solid var(--INK);
+}
+[data-v="3"].slide-dark .slide-body { border-top-color: var(--YELLOW); background: transparent; }
+[data-v="3"].slide-grad .slide-body { border-top-color: var(--YELLOW); background: transparent; }
+[data-v="3"] .slide-tag {
+  background: var(--YELLOW); color: var(--INK);
+  box-shadow: none; margin-bottom: 18px;
+}
+[data-v="3"].slide-capa .capa-headline-box { box-shadow: none; }
+[data-v="3"].slide-capa .capa-sticker { box-shadow: none; transform: none; }
+[data-v="3"].slide-cta .cta-headline { box-shadow: none; transform: none; }
+[data-v="3"].slide-cta .cta-kbox { box-shadow: none; }
+
+</style>
+</head>
+<body>
+
+<div class="page-controls">
+  <button onclick="toggleView()">⇄ Preview / Tamanho Real</button>
+  <span id="view-label">Modo: Preview lado a lado</span><span class="tpl-badge" style="margin-left: 18px; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 100px; color: rgba(255,255,255,0.85); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700;">{{ template_nome }}</span>
+</div>
+
+<div class="slides-wrap preview" id="slides-wrap">
+
+{% macro header(slide) %}
+<div class="bru-header">
+  <div class="bru-handle-box">
+    <div class="logo-circle">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+    @{{ handle }}
+  </div>
+  <div class="bru-slidenum">{{ '%02d'|format(slide.numero) }} / {{ '%02d'|format(total_slides) }}</div>
+</div>
+{% endmacro %}
+
+{% for slide in slides %}
+
+  {% if slide.tipo == 'capa' %}
+  <div class="slide slide-capa" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.imagem_base64 %}
+      <div class="capa-bg-img" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% endif %}
+    {{ header(slide) }}
+    <div class="capa-content">
+      <div class="capa-sticker">Lezione · Italiano</div>
+      <div class="capa-headline-box">
+        {% set _hlen = (slide.headline_capa | striptags | length) if slide.headline_capa else 0 %}
+        {% if _hlen < 40 %}{% set _hsize = 'len-xl' %}
+        {% elif _hlen < 70 %}{% set _hsize = 'len-lg' %}
+        {% elif _hlen < 100 %}{% set _hsize = 'len-md' %}
+        {% elif _hlen < 130 %}{% set _hsize = 'len-sm' %}
+        {% else %}{% set _hsize = 'len-xs' %}{% endif %}
+        <div class="capa-headline {{ _hsize }}">{{ slide.headline_capa | safe if slide.headline_capa else '' }}</div>
+      </div>
+    </div>
+    <div class="capa-bottom">
+      <div class="capa-arrow">→</div>
+      <div class="capa-marker">Arrasta →</div>
+    </div>
+  </div>
+
+  {% elif slide.tipo in ['dark', 'light'] %}
+  <div class="slide slide-{{ slide.tipo }}" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {% if slide.tipo_imagem == 'background-overlay' and slide.imagem_base64 %}
+      <div class="slide-img-bru" style="background-image: url('{{ slide.imagem_base64 }}');"></div>
+    {% endif %}
+    {{ header(slide) }}
+    <div class="slide-content">
+      {% if slide.tag %}<div class="slide-tag">{{ slide.tag }}</div>{% endif %}
+      {% if slide.headline_interna %}<div class="slide-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.tipo_imagem == 'img-box' and slide.imagem_base64 %}
+        <div class="img-box-bru"><img src="{{ slide.imagem_base64 }}" alt=""></div>
+      {% endif %}
+      {% if slide.bloco1 %}<div class="slide-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="slide-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+  </div>
+
+  {% elif slide.tipo == 'grad' %}
+  <div class="slide slide-grad" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ header(slide) }}
+    <div class="slide-content">
+      {% if slide.tag %}<div class="slide-tag">{{ slide.tag or 'Em sintese' }}</div>{% endif %}
+      {% if slide.headline_interna %}<div class="slide-h1">{{ slide.headline_interna | safe }}</div>{% endif %}
+      {% if slide.bloco1 %}<div class="slide-body">{{ slide.bloco1 | safe }}</div>{% endif %}
+      {% if slide.bloco2 %}<div class="slide-body">{{ slide.bloco2 | safe }}</div>{% endif %}
+    </div>
+  </div>
+
+  {% elif slide.tipo == 'cta' %}
+  <div class="slide slide-cta" id="slide-{{ slide.numero }}" data-v="{{ slide.variant }}">
+    {{ header(slide) }}
+    <div class="cta-content">
+      {% if slide.frase_ponte %}<div class="cta-bridge">{{ slide.frase_ponte | safe }}</div>{% endif %}
+      {% if slide.cta_headline %}<div class="cta-headline">{{ slide.cta_headline | safe }}</div>{% endif %}
+      <div class="cta-kbox">
+        <div class="cta-kinstr">Comenta a palavra abaixo:</div>
+        <div class="cta-kword">{{ slide.cta_keyword or 'GUIA' }}</div>
+        <div class="cta-kbenefit">{{ slide.cta_beneficio or 'e recebe o guia direto na DM' }}</div>
+      </div>
+      <div class="cta-footer">
+        <div class="dot">{% if logo_url %}<img src="{{ logo_url }}" alt="">{% else %}{{ handle[0]|upper }}{% endif %}</div>
+        <span>@{{ handle }} · DM AUTOMÁTICA</span>
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+
+{% endfor %}
+
+</div>
+
+<script>
+function toggleView() {
+  const w = document.getElementById('slides-wrap');
+  const l = document.getElementById('view-label');
+  w.classList.toggle('preview');
+  l.textContent = w.classList.contains('preview') ? 'Modo: Preview lado a lado' : 'Modo: Tamanho real (1080×1350)';
+}
+</script>
+</body>
+</html>

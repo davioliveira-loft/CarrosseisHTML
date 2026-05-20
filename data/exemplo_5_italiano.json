@@ -1,0 +1,354 @@
+{
+  "carrosseis": [
+    {
+      "ideia": "Sons que travam o brasileiro em italiano",
+      "headline": "Você Pronuncia 'Gnocchi' Como 'Gnok' e o Garçom Trava: Os 4 Sons Italianos Que o Brasileiro Aplica Errado Por Reflexo do Português",
+      "slides": [
+        {
+          "numero": 1,
+          "tipo": "capa",
+          "headline_capa": "VOCÊ PRONUNCIA 'GNOCCHI' COMO 'GNOK' E O GARÇOM TRAVA: OS 4 SONS ITALIANOS QUE BRASILEIRO APLICA ERRADO POR REFLEXO"
+        },
+        {
+          "numero": 2,
+          "tipo": "dark",
+          "tag": "A CENA",
+          "bloco1": "Você entra numa trattoria em Florença, abre o cardápio e pede '<strong>gnocchi al ragù</strong>'. O garçom inclina a cabeça. Você repete. Ele sorri educado e anota — entendeu pelo contexto, não pelo som.",
+          "bloco2": "A diferença foi 1 letra. O 'gn' italiano não soa como 'g' + 'n'. É o mesmo som do '<strong>nh</strong>' português em 'banho'. Quem não sabe disso vira turista mesmo falando 'fluente'."
+        },
+        {
+          "numero": 3,
+          "tipo": "light",
+          "tag": "REGRA 1",
+          "headline_interna": "O 'GN' que vira 'NH'",
+          "bloco1": "Sempre que ver 'gn' em italiano, leia como '<strong>nh</strong>'. Não há exceção.",
+          "bloco2": "<strong>Gnocchi</strong> = nhóqui. <strong>Lasagna</strong> = lazânha. <strong>Bagno</strong> = banho. <strong>Signore</strong> = sinhore."
+        },
+        {
+          "numero": 4,
+          "tipo": "dark",
+          "tag": "REGRA 2",
+          "bloco1": "O 'gh' italiano nunca soa como 'gui'. É um <strong>g duro puro</strong>, como em 'guerra' — sem o 'i' colado depois.",
+          "bloco2": "<strong>Spaghetti</strong> = espaguéti (não 'espadjeti'). <strong>Funghi</strong> = fungui (não 'fundji'). <strong>Margherita</strong> = margaríta (não 'mardjerita')."
+        },
+        {
+          "numero": 5,
+          "tipo": "light",
+          "tag": "REGRA 3",
+          "headline_interna": "O 'CI' e 'CE'",
+          "bloco1": "Antes de 'e' ou 'i', o 'c' italiano vira <strong>'tch'</strong>. Sem aviso, sem exceção.",
+          "bloco2": "<strong>Ciao</strong> = tchao. <strong>Cinema</strong> = tchinema. <strong>Cento</strong> = tchento. <strong>Dieci</strong> = diétchi."
+        },
+        {
+          "numero": 6,
+          "tipo": "dark",
+          "tag": "REGRA 4",
+          "bloco1": "O '<strong>gli</strong>' italiano vira o som '<strong>lhi</strong>' do português. É o som mais difícil pro brasileiro porque parece quase igual — mas não é.",
+          "bloco2": "<strong>Figlio</strong> = filhio (não 'fíglio'). <strong>Famiglia</strong> = familhia. <strong>Meglio</strong> = mélhio. <strong>Olio</strong> NÃO tem 'gli' — é 'ólio' normal."
+        },
+        {
+          "numero": 7,
+          "tipo": "light",
+          "tag": "COMO TREINAR",
+          "headline_interna": "5 minutos por dia, 14 dias",
+          "bloco1": "Pegue uma lista de <strong>50 pratos italianos</strong>. Pronuncie em voz alta, grave no celular.",
+          "bloco2": "Compare com áudios nativos no <strong>Forvo.com</strong> ou <strong>Reverso</strong>. Em duas semanas sua boca aprende o reflexo — antes da gramática travar."
+        },
+        {
+          "numero": 8,
+          "tipo": "grad",
+          "bloco1": "Quem corrige a pronúncia <strong>antes</strong> de aprender vocabulário avançado fica fluente em metade do tempo.",
+          "bloco2": "É o caminho que método tradicional nunca vende — porque não cabe em 12 módulos pagos."
+        },
+        {
+          "numero": 9,
+          "tipo": "cta",
+          "frase_ponte": "Quer o guia com os 30 sons italianos que mais travam o brasileiro?",
+          "cta_headline": "BAIXE O GUIA",
+          "cta_keyword": "GUIA",
+          "cta_beneficio": "PDF com 30 palavras + áudios nativos"
+        }
+      ]
+    },
+    {
+      "ideia": "Falsos cognatos perigosos em italiano",
+      "headline": "Você Pede 'Burro' no Café e Recebe Manteiga: As 7 Palavras Italianas Que Parecem Português e Significam o Contrário",
+      "slides": [
+        {
+          "numero": 1,
+          "tipo": "capa",
+          "headline_capa": "VOCÊ PEDE 'BURRO' NO CAFÉ E RECEBE MANTEIGA: AS 7 PALAVRAS ITALIANAS QUE PARECEM PORTUGUÊS E SIGNIFICAM O CONTRÁRIO"
+        },
+        {
+          "numero": 2,
+          "tipo": "dark",
+          "tag": "A CILADA",
+          "bloco1": "Você senta num bar em Milão e pede '<strong>burro</strong>'. O garçom não estranha — anota, vai e volta com pão e <strong>manteiga</strong>.",
+          "bloco2": "'Burro' em italiano não tem nada a ver com o animal. É manteiga. E essa é só a primeira de várias palavras que enganam o brasileiro porque o cérebro já preencheu o significado."
+        },
+        {
+          "numero": 3,
+          "tipo": "light",
+          "tag": "OS 7 FALSOS AMIGOS",
+          "headline_interna": "Lista das mais perigosas",
+          "bloco1": "<strong>Burro</strong> = manteiga (animal é 'asino'). <strong>Salsa</strong> = molho (não 'salsa-tempero'). <strong>Esquisito</strong>? Não existe. Mas '<strong>squisito</strong>' = delicioso.",
+          "bloco2": "<strong>Tappeto</strong> = tapete (não tampão). <strong>Tasso</strong> = taxa ou texugo. <strong>Pasta</strong> = massa (não cola). <strong>Caldo</strong> = quente (não caldo de sopa)."
+        },
+        {
+          "numero": 4,
+          "tipo": "dark",
+          "tag": "POR QUE ENGANA",
+          "bloco1": "O português e o italiano vêm do mesmo latim. <strong>80% do vocabulário se parece</strong>. O cérebro acelera, assume o significado e pula a verificação.",
+          "bloco2": "Resultado: você fala com confiança e diz exatamente o oposto do que queria. Italiano entende — e te enxerga como brasileiro tentando 'chutar'."
+        },
+        {
+          "numero": 5,
+          "tipo": "light",
+          "tag": "CENAS REAIS",
+          "headline_interna": "Onde isso aparece",
+          "bloco1": "<strong>Restaurante:</strong> 'Vorrei della salsa' — você quer o tempero, eles trazem molho de tomate.",
+          "bloco2": "<strong>Mercado:</strong> 'Mi piace il caldo' soa como 'gosto de caldo'. Significa 'gosto do calor'. Italiano vai olhar achando que você é meio louco."
+        },
+        {
+          "numero": 6,
+          "tipo": "dark",
+          "tag": "OS QUE NINGUÉM AVISA",
+          "bloco1": "<strong>Largo</strong> em italiano = praça (largo de cidade). <strong>Stanco</strong> = cansado (não 'estancado'). <strong>Stoffa</strong> = tecido (não 'estofo' completo).",
+          "bloco2": "<strong>Carta</strong> = papel ou cardápio (não a carta que você escreve — essa é '<strong>lettera</strong>')."
+        },
+        {
+          "numero": 7,
+          "tipo": "light",
+          "tag": "COMO FIXAR",
+          "headline_interna": "Truque do flashcard invertido",
+          "bloco1": "Crie um flashcard pra cada palavra <strong>com a tradução real</strong> de um lado e a 'pegadinha' do outro.",
+          "bloco2": "Revise antes de dormir, durante 7 dias. Quando esses 7 caírem, escolha mais 7 do dicionário de falsi amici. Em 1 mês você tem 30 fixados."
+        },
+        {
+          "numero": 8,
+          "tipo": "grad",
+          "bloco1": "Falso cognato é o erro que faz brasileiro <strong>parecer turista</strong> mesmo falando italiano fluente.",
+          "bloco2": "Corrigir os 30 mais comuns muda a percepção do nativo sobre você em menos de uma semana de conversa."
+        },
+        {
+          "numero": 9,
+          "tipo": "cta",
+          "frase_ponte": "Quer a lista completa dos 30 falsos cognatos italianos mais perigosos?",
+          "cta_headline": "BAIXE O GUIA",
+          "cta_keyword": "GUIA",
+          "cta_beneficio": "PDF + áudios + frases de uso real"
+        }
+      ]
+    },
+    {
+      "ideia": "Gírias italianas que livros não ensinam",
+      "headline": "Italiano de Verdade Não Diz 'Buongiorno' o Dia Todo: As 6 Palavras Que Você Vai Ouvir em Roma e Curso Nenhum Ensinou",
+      "slides": [
+        {
+          "numero": 1,
+          "tipo": "capa",
+          "headline_capa": "ITALIANO DE VERDADE NÃO DIZ 'BUONGIORNO' O DIA TODO: AS 6 PALAVRAS QUE VOCÊ VAI OUVIR EM ROMA E NENHUM CURSO ENSINOU"
+        },
+        {
+          "numero": 2,
+          "tipo": "dark",
+          "tag": "O GAP",
+          "bloco1": "Você desembarca em Fiumicino sabendo dizer 'Buongiorno', 'Grazie' e 'Prego'. Dez minutos depois, um italiano te responde com '<strong>boh</strong>' — e você não tem ideia do que isso significa.",
+          "bloco2": "Curso ensina forma escrita. Italiano de rua usa <strong>interjeições e atalhos</strong> que nenhum livro lista, mas que aparecem 50 vezes por dia em qualquer conversa real."
+        },
+        {
+          "numero": 3,
+          "tipo": "light",
+          "tag": "1. BOH",
+          "headline_interna": "O 'sei lá' italiano",
+          "bloco1": "<strong>Boh</strong> = 'sei lá', 'não faço ideia', 'sabe-se lá'. Usado o tempo todo.",
+          "bloco2": "Exemplo: 'A che ora arriva il treno?' — 'Boh.' (A que horas chega o trem? — Sei lá.) Soa rude no curso, é normal na rua."
+        },
+        {
+          "numero": 4,
+          "tipo": "dark",
+          "tag": "2. MAGARI",
+          "bloco1": "<strong>Magari</strong> = 'quem dera', 'oxalá', 'tomara'. Carrega desejo misturado com dúvida — sentimento difícil de traduzir.",
+          "bloco2": "'Vai in Italia quest'estate?' — '<strong>Magari!</strong>' (Vai à Itália esse verão? — Quem dera!) Resposta que diz 'queria muito mas não vai rolar' sem precisar explicar."
+        },
+        {
+          "numero": 5,
+          "tipo": "light",
+          "tag": "3. DAI E 4. FIGURATI",
+          "headline_interna": "Dois cotidianos",
+          "bloco1": "<strong>Dai</strong> (lê-se 'dai') = 'vai', 'deixa disso', 'fala sério'. 'Dai, andiamo!' = 'Vai, vamos!'.",
+          "bloco2": "<strong>Figurati</strong> = 'imagina', 'que isso', 'sem problema'. Resposta padrão a 'grazie'. Mais usada que 'prego' em contexto informal."
+        },
+        {
+          "numero": 6,
+          "tipo": "dark",
+          "tag": "5. CHE PALLE E 6. IN BOCCA AL LUPO",
+          "bloco1": "<strong>Che palle!</strong> = 'que saco!'. Vulgar mas universal — todo italiano usa, todo dia. Em contexto formal, evite.",
+          "bloco2": "<strong>In bocca al lupo</strong> = 'boa sorte' (literalmente 'na boca do lobo'). Resposta: '<strong>crepi</strong>' (que ele morra). Nunca diga 'grazie' — dá azar."
+        },
+        {
+          "numero": 7,
+          "tipo": "light",
+          "tag": "ONDE PRATICAR",
+          "headline_interna": "Imersão sem viajar",
+          "bloco1": "Veja <strong>séries italianas em streaming</strong> com legenda em italiano. 'Boris', 'Mare Fuori', 'L'amica geniale' usam essas gírias o tempo todo.",
+          "bloco2": "Anote cada interjeição que aparecer 2+ vezes. Em 5 episódios você fixa 10 expressões que livro nenhum ensina."
+        },
+        {
+          "numero": 8,
+          "tipo": "grad",
+          "bloco1": "Saber gírias é o que separa <strong>'falar italiano'</strong> de <strong>'soar italiano'</strong>.",
+          "bloco2": "É a parte mais barata do aprendizado — e a única que livros sistematicamente ignoram."
+        },
+        {
+          "numero": 9,
+          "tipo": "cta",
+          "frase_ponte": "Quer o guia com 30 gírias italianas usadas todo dia em Roma e Milão?",
+          "cta_headline": "BAIXE O GUIA",
+          "cta_keyword": "GUIA",
+          "cta_beneficio": "PDF + áudios reais + contexto de uso"
+        }
+      ]
+    },
+    {
+      "ideia": "Quando usar TU e quando usar LEI em italiano",
+      "headline": "Você Trata um Italiano de 'Tu' no Primeiro Encontro e Ele Recua: A Regra do 'Lei' Que Brasileiro Quebra Sem Saber",
+      "slides": [
+        {
+          "numero": 1,
+          "tipo": "capa",
+          "headline_capa": "VOCÊ TRATA UM ITALIANO DE 'TU' NO PRIMEIRO ENCONTRO E ELE RECUA: A REGRA DO 'LEI' QUE O BRASILEIRO QUEBRA SEM SABER"
+        },
+        {
+          "numero": 2,
+          "tipo": "dark",
+          "tag": "A CENA",
+          "bloco1": "Você entra numa loja em Bolonha e pergunta para o vendedor de 50 anos: '<strong>Sai dove sono le scarpe?</strong>' ('Você sabe onde são os sapatos?').",
+          "bloco2": "Ele responde, mas com voz mais fria. Você não percebeu — usou 'tu' (sai) com um estranho mais velho. A frase correta era '<strong>Sa dove sono?</strong>' usando '<strong>Lei</strong>'."
+        },
+        {
+          "numero": 3,
+          "tipo": "light",
+          "tag": "REGRA BASE",
+          "headline_interna": "Dois 'você' diferentes",
+          "bloco1": "Italiano tem <strong>dois 'você'</strong>. <strong>Tu</strong> = informal (amigos, família, jovens). <strong>Lei</strong> = formal (desconhecidos, mais velhos, contexto profissional).",
+          "bloco2": "A diferença não é só cultural — muda a <strong>conjugação do verbo</strong>. 'Tu sai' vira 'Lei sa'. 'Tu vai' vira 'Lei va'. Sempre 3ª pessoa do singular."
+        },
+        {
+          "numero": 4,
+          "tipo": "dark",
+          "tag": "QUANDO USAR LEI",
+          "bloco1": "<strong>Sempre Lei:</strong> lojas, restaurantes, hotéis, taxistas, médicos, profissionais. Pessoas mais velhas que você não conhece. Ambiente de trabalho com superiores ou desconhecidos.",
+          "bloco2": "<strong>Sempre tu:</strong> amigos próximos, crianças, jovens da sua idade em contexto casual (bar, festa). Família — exceto sogros e parentes mais velhos no primeiro encontro."
+        },
+        {
+          "numero": 5,
+          "tipo": "light",
+          "tag": "EXEMPLO PRÁTICO",
+          "headline_interna": "Mesma frase, dois 'você'",
+          "bloco1": "<strong>Informal (tu):</strong> 'Come ti chiami? Da dove vieni? Cosa fai nella vita?' (Como você se chama? De onde você vem? O que faz da vida?)",
+          "bloco2": "<strong>Formal (Lei):</strong> 'Come si chiama? Da dove viene? Cosa fa nella vita?' Note: <strong>ti</strong> vira <strong>si</strong>, <strong>vieni</strong> vira <strong>viene</strong>, <strong>fai</strong> vira <strong>fa</strong>."
+        },
+        {
+          "numero": 6,
+          "tipo": "dark",
+          "tag": "REGIONAL",
+          "bloco1": "<strong>Norte da Itália</strong> (Milão, Veneza, Turim): mais formal. Use Lei por padrão, espere o convite para passar pro tu.",
+          "bloco2": "<strong>Sul</strong> (Nápoles, Bari, Sicília): mais aberto. Tu chega mais rápido. Mas com estranho mais velho, Lei continua sendo o seguro."
+        },
+        {
+          "numero": 7,
+          "tipo": "light",
+          "tag": "COMO TRANSICIONAR",
+          "headline_interna": "Do Lei pro tu",
+          "bloco1": "Quando alguém quer pular pra informal, fala: '<strong>Diamoci del tu</strong>' (vamos nos tratar de tu). É um convite explícito.",
+          "bloco2": "Aceita com '<strong>Volentieri</strong>' (com prazer). Daí em diante, mantém o tu. Nunca volte pro Lei sem motivo — vira frio."
+        },
+        {
+          "numero": 8,
+          "tipo": "grad",
+          "bloco1": "Brasileiro tende a usar 'tu' por reflexo do português. Em italiano, isso pode <strong>cancelar uma venda, esfriar uma conversa, fechar uma porta profissional</strong>.",
+          "bloco2": "Saber alternar entre tu e Lei é a primeira coisa que diferencia turista de quem está se integrando de verdade."
+        },
+        {
+          "numero": 9,
+          "tipo": "cta",
+          "frase_ponte": "Quer o guia com as conjugações completas de Tu e Lei nos 20 verbos mais usados?",
+          "cta_headline": "BAIXE O GUIA",
+          "cta_keyword": "GUIA",
+          "cta_beneficio": "PDF + tabela de conjugação + áudios"
+        }
+      ]
+    },
+    {
+      "ideia": "Como pedir café como italiano de verdade",
+      "headline": "Você Pede 'Latte' em Roma e Recebe Um Copo de Leite Puro: As 5 Regras Não Escritas do Café Italiano Que Separam Turista de Quem Mora Lá",
+      "slides": [
+        {
+          "numero": 1,
+          "tipo": "capa",
+          "headline_capa": "VOCÊ PEDE 'LATTE' EM ROMA E RECEBE UM COPO DE LEITE PURO: AS 5 REGRAS NÃO ESCRITAS DO CAFÉ ITALIANO"
+        },
+        {
+          "numero": 2,
+          "tipo": "dark",
+          "tag": "A CILADA",
+          "bloco1": "Você entra num bar perto da Fontana di Trevi e pede '<strong>un latte, per favore</strong>', achando que vai receber café com leite. Em vez disso, vem <strong>um copo grande de leite puro</strong>, sem café.",
+          "bloco2": "'Latte' em italiano significa só leite. O que você queria era '<strong>caffè latte</strong>' — ou '<strong>cappuccino</strong>', dependendo do horário."
+        },
+        {
+          "numero": 3,
+          "tipo": "light",
+          "tag": "REGRA 1",
+          "headline_interna": "Caffè = espresso",
+          "bloco1": "Quando italiano diz '<strong>caffè</strong>', está falando de <strong>espresso curto</strong>. Não precisa especificar.",
+          "bloco2": "Quer americano? Peça '<strong>caffè americano</strong>'. Quer mais forte? '<strong>Ristretto</strong>'. Quer com muito leite vaporizado? '<strong>Cappuccino</strong>'. Cada palavra é uma bebida diferente."
+        },
+        {
+          "numero": 4,
+          "tipo": "dark",
+          "tag": "REGRA 2",
+          "bloco1": "<strong>Cappuccino só de manhã.</strong> Tradicionalmente, italiano não toma cappuccino depois das 11h — leite após refeição é visto como ruim pra digestão.",
+          "bloco2": "Você pode pedir, ninguém vai negar. Mas o garçom vai te identificar como turista na hora. Italiano almoçando com cappuccino é cena rara."
+        },
+        {
+          "numero": 5,
+          "tipo": "light",
+          "tag": "REGRA 3",
+          "headline_interna": "Al banco vs al tavolo",
+          "bloco1": "<strong>Al banco</strong> (no balcão, em pé) = preço normal, geralmente 1-1,5 €.",
+          "bloco2": "<strong>Al tavolo</strong> (na mesa, sentado) = preço dobra ou triplica, especialmente em zona turística. Mesmo café, mesma máquina — só a posição muda."
+        },
+        {
+          "numero": 6,
+          "tipo": "dark",
+          "tag": "REGRA 4",
+          "bloco1": "<strong>Açúcar vai por cima</strong> da espuma do espresso, sem mexer muito. O peso do açúcar atravessa o creme e fica no fundo — você toma o creme primeiro, o doce depois.",
+          "bloco2": "Mexer demais quebra a crema e descaracteriza a bebida. Reparar em quem está no balcão ao lado ensina mais que qualquer manual."
+        },
+        {
+          "numero": 7,
+          "tipo": "light",
+          "tag": "REGRA 5",
+          "headline_interna": "To go não existe",
+          "bloco1": "Italiano toma café <strong>na hora, no lugar</strong>. Pegar copo de papel pra levar é prática americana — bares de fora dos circuitos turísticos nem oferecem.",
+          "bloco2": "Quer o ritual? Entra, pede no caixa, paga, leva o recibo ao balcão, espera 30 segundos, toma em 1 minuto, sai. Tudo isso por 1 euro. <strong>É o sistema.</strong>"
+        },
+        {
+          "numero": 8,
+          "tipo": "grad",
+          "bloco1": "Pedir café como italiano não é frescura — é o <strong>primeiro código social</strong> que sinaliza se você está visitando ou vivendo a cidade.",
+          "bloco2": "Aprender essas 5 regras muda a forma como o bar te trata, o preço que você paga e a velocidade que você se integra."
+        },
+        {
+          "numero": 9,
+          "tipo": "cta",
+          "frase_ponte": "Quer o guia completo do vocabulário de bar italiano com 25 termos e fotos?",
+          "cta_headline": "BAIXE O GUIA",
+          "cta_keyword": "GUIA",
+          "cta_beneficio": "PDF + cardápio comentado + áudios de pedido"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "slides": [
+    {
+      "numero": 1,
+      "tipo": "capa",
+      "tag": null,
+      "headline_capa": "COMO DIZER A DATA EM ITALIANO: DIAS, MESES E A LÓGICA QUE FACILITA TUDO",
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 2,
+      "tipo": "dark",
+      "tag": "A CENA",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Você marca um encontro com um italiano: 'no dia 15 de março'. Sabe que em italiano a data vai nessa ordem — dia, mês, ano — como no português, não como no inglês. Mas precisa das palavras: como se diz 'março'? E 'terça-feira'?",
+      "bloco2": "Dias da semana e meses são vocabulário de uso diário — aparecem em reservas, convites, notícias, conversas. A boa notícia: vários meses italianos são imediatamente reconhecíveis para quem fala português. O desafio maior está nos dias da semana.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 3,
+      "tipo": "light",
+      "tag": "REGRA 1",
+      "headline_capa": null,
+      "headline_interna": "Os dias da semana em italiano",
+      "bloco1": "<strong>Lunedì</strong> (segunda), <strong>martedì</strong> (terça), <strong>mercoledì</strong> (quarta), <strong>giovedì</strong> (quinta), <strong>venerdì</strong> (sexta), <strong>sabato</strong> (sábado), <strong>domenica</strong> (domingo). Em italiano, os dias não têm letra maiúscula — são escritos em minúsculo.",
+      "bloco2": "Os dias de segunda a sexta terminam em <strong>-dì</strong> (exceto sábado e domingo) e têm acento na última sílaba. <strong>Lunedì</strong> vem de 'Lua', <strong>martedì</strong> de 'Marte', <strong>mercoledì</strong> de 'Mercúrio' — os mesmos planetas do português ('segunda, terça, quarta' tinham essa origem latina).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 4,
+      "tipo": "dark",
+      "tag": "OS MESES DO ANO",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Gennaio</strong> (janeiro), <strong>febbraio</strong> (fevereiro), <strong>marzo</strong> (março), <strong>aprile</strong> (abril), <strong>maggio</strong> (maio), <strong>giugno</strong> (junho), <strong>luglio</strong> (julho), <strong>agosto</strong> (agosto), <strong>settembre</strong> (setembro), <strong>ottobre</strong> (outubro), <strong>novembre</strong> (novembro), <strong>dicembre</strong> (dezembro).",
+      "bloco2": "A maioria é reconhecível imediatamente: <strong>marzo, aprile, agosto, settembre, ottobre, novembre, dicembre</strong> são praticamente iguais ao português. Os menos óbvios são <strong>gennaio</strong> (janeiro), <strong>febbraio</strong> (fevereiro), <strong>maggio</strong> (maio), <strong>giugno</strong> (junho) e <strong>luglio</strong> (julho).",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 5,
+      "tipo": "light",
+      "tag": "COMO DIZER A DATA",
+      "headline_capa": null,
+      "headline_interna": "A estrutura da data em italiano",
+      "bloco1": "A data em italiano segue a ordem: artigo + número + mês + ano. <strong>Il quindici marzo</strong> (o dia quinze de março). Para o primeiro dia do mês, usa-se o ordinal: <strong>il primo aprile</strong> (o primeiro de abril). Para os demais, usa-se o cardinal: <strong>il due, il tre, il quattro...</strong>",
+      "bloco2": "Em contextos formais e escritos: <strong>Milano, 15 marzo 2025</strong> — sem artigo, apenas os elementos. Em conversa: <strong>Oggi è il diciotto maggio</strong> (Hoje é dezoito de maio). A estrutura é próxima do português e muito mais intuitiva do que a do inglês.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 6,
+      "tipo": "dark",
+      "tag": "EXPRESSÕES DE TEMPO ÚTEIS",
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "<strong>Oggi</strong> (hoje), <strong>ieri</strong> (ontem), <strong>domani</strong> (amanhã), <strong>dopodomani</strong> (depois de amanhã), <strong>ieri l'altro</strong> (anteontem). <strong>La settimana scorsa</strong> (a semana passada), <strong>la settimana prossima</strong> (a próxima semana).",
+      "bloco2": "<strong>Il mese scorso</strong> (o mês passado), <strong>il mese prossimo</strong> (o próximo mês), <strong>l'anno scorso</strong> (o ano passado), <strong>l'anno prossimo</strong> (o próximo ano). Essas expressões combinam com qualquer verbo e são essenciais para situar qualquer informação no tempo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 7,
+      "tipo": "light",
+      "tag": "COMO TREINAR",
+      "headline_capa": null,
+      "headline_interna": "Use datas reais para memorizar",
+      "bloco1": "Mude o idioma do calendário do celular para o italiano. Você vai ver os dias e meses todos os dias, no contexto certo, sem nenhum esforço extra. Em duas semanas, os nomes estarão automáticos.",
+      "bloco2": "Pratique dizendo a data de hoje em voz alta toda manhã: <strong>Oggi è lunedì, il diciotto maggio</strong>. Trinta segundos por dia durante um mês e a data em italiano vai sair sem pensar — o tipo de automação que só a repetição diária constrói.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 8,
+      "tipo": "grad",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": "Dias da semana, meses e datas aparecem em absolutamente todo contexto comunicativo — reservas, convites, contratos, conversas, redes sociais. Ter esse vocabulário automático libera você para focar no conteúdo da mensagem, não na estrutura.",
+      "bloco2": "E a semelhança com o português é real e aproveitável. <strong>Settembre, ottobre, novembre, dicembre</strong> — você já quase sabia. O italiano recompensa o falante de português com uma quantidade enorme de vocabulário pronto. Basta ativá-lo.",
+      "frase_ponte": null,
+      "cta_headline": null,
+      "cta_keyword": null,
+      "cta_beneficio": null
+    },
+    {
+      "numero": 9,
+      "tipo": "cta",
+      "tag": null,
+      "headline_capa": null,
+      "headline_interna": null,
+      "bloco1": null,
+      "bloco2": null,
+      "frase_ponte": "Quer o guia completo com datas, horários e expressões de tempo em italiano?",
+      "cta_headline": "BAIXE O GUIA",
+      "cta_keyword": "GUIA",
+      "cta_beneficio": "PDF com dias, meses e expressões de tempo + áudios nativos + exercícios de escuta com datas reais"
+    }
+  ]
+}

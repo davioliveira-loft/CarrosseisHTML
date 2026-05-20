@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Machine</title>
+  <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ── SIDEBAR ─────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">Content Machine</span>
+    </div>
+
+    <!-- Briefing form (colapsável) -->
+    <div class="sidebar-section">
+      <button class="section-toggle" onclick="toggleBriefing()">
+        ▸ Briefing da Marca
+      </button>
+      <form id="briefing-form" class="collapsed" onsubmit="saveBriefing(event)">
+        <div class="field">
+          <label>Marca</label>
+          <input type="text" id="bf-marca" placeholder="BrandsDecoded" required>
+        </div>
+        <div class="field">
+          <label>@ Instagram</label>
+          <input type="text" id="bf-handle" placeholder="brandsdecoded" required onchange="loadLogoStatus()">
+        </div>
+        <div class="field">
+          <label>Logo (opcional)</label>
+          <div class="logo-row">
+            <div class="logo-preview" id="logo-preview"></div>
+            <div class="logo-actions">
+              <input type="file" id="logo-input" accept="image/png,image/jpeg,image/webp,image/svg+xml" style="display:none" onchange="uploadLogo(event)">
+              <button type="button" class="btn-sm" onclick="document.getElementById('logo-input').click()">Escolher</button>
+              <button type="button" class="btn-danger" id="logo-remove" style="display:none" onclick="removerLogo()">Remover</button>
+            </div>
+          </div>
+          <small class="hint-text">PNG/JPG/SVG quadrado. Substitui a inicial @ no carrossel.</small>
+        </div>
+        <div class="field">
+          <label>Paleta de cores</label>
+          <div class="paleta-grid">
+            <div class="paleta-item">
+              <span class="paleta-label">Primária</span>
+              <div class="color-row">
+                <input type="color" id="bf-cor-picker" value="#E8421A" oninput="syncColorText(this, 'bf-cor')">
+                <input type="text" id="bf-cor" placeholder="#E8421A" maxlength="7" oninput="syncColorPicker(this, 'bf-cor-picker')" required>
+              </div>
+            </div>
+            <div class="paleta-item">
+              <span class="paleta-label">Destaque</span>
+              <div class="color-row">
+                <input type="color" id="bf-cor-destaque-picker" value="#FFE74C" oninput="syncColorText(this, 'bf-cor-destaque')">
+                <input type="text" id="bf-cor-destaque" placeholder="auto" maxlength="7" oninput="syncColorPicker(this, 'bf-cor-destaque-picker')">
+              </div>
+            </div>
+            <div class="paleta-item">
+              <span class="paleta-label">Fundo</span>
+              <div class="color-row">
+                <input type="color" id="bf-cor-fundo-picker" value="#FAF8F2" oninput="syncColorText(this, 'bf-cor-fundo')">
+                <input type="text" id="bf-cor-fundo" placeholder="auto" maxlength="7" oninput="syncColorPicker(this, 'bf-cor-fundo-picker')">
+              </div>
+            </div>
+            <div class="paleta-item">
+              <span class="paleta-label">Tinta</span>
+              <div class="color-row">
+                <input type="color" id="bf-cor-tinta-picker" value="#0E0E0E" oninput="syncColorText(this, 'bf-cor-tinta')">
+                <input type="text" id="bf-cor-tinta" placeholder="auto" maxlength="7" oninput="syncColorPicker(this, 'bf-cor-tinta-picker')">
+              </div>
+            </div>
+          </div>
+          <small class="hint-text">Destaque/Fundo/Tinta são opcionais — deixe em branco para o sistema escolher automaticamente.</small>
+          <div class="paleta-presets">
+            <button type="button" class="btn-sm preset-btn" onclick="applyPaletaPreset('italiano')">Italiano</button>
+            <button type="button" class="btn-sm preset-btn" onclick="applyPaletaPreset('brutalismo-amarelo')">Brutal Amarelo</button>
+            <button type="button" class="btn-sm preset-btn" onclick="applyPaletaPreset('editorial-creme')">Editorial Creme</button>
+            <button type="button" class="btn-sm preset-btn" onclick="applyPaletaPreset('limpar')">Limpar</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Estilo visual <span class="hint-text" style="display:inline">(define as fontes)</span></label>
+          <select id="bf-estilo">
+            <option value="moderno">Moderno — Barlow Condensed</option>
+            <option value="classico">Clássico — Playfair Display</option>
+            <option value="minimalista">Minimalista — Plus Jakarta Sans</option>
+            <option value="bold">Bold — Space Grotesk</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Máx. imagens por carrossel <span class="hint-text" style="display:inline">(inclui capa)</span></label>
+          <select id="bf-max-imagens">
+            <option value="4">4 — enxuto</option>
+            <option value="6" selected>6 — equilibrado</option>
+            <option value="8">8 — visual</option>
+            <option value="12">12 — sem limite prático</option>
+          </select>
+          <small class="hint-text">Slides elegíveis: capa (sempre), dark/light com pouco texto, grad com pouco texto. CTA nunca recebe imagem.</small>
+        </div>
+        <button type="submit" class="btn-primary">Salvar briefing</button>
+        <span id="briefing-saved" class="saved-msg" style="display:none">✓ Salvo</span>
+      </form>
+    </div>
+
+    <!-- Importar JSON -->
+    <div class="sidebar-section">
+      <div class="section-header">
+        <h3>Importar</h3>
+      </div>
+      <input type="file" id="json-import-input" accept=".json,application/json" style="display:none" onchange="importarJSONFromFile(event)">
+      <div class="import-row">
+        <button class="btn-import-big" onclick="document.getElementById('json-import-input').click()">↥ Arquivo</button>
+        <button class="btn-import-big" onclick="abrirModalColarJSON()">📋 Colar</button>
+      </div>
+      <p class="import-hint">O JSON pode conter um ou vários carrosséis. A marca/paleta vem sempre do briefing acima.</p>
+      <div id="lotes-ativos"></div>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ─────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Vazio (estado inicial) -->
+    <div id="step-empty" class="step-view active">
+      <div class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h2>Content Machine</h2>
+        <p>Configure o briefing da marca e importe um JSON para começar.</p>
+        <div class="empty-actions">
+          <button class="btn-primary large" onclick="document.getElementById('json-import-input').click()">↥ Importar arquivo</button>
+          <button class="btn-primary large btn-outline" onclick="abrirModalColarJSON()">📋 Colar JSON</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="step-spinner" class="step-view">
+      <div class="spinner-container">
+        <div class="spinner"></div>
+        <p id="spinner-msg">Processando...</p>
+      </div>
+    </div>
+
+    <!-- Step: Upload de imagens (individual) -->
+    <div id="step-imagens" class="step-view">
+      <div class="step-header">
+        <h2>Imagens</h2>
+        <p class="step-hint">Esses slides ficam mais fortes com imagem. A ordem de upload define qual imagem vai para qual slide.</p>
+      </div>
+      <div class="template-row-individual" id="template-row-individual"></div>
+      <div id="sugestao-lista"></div>
+      <div class="upload-zone" id="upload-zone" ondragover="event.preventDefault()" ondrop="onDrop(event)">
+        <input type="file" id="img-input" multiple accept="image/*" style="display:none" onchange="onFilesSelected(event)">
+        <div class="upload-inner" onclick="document.getElementById('img-input').click()">
+          <div class="upload-icon">↑</div>
+          <p>Arraste as imagens aqui ou clique para selecionar</p>
+          <p class="upload-hint">1ª imagem → capa, 2ª → próximo slide sugerido, etc.</p>
+        </div>
+        <div id="img-preview-row" class="img-preview-row"></div>
+      </div>
+      <div class="step-actions">
+        <button class="btn-primary" onclick="uploadImagens()">→ Gerar preview</button>
+        <button class="btn-secondary" onclick="uploadImagens(true)">Sem imagens (fundo sólido)</button>
+      </div>
+    </div>
+
+    <!-- Step: Preview -->
+    <div id="step-preview" class="step-view">
+      <div class="step-header">
+        <h2>Preview do carrossel</h2>
+        <p class="step-hint">Confira o visual. Exporte quando estiver pronto.</p>
+      </div>
+      <div class="preview-toolbar">
+        <a id="preview-link" href="#" target="_blank" class="btn-secondary">Abrir em nova aba ↗</a>
+      </div>
+      <iframe id="preview-iframe" class="preview-frame" src="about:blank"></iframe>
+      <div class="step-actions">
+        <button class="btn-primary large" onclick="exportar()">⬇ Exportar PNGs</button>
+        <button class="btn-secondary" onclick="voltarParaImagens()">← Trocar imagens</button>
+      </div>
+    </div>
+
+    <!-- Step: PNGs finalizados -->
+    <div id="step-pngs" class="step-view">
+      <div class="step-header">
+        <h2>Carrossel exportado ✓</h2>
+        <p id="pngs-path" class="step-hint"></p>
+      </div>
+      <div id="pngs-grid" class="pngs-grid"></div>
+      <div class="step-actions">
+        <button class="btn-secondary" onclick="voltarInicio()">← Importar outro</button>
+      </div>
+    </div>
+
+    <!-- Batch: Imagens e exportação -->
+    <div id="step-batch-imagens" class="step-view">
+      <div class="step-header">
+        <h2>Imagens e exportação</h2>
+        <p class="step-hint">Faça upload das imagens para cada carrossel, gere o preview e exporte os PNGs.</p>
+      </div>
+      <div id="batch-img-container"></div>
+      <div class="step-actions">
+        <button class="btn-secondary" onclick="voltarInicio()">← Importar outro</button>
+      </div>
+    </div>
+
+    <!-- Step: Erro -->
+    <div id="step-erro" class="step-view">
+      <div class="erro-container">
+        <div class="erro-icon">✕</div>
+        <h2>Ocorreu um erro</h2>
+        <pre id="erro-msg"></pre>
+        <button class="btn-secondary" onclick="voltarInicio()">← Voltar</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Modal: Colar JSON -->
+<div id="modal-colar-json" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Colar JSON</h3>
+      <button class="modal-close" onclick="fecharModalColarJSON()">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-hint">Cole abaixo o JSON gerado pelo LLM. A marca/paleta vem do briefing da sidebar — não precisa estar no JSON.</p>
+      <textarea id="colar-json-area" placeholder='{ "carrosseis": [ { "ideia": "...", "slides": [...] } ] }' spellcheck="false"></textarea>
+      <div id="colar-json-erro" class="modal-erro"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-secondary" onclick="fecharModalColarJSON()">Cancelar</button>
+      <button class="btn-primary" onclick="importarJSONFromText()">Importar</button>
+    </div>
+  </div>
+</div>
+
+<script src="/frontend/app.js"></script>
+</body>
+</html>
